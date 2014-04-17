@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.s {
+    width: 100%;
+    height: 800px;
+    border: 1px solid red;
+}
+
+.body .left-bar {
+    position: fixed;
+    left: 0px;
+    top: 50%;
+}
+
+.body .right-bar {
+    position: fixed;
+    right: 0px;
+    top: 50%;
+}
+
+.maincontent {
+    background: #2491F7;
+}

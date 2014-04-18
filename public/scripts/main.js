@@ -1,4 +1,5 @@
 (function ($) {
+	// preload image
 	var images = ["/public/misc/images/arrow_academy2.png"];
 
 	$.each(images, function (index) {
@@ -45,11 +46,40 @@
 		}
 	}
 
+	function resize_right_slide_btns() {
+		var width = $(".slides").height();
+		var right_slide_btns = $(".slides .slide-item .btn-c");
+		right_slide_btns.each(function () {
+			var self = $(this);
+			var con = $(self).parent(".slide-item");
+
+			var height = 41 * $(".btn-item", self).size();
+
+			var margin_top = - parseInt(height) / 2;
+			var right = -(parseInt(width) / 2 - parseInt(height) / 2);
+			self.css({
+				top: "50%",
+				"margin-top": margin_top,
+				right: right,
+				height: height,
+				width: width
+			});
+		});
+
+		return function () {};
+	}
+
 	$(function () {
 		// 垂直导航条重新设置大小 位置.
 		var resize_slide_btns_fn = resize_slide_btns();
-	    $(window).load(resize_slide_btns_fn);
-	    $(window).resize(resize_slide_btns_fn);
+	    $(window).load(function () {
+	    	resize_slide_btns_fn();
+	    	resize_right_slide_btns();
+	    });
+	    $(window).resize(function () {
+	    	resize_slide_btns_fn();
+	    	resize_right_slide_btns();
+	    });
 
 	   	// 垂直导航条点击事件处理
 	   	$(".s2:not(.s3):not(.s4)").find(".slider-btns li.btn").click(function () {
@@ -63,12 +93,11 @@
 	   		}
 	   		if (index != false) {
 	   			var slides = self.parent(".btns").parent(".slider-btns").siblings(".slides");
-	   			$("li", slides).addClass("hideme");
+	   			$(">li", slides).addClass("hideme");
 	   			$(".slide-item-" + index, slides).removeClass("hideme");
-	   			self.siblings("li.btn").removeClass("hideme");
-	   			self.addClass("hideme");
+	   			// self.siblings("li.btn").removeClass("hideme");
+	   			// self.addClass("hideme");
 	   		}
 	   	});
-
 	});
 })(jQuery);

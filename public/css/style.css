@@ -592,7 +592,7 @@ color: #DBDCDC;
     background:url(../misc/images/signature_dean.png) no-repeat;
 }
 
-.slide-item-3 .btn-c {
+.slide-item .btn-c {
     height: 41px;
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
@@ -610,12 +610,12 @@ color: #DBDCDC;
     color:#fff;
 }
 
-.slide-item-3 .btn-c  > span  {
+.slide-item .btn-c   span  {
     margin-right: 200px;
     display: inline-block;
 }
 
-.slide-item-3 .btn-c  > span .b-icon {
+.slide-item .btn-c   span .b-icon {
     background: url(../misc/images/icon_open.png) no-repeat;
     background-position: center;
     width: 17px;

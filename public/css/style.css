@@ -553,7 +553,8 @@ color: #DBDCDC;
 
 .footer {
     background: #C1093D;
-color: #fff;
-font-size: 12px;
-text-align: center;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
 }

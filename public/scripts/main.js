@@ -1,9 +1,21 @@
 (function ($) {
+	var images = ["/public/misc/images/arrow_academy2.png"];
+
+	$.each(images, function (index) {
+		var img = new Image();
+		img.src = images[index];
+	});
+})(jQuery);
+
+(function ($) {
 
 	// 垂直导航条重新设置大小 位置.
 	function resize_slide_btns() {
 		var s2_slide_btns = $(".s2:not(.s3):not(.s4)").find(".slider-btns");
 		var s3_slide_btns = $(".s3 .slider-btns");
+
+		s2_slide_btns.css("display", "none");
+		s3_slide_btns.css("display", "none");
 
 		return function () {
 	        s2_slide_btns.each(function () {
@@ -15,6 +27,7 @@
 	        	self.css({
 	        		"margin-left": -( parseInt(width)/2 - 69),
 	        	});
+	        	s2_slide_btns.css("display", "block");
 	        });
 
 	        s3_slide_btns.each(function () {
@@ -26,6 +39,8 @@
 	        	self.css({
 	        		"margin-left": -( parseInt(width)/2 + 55),
 	        	});
+
+	        	s3_slide_btns.css("display", "block");
 	        });
 		}
 	}
@@ -46,12 +61,12 @@
 	   		catch (e) {
 	   			index = false;
 	   		}
-	   		console.log(index);
 	   		if (index != false) {
 	   			var slides = self.parent(".btns").parent(".slider-btns").siblings(".slides");
 	   			$("li", slides).addClass("hideme");
 	   			$(".slide-item-" + index, slides).removeClass("hideme");
-
+	   			self.siblings("li.btn").removeClass("hideme");
+	   			self.addClass("hideme");
 	   		}
 	   	});
 

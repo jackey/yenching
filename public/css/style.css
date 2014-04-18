@@ -142,7 +142,7 @@ html, body {
 }
 
 .s2 {
-    background: #970F37;
+    background: #B11B3B;
 }
 
 .s2 .header  {
@@ -199,7 +199,7 @@ margin-bottom: 20px;
 
 .s2 .home .slides .r {
     float: right;
-    width: 430px;
+    width: 35%;
     color: #fff;
     margin-right: 60px;
 }
@@ -251,12 +251,12 @@ margin-bottom: 20px;
 }
 
 .s2  .slider-btns .btns .btn {
-width: 100%;
-height: 30%;
-float: left;
-text-align: right;
-line-height: 41px;
-text-transform: uppercase;
+    width: 100%;
+    height: 30%;
+    float: left;
+    text-align: right;
+    line-height: 41px;
+    text-transform: uppercase;
 }
 
 .s2  .slider-btns .btns .btn span {
@@ -590,4 +590,36 @@ color: #DBDCDC;
 
 .s2 .slides .r  .signature-2 {
     background:url(../misc/images/signature_dean.png) no-repeat;
+}
+
+.slide-item-3 .btn-c {
+    height: 41px;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
+    position: absolute;
+    width: 768px;
+    text-transform: uppercase;
+    line-height: 41px;
+    background: #970F37;
+    right: -363px;
+    top: 50%;
+    margin-top: -20px;
+    text-align: right;
+    color:#fff;
+}
+
+.slide-item-3 .btn-c  > span  {
+    margin-right: 200px;
+    display: inline-block;
+}
+
+.slide-item-3 .btn-c  > span .b-icon {
+    background: url(../misc/images/icon_open.png) no-repeat;
+    background-position: center;
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    margin-left: 10px;
 }

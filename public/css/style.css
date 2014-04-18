@@ -6,6 +6,10 @@
     height: 100%;
 }
 
+.hideme {
+    display: none;
+}
+
 .font-size-35 {
     font-size: 35px;
 }
@@ -35,7 +39,7 @@
 }
 
 html, body {
-    min-width: 1400px;
+    min-width: 1200px;
 }
 
 .body .left-bar {
@@ -195,7 +199,7 @@ margin-bottom: 20px;
 
 .s2 .home .slides .r {
     float: right;
-    width: 35%;
+    width: 430px;
     color: #fff;
     margin-right: 60px;
 }
@@ -568,4 +572,22 @@ color: #DBDCDC;
     font-size: 12px;
     text-align: center;
     padding: 10px;
+}
+
+.s2 .slides .r .hl2 {
+    text-transform: uppercase;
+}
+
+.s2 .slides .r  .signature{
+    width: 184px;
+    height: 68px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background:url(../misc/images/signature_president.png) no-repeat;
+    background-position: center center;
+    margin-left: auto;
+}
+
+.s2 .slides .r  .signature-2 {
+    background:url(../misc/images/signature_dean.png) no-repeat;
 }

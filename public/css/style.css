@@ -34,6 +34,10 @@
     width:50%;
 }
 
+html, body {
+    min-width: 1400px;
+}
+
 .body .left-bar {
     position: fixed;
     left: 0px;
@@ -205,14 +209,14 @@ margin-bottom: 20px;
 
 .s2 .slider-icon {
     position: absolute;
-width: 161px;
-height: 80px;
-background: url(../misc/images/arrow_academy2.png) no-repeat;
-background-position: center center;
-background-size: 100%;
-left: 50%;
-margin-left: -80px;
-z-index: 1000;
+    width: 161px;
+    height: 80px;
+    background: url(../misc/images/arrow_academy2.png) no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    left: 50%;
+    margin-left: -80px;
+    z-index: 1000;
 }
 
 .s2 .slider {
@@ -220,19 +224,22 @@ z-index: 1000;
 }
 
 .s2  .slider-btns {
-width: 768px;
-height: 138px;
-left: 50%;
--webkit-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--moz-transform: rotate(-90deg);
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
-margin-left: -438px;
-top: 315px;
-z-index: 999;
-color: #fff;
-position: absolute;
-word-wrap: break-word;
+    height: 138px;
+    left: 50%;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
+    top: 50%;
+    margin-top: -69px;
+    z-index: 999;
+    color: #fff;
+    position: absolute;
+    word-wrap: break-word;
+}
+
+.s3 .slider-btns {
+    margin-top: -68px;
 }
 
 .s2  .slider-btns .btns {
@@ -264,6 +271,10 @@ margin-left: 10px;
 
 .s2  .slider-btns .btns .btn-1 {
     background: #970F37;
+}
+
+.s2 .slider-btns .btns .btn:hover {
+    cursor: pointer;
 }
 
 .s2  .slider-btns .btns .btn-2 {

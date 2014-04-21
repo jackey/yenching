@@ -13,7 +13,7 @@
 	// 垂直导航条重新设置大小 位置.
 	function resize_slide_btns() {
 		var s2_slide_btns = $(".s2:not(.s3):not(.s4)").find(".slider-btns");
-		var s3_slide_btns = $(".s3 .slider-btns");
+		var s3_slide_btns = $(".s3").find(".slider-btns");
 
 		s2_slide_btns.css("display", "none");
 		s3_slide_btns.css("display", "none");
@@ -26,7 +26,7 @@
 	        	self.width(con.height());
 
 	        	self.css({
-	        		"margin-left": -( parseInt(width)/2 - 69),
+	        		"margin-left": - ( parseInt(width)/2 - 69),
 	        	});
 	        	s2_slide_btns.css("display", "block");
 	        });
@@ -38,9 +38,8 @@
 	        	self.width(con.height());
 
 	        	self.css({
-	        		"margin-left": -( parseInt(width)/2 + 55),
+	        		"margin-left": - ( parseInt(width)/2 - 69),
 	        	});
-
 	        	s3_slide_btns.css("display", "block");
 	        });
 		}
@@ -82,7 +81,7 @@
 	    });
 
 	   	// 垂直导航条点击事件处理
-	   	$(".s2:not(.s3):not(.s4)").find(".slider-btns li.btn").click(function () {
+	   	$(".s2:not(.s4)").find(".slider-btns li.btn").click(function () {
 	   		var self = $(this);
 	   		var cls = self.attr("class");
 	   		try {

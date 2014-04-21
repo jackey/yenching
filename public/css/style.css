@@ -214,7 +214,7 @@ html, body {
 .s2 .header h1 {
     text-transform: uppercase;
     text-align: center;
-    color: #fff;
+    color: #231815;
 }
 
 .s2 .home .star {
@@ -230,7 +230,7 @@ html, body {
 
 
 .s2 .home .c {
-    color: #fff;
+    color: #231815;
 }
 
 .s2 .home .video {
@@ -282,7 +282,7 @@ html, body {
     position: absolute;
     width: 161px;
     height: 80px;
-    background: url(../misc/images/arrow_academy2.png) no-repeat;
+    background: url(../misc/images/arrow_white.png) no-repeat;
     background-position: center center;
     background-size: 100%;
     left: 50%;
@@ -324,6 +324,7 @@ html, body {
     text-align: right;
     line-height: 41px;
     text-transform: uppercase;
+    margin-top: -1px;
 }
 
 .s2  .slider-btns .btns .btn span {
@@ -368,17 +369,12 @@ margin-left: 10px;
     background: #B11B3B;
 }
 
-.s3 {
-    background: #7A7885;
-}
-
 .s3 .content .header > h4 {
     color:#fff;
 }
 
-.s3 .slider-icon {
-    background: url(../misc/images/arrow_program.png) no-repeat;
-    margin-left: -72px;
+.s3 .home .slides {
+    background-color: #7A7885;
 }
 
 .s3 .home .slides .l {
@@ -393,6 +389,10 @@ float: left;
 width: 50%;
 color: #fff;
 margin-right: 0px;
+}
+
+.s3 .home .c {
+    color: #fff;
 }
 
 .s3 .slider-btns .btns .btn-1 {

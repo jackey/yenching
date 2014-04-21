@@ -47,11 +47,34 @@ html, body {
     left: 0px;
     top: 50%;
     background: #B41A3C;
-    height: 360px;
+    height: 340px;
     width: 50px;
     margin-top: -230px;
     z-index: 10000;
 }
+
+.body .left-bar .left-bar-menu .hover-menu {
+    display: block;
+    position: absolute;
+    left: 140%;
+    background: #c81240;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.body .left-bar .left-bar-menu .hover-menu .arrow {
+    border: 10px solid #c81240;
+    height: 0px;
+    width: 0px;
+    border-color: transparent #c81240 transparent transparent;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px; 
+}
+
 
 .body .right-bar {
     position: fixed;
@@ -69,13 +92,14 @@ html, body {
 .body .left-bar .left-bar-menu {
     position: absolute;
     top: 50%;
-    margin-top: -175px;;
+    margin-top: -180px;
 }
 
 .body .left-bar .left-bar-menu .m-item {
     float: left;
     width: 50px;
     height: 50px;
+    text-indent: 10000px;
 }
 
 .body .left-bar .left-bar-menu .m-item-0 {
@@ -83,9 +107,17 @@ html, body {
     background-position: center center;
 }
 
+.body .left-bar .left-bar-menu .m-item-0:hover {
+    background-image: url(../misc/images/menu_site_up_on.png);
+}
+
 .body .left-bar .left-bar-menu .m-item-1 {
     background: url(../misc/images/menu_site_home.png) no-repeat;
     background-position: center center;
+}
+
+.body .left-bar .left-bar-menu .m-item-1:hover {
+    background-image: url(../misc/images/menu_site_home_on.png);
 }
 
 .body .left-bar .left-bar-menu .m-item-2 {
@@ -93,9 +125,17 @@ html, body {
     background-position: center center;
 }
 
+.body .left-bar .left-bar-menu .m-item-2:hover {
+    background-image: url(../misc/images/menu_site_academy_on.png);
+}
+
 .body .left-bar .left-bar-menu .m-item-3 {
     background: url(../misc/images/menu_site_program.png) no-repeat;
     background-position: center center;
+}
+
+.body .left-bar .left-bar-menu .m-item-3:hover {
+    background-image: url(../misc/images/menu_site_program_on.png);
 }
 
 .body .left-bar .left-bar-menu .m-item-4 {
@@ -103,15 +143,28 @@ html, body {
     background-position: center center;
 }
 
+.body .left-bar .left-bar-menu .m-item-4:hover {
+    background-image: url(../misc/images/menu_site_residential_on.png);
+}
+
 .body .left-bar .left-bar-menu .m-item-5 {
     background: url(../misc/images/menu_site_news.png) no-repeat;
     background-position: center center;
+}
+
+.body .left-bar .left-bar-menu .m-item-5:hover {
+    background-image: url(../misc/images/menu_site_news_on.png);
 }
 
 .body .left-bar .left-bar-menu .m-item-6 {
     background: url(../misc/images/menu_site_down.png) no-repeat;
     background-position: center center;
 }
+
+.body .left-bar .left-bar-menu .m-item-6:hover {
+    background-image: url(../misc/images/menu_site_down_on.png);
+}
+
 
 .img-full {
     width: 100%;
@@ -142,7 +195,7 @@ html, body {
 }
 
 .s2 {
-    background: #B11B3B;
+    background: #ffffff;
 }
 
 .s2 .header  {
@@ -182,26 +235,40 @@ html, body {
 
 .s2 .home .video {
     text-transform: uppercase;
-text-align: center;
-color: #fff;
-margin-top: 80px;
-margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
 
 .s2 .home .slides {
     position: relative;
+    background-color: #970F37;
 }
 
 .s2 .home .slides .l {
     float: left;
     width: 50%;
+    position: relative;
 }
 
 .s2 .home .slides .r {
     float: right;
     width: 35%;
     color: #fff;
-    margin-right: 60px;
+    margin-right: 90px;
+}
+
+.s2 .home .slide-item-1 .r {
+    margin-right: 166px;
+}
+
+.s2 .home .slide-item-2 .r {
+    margin-right: 166px;
+}
+
+.s2 .home .slide-item-3 .r {
+    margin-right: 124px;
 }
 
 .s2 .home .slides .line {
@@ -274,7 +341,19 @@ margin-left: 10px;
 }
 
 .s2  .slider-btns .btns .btn-1 {
+    background: #D20839;
+}
+
+.slide-item .btn-c .btn-item-1 {
     background: #970F37;
+}
+
+.slide-item .btn-c .btn-item-2 {
+    background: #B11B3B;
+}
+
+.slide-item .btn-c .btn-item-3 {
+    background: #C2243B;
 }
 
 .s2 .slider-btns .btns .btn:hover {
@@ -602,7 +681,6 @@ color: #DBDCDC;
     width: 768px;
     text-transform: uppercase;
     line-height: 41px;
-    background: #970F37;
     right: -363px;
     top: 50%;
     margin-top: -20px;
@@ -613,6 +691,10 @@ color: #DBDCDC;
 .slide-item .btn-c   span  {
     margin-right: 200px;
     display: inline-block;
+}
+
+.slide-item .btn-c span:hover {
+    cursor: pointer;
 }
 
 .slide-item .btn-c   span .b-icon {

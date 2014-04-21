@@ -92,12 +92,314 @@
 	   			index = false;
 	   		}
 	   		if (index != false) {
-	   			var slides = self.parent(".btns").parent(".slider-btns").siblings(".slides");
-	   			$(">li", slides).addClass("hideme");
-	   			$(".slide-item-" + index, slides).removeClass("hideme");
-	   			// self.siblings("li.btn").removeClass("hideme");
-	   			// self.addClass("hideme");
+	   			$("~ li.btn", self).addClass("hideme");
+
+	   			// Show next slide
+	   			var con = self.parent().parent().siblings("ul.slides");
+	   			var crtShowingSlide = $(".slide-item:not(.hideme)", con);
+	   			var nextShowSlide = $(".slide-item-"+ index, con);
+
+	   			// Left image
+	   			var l = $(".l", nextShowSlide);
+	   			var img = $(".l img", nextShowSlide);
+
+	   			if ($(".l", con).is(":animated") || $(".l img", con).is(":animated")) {
+	   				return;
+	   			}
+
+				var bgcolor = self.css("background-color");
+				con.css({"background": bgcolor});
+
+	   			// Hide me and behind me btn
+	   			self.addClass("hideme");
+	   			nextShowSlide
+	   				.css({
+	   					position: "absolute",
+	   					width: "100%",
+	   					top: "0px",
+	   				})
+	   				.removeClass("hideme");
+
+	   			l.css({
+	   				position: "relative",
+	   				overflow: "hidden",
+	   				"width": img.width(),
+	   				"height": img.height()
+	   			});
+	   			img.css({
+	   				position: "absolute",
+	   				left: "100%"
+	   			});
+
+	   			img.animate({
+	   				left: "0px"
+	   			}, 1000 * 1, function () {
+	   				crtShowingSlide.addClass("hideme");
+	   				nextShowSlide.css({
+	   					position: "static",
+	   					top: "auto"
+	   				});
+
+	   				// Left image
+	   				l.css({
+	   					position: "static",
+	   					overflow: "auto",
+	   					width: "50%",
+	   					height: "auto"
+	   				});
+	   				img.css({
+	   					position: "static",
+	   					left:"auto"
+	   				});
+	   			});
+
+	   			// Right content
+	   			var next_r = $(".r", nextShowSlide);
+	   			var next_r_c = $(".r .r-c", nextShowSlide);
+	   			next_r.css({
+	   				position: "relative",
+	   				width: next_r_c.width(),
+	   				height: next_r_c.width(),
+	   				overflow: "hidden"
+	   			});
+	   			next_r_c.css({
+	   				position: "absolute",
+	   				right: "100%",
+	   				width: next_r.width(),
+	   			});
+
+	   			next_r_c.animate({
+	   				right: "0px"
+	   			}, 1000 * 1, function () {
+		   			next_r.css({
+		   				position: "static",
+		   				width: "35%",
+		   				height: "auto",
+		   				overflow: "auto"
+		   			});
+		   			next_r_c.css({
+		   				position: "static",
+		   				right: "auto"
+		   			});
+	   			});
+
+	   			var crt_r = $(".r", crtShowingSlide);
+	   			var crt_r_c = $(".r .r-c", crtShowingSlide);
+	   			crt_r.css({
+	   				position: "relative",
+	   				width: crt_r_c.width(),
+	   				height: crt_r_c.width(),
+	   				overflow: "hidden"
+	   			});
+	   			crt_r_c.css({
+	   				position: "absolute",
+	   				left: "0",
+	   				width: crt_r.width(),
+	   			});
+	   			crt_r_c.animate({
+	   				left: "100%"
+	   			}, 1000* 1, function () {
+		   			crt_r.css({
+		   				position: "static",
+		   				width: "auto",
+		   				height: "auto",
+		   				overflow: "auto"
+		   			});
+		   			crt_r_c.css({
+		   				position: "static",
+		   				left: "auto"
+		   			});
+	   			});
 	   		}
 	   	});
+	});
+})(jQuery);
+
+(function ($) {
+	$(function () {
+		$('.btn-c .btn-item').click(function () {
+			console.log("====================================");
+			var self = $(this);
+			var bgcolor = self.css("background-color");
+			console.log(bgcolor);
+			console.log(self);
+			var con = self.parent().parent().parent();
+
+   			if ($(".l", con).is(":animated") || $(".l img", con).is(":animated")) {
+   				return;
+   			}
+
+			var crtShowingSlide = self.parent().parent();
+
+	   		var cls = self.attr("class");
+	   		try {
+	   			var index = parseInt(cls[cls.search(/[0-9]/)]);
+	   		}
+	   		catch (e) {
+	   			index = false;
+	   		}
+
+	   		console.log("SLIDE INDEX: " + index);
+	   		var nextShowSlide = $(".slide-item-" + index, con);
+	   		console.log("nextShowSlide count: " + nextShowSlide.size());
+	   		
+	   		var right_c = $("~ .btn-item", self).size();
+	   		console.log("right_c: " + right_c);
+
+	   		var total = $(".slider-btns .btns .btn", con.parent()).size();
+	   		console.log("total: " + total);
+	   		for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
+	   			console.log(i);
+	   			console.log(".slider-btns .btns .btn-" + (i + 1));
+	   			console.log($(".slider-btns .btns .btn-" + (i + 1), con.parent()).size());
+	   			$(".slider-btns .btns .btn-" + (i + 1), con.parent()).removeClass("hideme");
+	   		}
+
+   			// Left image
+   			var l = $(".l", nextShowSlide);
+   			var img = $(".l img", nextShowSlide);
+
+	   		nextShowSlide.removeClass("hideme");
+   			nextShowSlide
+   				.css({
+   					position: "absolute",
+   					width: "100%",
+   					top: "0px",
+   				})
+   				.removeClass("hideme");
+
+   			l.css({
+   				position: "relative",
+   				overflow: "hidden",
+   				"width": img.width(),
+   				"height": img.height()
+   			});
+   			img.css({
+   				position: "absolute",
+   				right: "100%"
+   			});
+   			
+   			img.animate({
+   				right: "0px"
+   			}, 1000 * 1, function () {
+   				crtShowingSlide.addClass("hideme");
+   				nextShowSlide.css({
+   					position: "static",
+   					top: "auto"
+   				});
+
+   				// Left image
+   				l.css({
+   					position: "static",
+   					overflow: "auto",
+   					width: "50%",
+   					height: "auto"
+   				});
+   				img.css({
+   					position: "static",
+   					left:"auto"
+   				});
+   			});
+
+   			// Right content
+   			var next_r = $(".r", nextShowSlide);
+   			var next_r_c = $(".r .r-c", nextShowSlide);
+   			next_r.css({
+   				position: "relative",
+   				width: next_r_c.width(),
+   				height: next_r_c.width(),
+   				overflow: "hidden"
+   			});
+   			next_r_c.css({
+   				position: "absolute",
+   				left: "100%",
+   				width: next_r.width(),
+   			});
+
+   			next_r_c.animate({
+   				left: "0px"
+   			}, 1000 * 1, function () {
+	   			next_r.css({
+	   				position: "static",
+	   				width: "35%",
+	   				height: "auto",
+	   				overflow: "auto"
+	   			});
+	   			next_r_c.css({
+	   				position: "static",
+	   				right: "auto",
+	   				left: "auto"
+	   			});
+   			});
+
+   			var crt_r = $(".r", crtShowingSlide);
+   			var crt_r_c = $(".r .r-c", crtShowingSlide);
+   			crt_r.css({
+   				position: "relative",
+   				width: crt_r_c.width(),
+   				height: crt_r_c.width(),
+   				overflow: "hidden"
+   			});
+   			crt_r_c.css({
+   				position: "absolute",
+   				right: "0",
+   				width: crt_r.width(),
+   			});
+   			crt_r_c.animate({
+   				right: "100%"
+   			}, 1000* 1, function () {
+	   			crt_r.css({
+	   				position: "static",
+	   				width: "auto",
+	   				height: "auto",
+	   				overflow: "auto"
+	   			});
+	   			crt_r_c.css({
+	   				position: "static",
+	   				left: "auto",
+	   				right: "auto"
+	   			});
+   			});
+		});
+	});
+})(jQuery);
+
+// Menu Hover
+(function ($) {
+	$(function () {
+		$(".left-bar-menu li").hover(function () {
+			var self = $(this);
+			var con = $(this).parent();
+			var menu_txt = self.html();
+			if (menu_txt.trim() == "") {
+				return;
+			}
+	   		try {
+	   			var cls = self.attr("class");
+	   			var index = parseInt(cls[cls.search(/[0-9]/)]);
+	   		}
+	   		catch (e) {
+	   			index = false;
+	   		}
+	   		
+			var menu = $(".hover-menu", con);
+			if (!menu.size()) {
+				var menu = $("<div class='hover-menu'></div>");
+				con.append(menu);
+				menu.hide();
+			}
+			menu.html("");
+			menu.append(menu_txt);
+			menu.append("<div class='arrow'></div>");
+			con.append(menu);
+			menu.show();
+			menu.css({top: index * 50 + 50 - menu.outerHeight() });
+		}, function () {
+			var self = $(this);
+			var con = $(this).parent();
+			var menu_txt = self.html();
+			var menu = $(".hover-menu", con);
+			menu.hide();
+		});
 	});
 })(jQuery);

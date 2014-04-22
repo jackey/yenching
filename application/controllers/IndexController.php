@@ -15,6 +15,5 @@ class IndexController extends Zend_Controller_Action
         $this->view->news = $mNews->getAllNews();
     }
 
-
 }
 

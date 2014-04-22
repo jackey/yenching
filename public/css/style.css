@@ -740,11 +740,16 @@ color: #DBDCDC;
     vertical-align: middle;
     float: none;
     position: relative;
+    width: 50%;
     left: 7%;
 }
+
+.s3 .home .slides  .slide-item-con2  .l .l-c {
+    width: 80%;
+}
+
 .s3  .home .slides  .slide-item-con2  .r {
     float: none;
     width: 100%;
     position: relative;
-    left: 24%;
 }

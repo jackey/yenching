@@ -254,7 +254,9 @@
 	   				position: "absolute",
 	   				left: "0",
 	   				width: crt_r.width(),
+	   				top: "50%"
 	   			});
+	   			crt_r_c.css("margin-top", -(parseInt(crt_r_c.innerHeight()) / 2) );
 	   			crt_r_c.animate({
 	   				left: "100%"
 	   			}, 1000* 1, function () {
@@ -404,7 +406,10 @@
    				position: "absolute",
    				right: "0",
    				width: crt_r.width(),
+   				top: "50%"
    			});
+
+	   		crt_r_c.css("margin-top", -(parseInt(crt_r_c.innerHeight()) / 2) );
    			crt_r_c.animate({
    				right: "100%"
    			}, 1000* 1, function () {
@@ -751,6 +756,8 @@
 		});
 	});
 	$(function () {
+		$(".s3 .next-icon .p-icon").click(function () {
 
+		});
 	});
 })(jQuery);

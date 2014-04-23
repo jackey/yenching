@@ -499,7 +499,7 @@ background: #5B5B63;
     margin-top: 50px;
 }
 
-.next-icon .p-icon{
+.next-icon .p-icon {
     width: 15px;
     height: 29px;
     background: url(../misc/images/right_on.png) no-repeat;
@@ -508,12 +508,20 @@ background: #5B5B63;
     margin-left: 69%;
 }
 
+.next-icon .p-icon:hover {
+    background: url(../misc/images/right.png) no-repeat;
+}
+
+.next-icon .p-icon.p-icon-on {
+    background: url(../misc/images/right.png) no-repeat;
+}
+
 .next-icon .next_txt {
     float: left;
-margin-left: 25px;
-height: 29px;
-line-height: 29px;
-color: #DBDCDC;
+    margin-left: 25px;
+    height: 29px;
+    line-height: 29px;
+    color: #DBDCDC;
 }
 
 .next-icon .n-icon {
@@ -523,6 +531,10 @@ color: #DBDCDC;
     background-position: center;
     float: left;
     margin-left: 25px;
+}
+
+.next-icon .n-icon.n-icon-on {
+    background: url(../misc/images/left.png) no-repeat;
 }
 
 .s4 {

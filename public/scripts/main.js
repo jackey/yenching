@@ -747,6 +747,47 @@
 	});
 })(jQuery);
 
+// Slide plugin
+(function ($) {
+	function getIndexFromClass(cls) {
+		try {
+			var crt_index = parseInt(cls[cls.search(/[0-9]/)]);
+		}
+		catch (e) {
+			crt_index = false;
+		}
+		return crt_index;
+	}
+	$.fn.slideToPre = function () {
+		var slide = $(this);
+		crt_index = getIndexFromClass(slide.attr("class"));
+		if (crt_index <= 1) {
+			return;
+		}
+		var pre_slides = slide.prevAll();
+		if (pre_slides.size() <= 0) {
+			return;
+		}
+
+		var pre_slide = $(pre_slides.get(0));
+		slide.addClass("hideme");
+		pre_slide.removeClass("hideme");
+	};
+
+	$.fn.slideToNext = function () {
+		var slide = $(this);
+		crt_index = getIndexFromClass(slide.attr("class"));
+		var next_slides = $("~ div", slide);
+		if (next_slides.size() <= 0) {
+			return;
+		}
+		var next_slide = $(next_slides.get(0));
+		slide.addClass("hideme");
+		next_slide.removeClass("hideme");
+	};
+
+})(jQuery);
+
 (function ($) {
 	$(window).load(function () {
 		$(".s3 .home .slides .r").each(function () {
@@ -754,10 +795,41 @@
 				height: $(this).parent().height()
 			});
 		});
+
 	});
 	$(function () {
 		$(".s3 .next-icon .p-icon").click(function () {
+			var self = $(this);
+	   		var content_slides = $("> .r-c-slide", self.parent().siblings(".c"));
+	   		var crt_slide = $("> :not(.hideme)", content_slides.parent());
+	   		crt_slide.slideToPre();
 
+	   		$(".s3 .next-icon .next_txt .btn").html("NEXT");
+	   		$(".s3 .next-icon .n-icon").addClass("n-icon-on");
+	   		self.removeClass("p-icon-on");
+		});
+
+		$(".s3 .next-icon .n-icon").click(function () {
+			var self = $(this);
+	   		var content_slides = $("> .r-c-slide", self.parent().siblings(".c"));
+
+	   		var crt_slide = $("> :not(.hideme)", content_slides.parent());
+	   		crt_slide.slideToNext();
+
+	   		$(".s3 .next-icon .next_txt .btn").html("PREVIOUS");
+	   		$(".s3 .next-icon .p-icon").addClass("p-icon-on");
+	   		self.removeClass("n-icon-on");
+		});
+
+		$(".s3 .next-icon .next_txt .btn").click(function () {
+			var self = $(this);
+
+			if (self.text().trim() == "NEXT") {
+				$(".s3 .next-icon .n-icon").trigger("click");
+			}
+			else {
+				$(".s3 .next-icon .p-icon").trigger("click");
+			}
 		});
 	});
 })(jQuery);

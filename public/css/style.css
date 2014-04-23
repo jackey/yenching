@@ -522,6 +522,7 @@ background: #5B5B63;
     height: 29px;
     line-height: 29px;
     color: #DBDCDC;
+    width: 80px;
 }
 
 .next-icon .n-icon {
@@ -531,6 +532,10 @@ background: #5B5B63;
     background-position: center;
     float: left;
     margin-left: 25px;
+}
+
+.next-icon .next_txt:hover {
+    cursor: pointer;
 }
 
 .next-icon .n-icon.n-icon-on {
@@ -828,4 +833,8 @@ background: #5B5B63;
 
 .s3 .home .slides .slide-item.slide-item-0 .r-c .line {
     margin: 30px auto;
+}
+
+.s3 .slide-item .r-c-c .c {
+    height: 520px;
 }

@@ -1,5 +1,5 @@
 
-<div class="s1 s hideme" id="home">
+<div class="s1 s  hideme" id="home">
     <div class="wrapper">
         <div class="home">
             <div class="header-tip">
@@ -126,7 +126,7 @@ social progress since 1898.</h3>
     </div>
 </div>
 
-<div class="s2 s3 s" id="program">
+<div class="s2 s3 s hideme" id="program">
     <div class="wrapper">
         <div class="home">
             <div class="content">
@@ -181,7 +181,7 @@ social progress since 1898.</h3>
                                         </div>
                                         <div class="next-icon clearfix">
                                             <div class="p-icon"></div>
-                                            <div class="next_txt"><div class="btn">NEXT</div></div>
+                                            <div class="next_txt"><div class="btn" data-nt="NEXT" data-pt="PREVIOUS">NEXT</div></div>
                                             <div class="n-icon n-icon-on"></div>
                                         </div>
                                         <div class="subscribe-form">
@@ -274,7 +274,7 @@ social progress since 1898.</h3>
                                                 The Yenching Academy Administration Office and Office of International Relations at Peking University will assist you in this process and ensure that you have all the proper documentation. Please visit the <a href="#">Office of International Relations</a> at Peking University here for more information.
                                             </p>
                                         </div>
-                                        <div class="r-c-slide r-c-slide-2 hideme">
+                                        <div class="r-c-slide r-c-slide-2 r-c-slide-last hideme">
                                             <p>
                                                <b>Prospective Yenching Scholars</b>
                                             <ul>
@@ -290,13 +290,13 @@ social progress since 1898.</h3>
                                             </ul>
                                             </p>
                                         </div>
-                                        <div class="next-icon clearfix">
-                                            <div class="p-icon"></div>
-                                            <div class="next_txt"><div class="btn">Prospective Yenching Scholars</div></div>
-                                            <div class="n-icon n-icon-on"></div>
-                                            <div class="apply-btn">Apply Now</div>
-                                        </div>
                                      </div>
+                                        <div class="next-icon-c clearfix"><div class="next-icon clearfix">
+                                            <div class="p-icon"></div>
+                                            <div class="next_txt"><div class="btn" data-nt="Prospective Yenching Scholars" data-pt="Go Back">Prospective Yenching Scholars</div></div>
+                                            <div class="n-icon n-icon-on"></div>
+                                        </div>
+                                        <div class="apply-btn clearfix">Apply Now</div></div>
                                   </div>
                                </div>
                             </div>
@@ -322,7 +322,7 @@ social progress since 1898.</h3>
     </div>
 </div>
 
-<div class="s4 s2 s" id="residential">
+<div class="s4 s2 s hideme" id="residential">
     <div class="wrapper">
         <div class="home">
             <div class="content">
@@ -340,17 +340,18 @@ social progress since 1898.</h3>
                             <li class="slideshow-item slideshow-item-1">
                                 <img class="img-full" src="/public/misc/images/pictures/residential/1.jpg" alt="">
                             </li>
-                            <li class="slideshow-item slideshow-item-1"></li>
-                            <li class="slideshow-item slideshow-item-1"></li>
-                            <li class="slideshow-item slideshow-item-1"></li>
-                            <li class="slideshow-item slideshow-item-1"></li>
-                        </ul>
-                        <ul class="slideshow-btns">
-                            <li class="btnli"></li>
-                            <li class="btnli"></li>
-                            <li class="btnli"></li>
-                            <li class="btnli"></li>
-                            <li class="btnli"></li>
+                            <li class="slideshow-item slideshow-item-2">
+                                <img class="img-full" src="/public/misc/images/pictures/residential/2.jpg" alt="">
+                            </li>
+                            <li class="slideshow-item slideshow-item-3">
+                                <img class="img-full" src="/public/misc/images/pictures/residential/3.jpg" alt="">
+                            </li>
+                            <li class="slideshow-item slideshow-item-4">
+                                <img class="img-full" src="/public/misc/images/pictures/residential/4.jpg" alt="">
+                            </li>
+                            <li class="slideshow-item slideshow-item-5">
+                                <img class="img-full" src="/public/misc/images/pictures/residential/5.jpg" alt="">
+                            </li>
                         </ul>
                     </div>
 
@@ -364,37 +365,107 @@ social progress since 1898.</h3>
     <div class="wrapper">
         <div class="home">
             <div class="news-block">
+
                 <div class="block-title clearfix">
                     <h2>NEWS ROOM</h2>
                     <div class="filters-con">
                         <ul class="filters clearfix">
-                            <li class="filter filter-1 font-size-18">THE YENCHING ACADEMY </li>
-                            <li class="filter filter-2 font-size-18">SENIOR FELLOWS </li>
-                            <li class="filter filter-3 filter-last font-size-18">sTUDENTS </li>
+                            <li class="filter filter-1 font-size-18 active">
+                                <a href="/#news-academy" data-type="academy">THE YENCHING ACADEMY</a>
+                            </li>
+                            <li class="filter filter-2 font-size-18">
+                               <a href="/#news-fellows" data-type="senior_fellows">SENIOR FELLOWS </a> 
+                            </li>
+                            <li class="filter filter-3 filter-last font-size-18">
+                                <a href="/#news-students" data-type="students">STUDENTS</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="block-con">
                     <ul class="news-list clearfix">
                         <?php foreach ($this->news as $date =>  $news_items) :?>
-                        <li class="news-item news-item-date news-item-<?php echo $key+1?>"><div class="v-c"><?php echo $date ?></div></li>
+                        <li class="news-item news-item-date "><div class="v-c"><?php echo $date ?></div></li>
                         <?php foreach ($news_items as $key => $news_item): ?>
-                            <li class="news-item news-item-<?php echo $key+1?>"><img src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
+                            <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
                         <?php endforeach;?>
                         <?php endforeach;?>
                     </ul>
                     <ul class="pager clearfix">
                         <li class="left-p">
-                            <a href="#" class="home"></a>
-                            <a href="" class="pre">previous</a>
+                            <a href="/#news-front" class="home">Home</a>
+                            <a href="/#news-pre" class="pre">previous</a>
                         </li>
                         <li class="right-p">
-                            <a href="" class="last"></a>
-                            <a href="" class="next">Next</a>
+                            <a href="/#news-last" class="last">Last</a>
+                            <a href="/#news-next" class="next">Next</a>
                         </li>
+                        <input type="hidden" id="crt-page" data-total="<?php echo $this->total_news?>" value="1">
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div id="template-news-item" style="display:none">
+    <li class="news-item news-item-{{id}}" data-newsid="{{news_id}}"><img src="{{{thumbnail}}}?>" alt=""></li>
+</div>
+
+<div id="template-news-date" style="display:none">
+    <li class="news-item news-item-date"><div class="v-c">{{date}}</div></li>
+</div>
+
+<div id="template-news-list" style="display:none">{{{newsrender}}}</div>
+
+<div id="template-news-detail" style="display:none">
+                <div class="news-detail">
+                    <div class="wrapper clearfix">
+                        <div class="news-pager bottom">
+                            <div class="time clearfix">
+                                <div class="date">{{date}}</div>
+                                <div class="like">({{like}})</div>
+                            </div>
+                            <div class="pager-links clearfix">
+                                <div class="links">
+                                    <div class="pre"><a href="/#/news-detail-pre">Pre</a></div>
+                                    <div class="next"><a href="/#news-detai-next">Next</a></div>
+                                </div>
+                                <div class="back">
+                                    <span>Back</span>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="news-detail-left">
+                            <div class="wrapper clearfix">
+                                <div class="news-content top">
+                                    <div class="img"><img src="/public/misc/images/pictures/news/n1.jpg" alt=""></div>
+                                    <div class="body">
+                                        <div class="bar">{{title}}</div>
+                                        <div class="c">
+                                            <p>{{body}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-detail-right">
+                            <div class="wrapper">
+                                <div class="left">left</div>
+                                <div class="slides">
+                                    <div class="slides-wrapper">
+                                        {{#images["slider"]}}
+                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        {{/images["slider"]}}
+                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="right">right</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </div>

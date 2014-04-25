@@ -639,6 +639,8 @@ background: #6F6E7A;
 
 .s5 .news-block {
     margin-top: 73px;
+    position: relative;
+    overflow: hidden;
 }
 
 .s5 .news-block .block-con {
@@ -926,6 +928,10 @@ background: #6F6E7A;
 
 .s5 .news-block .news-detail {
     border: 1px solid #000;
+    z-index: 2;
+    background: #fff;
+    left: 100%;
+    overflow: hidden;
 }
 
 .s5 .news-block .news-detail > .wrapper {

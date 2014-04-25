@@ -3,6 +3,96 @@
 class Application_Model_News
 {
 
+	public function getNews($news_id) {
+		$all_news = $this->getAllNews();
+		$news = NULL;
+		foreach ($all_news as $date => $news_list) {
+			foreach ($news_list as $news_item) {
+				if ($news_item["news_id"] == $news_id) {
+					$news = $news_item;
+					break;
+				}
+			}
+			if ($news) {
+				break;
+			}
+		}
+		return $news;
+	}
+
+	public function getPreNews($news_id) {
+		$all_news = $this->getAllNews();
+		$news = NULL;
+		$pre_news = NULL;
+		$index_index = 0;
+		foreach ($all_news as $date => $news_list) {
+			foreach ($news_list as $index => $news_item) {
+				if ($news_item["news_id"] == $news_id) {
+					$news = $news_item;
+					break;
+				}
+			}
+			if ($news) {
+				if ($index - 1 < 0) {
+					if ($index_index == 0) {
+						$pre_news = array();	
+					}
+					else {
+						$all_news_values = array_values($all_news);
+						$pre_news_list = $all_news_values[$index_index - 1];
+						$pre_news = $pre_news_list[count($pre_news_list) - 1];
+					}
+				}
+				else {
+					$pre_news = $news_list[$index - 1];
+				}
+			}
+
+			if ($pre_news !== NULL) {
+				break;
+			}
+
+			$index_index ++;
+		}
+		return $pre_news;
+	}
+
+	public function getNextNews($news_id) {
+		$all_news = $this->getAllNews();
+		$news = NULL;
+		$next_news = NULL;
+		$index_index = 0;
+		foreach ($all_news as $date => $news_list) {
+			foreach ($news_list as $index => $news_item) {
+				if ($news_item["news_id"] == $news_id) {
+					$news = $news_item;
+					break;
+				}
+			}
+			if ($news) {
+				if ($index + 1 < count($news_list)) {
+					$next_news = $news_list[$index + 1];
+				}
+				else {
+					if ($index_index + 1 < count($all_news)) {
+						$next_news_list = current($all_news);
+						$next_news = $next_news_list[0];
+					}
+					else {
+						$next_news = array();
+					}
+				}
+			}
+
+			if ($next_news !== NULL) {
+				break;
+			}
+
+			$index_index ++;
+		}
+		return $next_news;
+	}
+
 	public function getAllNews() {
 		$news = array(
 			"2015 JUN" => array(

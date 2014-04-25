@@ -365,43 +365,44 @@ social progress since 1898.</h3>
     <div class="wrapper">
         <div class="home">
             <div class="news-block">
-
-                <div class="block-title clearfix">
-                    <h2>NEWS ROOM</h2>
-                    <div class="filters-con">
-                        <ul class="filters clearfix">
-                            <li class="filter filter-1 font-size-18 active">
-                                <a href="/#news-academy" data-type="academy">THE YENCHING ACADEMY</a>
+                <div class="news-block-list-con">
+                    <div class="block-title clearfix">
+                        <h2>NEWS ROOM</h2>
+                        <div class="filters-con">
+                            <ul class="filters clearfix">
+                                <li class="filter filter-1 font-size-18 active">
+                                    <a href="/#news-academy" data-type="academy">THE YENCHING ACADEMY</a>
+                                </li>
+                                <li class="filter filter-2 font-size-18">
+                                   <a href="/#news-fellows" data-type="senior_fellows">SENIOR FELLOWS </a> 
+                                </li>
+                                <li class="filter filter-3 filter-last font-size-18">
+                                    <a href="/#news-students" data-type="students">STUDENTS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block-con">
+                        <ul class="news-list clearfix">
+                            <?php foreach ($this->news as $date =>  $news_items) :?>
+                            <li class="news-item news-item-date "><div class="v-c"><?php echo $date ?></div></li>
+                            <?php foreach ($news_items as $key => $news_item): ?>
+                                <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
+                            <?php endforeach;?>
+                            <?php endforeach;?>
+                        </ul>
+                        <ul class="pager clearfix">
+                            <li class="left-p">
+                                <a href="/#news-front" class="home">Home</a>
+                                <a href="/#news-pre" class="pre">previous</a>
                             </li>
-                            <li class="filter filter-2 font-size-18">
-                               <a href="/#news-fellows" data-type="senior_fellows">SENIOR FELLOWS </a> 
+                            <li class="right-p">
+                                <a href="/#news-last" class="last">Last</a>
+                                <a href="/#news-next" class="next">Next</a>
                             </li>
-                            <li class="filter filter-3 filter-last font-size-18">
-                                <a href="/#news-students" data-type="students">STUDENTS</a>
-                            </li>
+                            <input type="hidden" id="crt-page" data-total="<?php echo $this->total_news?>" value="1">
                         </ul>
                     </div>
-                </div>
-                <div class="block-con">
-                    <ul class="news-list clearfix">
-                        <?php foreach ($this->news as $date =>  $news_items) :?>
-                        <li class="news-item news-item-date "><div class="v-c"><?php echo $date ?></div></li>
-                        <?php foreach ($news_items as $key => $news_item): ?>
-                            <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
-                        <?php endforeach;?>
-                        <?php endforeach;?>
-                    </ul>
-                    <ul class="pager clearfix">
-                        <li class="left-p">
-                            <a href="/#news-front" class="home">Home</a>
-                            <a href="/#news-pre" class="pre">previous</a>
-                        </li>
-                        <li class="right-p">
-                            <a href="/#news-last" class="last">Last</a>
-                            <a href="/#news-next" class="next">Next</a>
-                        </li>
-                        <input type="hidden" id="crt-page" data-total="<?php echo $this->total_news?>" value="1">
-                    </ul>
                 </div>
             </div>
         </div>
@@ -439,7 +440,7 @@ social progress since 1898.</h3>
                         <div class="news-detail-left">
                             <div class="wrapper clearfix">
                                 <div class="news-content top">
-                                    <div class="img"><img src="/public/misc/images/pictures/news/n1.jpg" alt=""></div>
+                                    <div class="img"><img src="{{{thumbnail}}}" alt=""></div>
                                     <div class="body">
                                         <div class="bar">{{title}}</div>
                                         <div class="c">
@@ -454,13 +455,9 @@ social progress since 1898.</h3>
                                 <div class="left">left</div>
                                 <div class="slides">
                                     <div class="slides-wrapper">
-                                        {{#images["slider"]}}
-                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
-                                        {{/images["slider"]}}
-                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
-                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
-                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
-                                        <img class="img-full" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        {{#slider}}
+                                        <img class="img-full hideme" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                                        {{/slider}}
                                     </div>
                                 </div>
                                 <div class="right">right</div>

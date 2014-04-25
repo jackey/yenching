@@ -598,7 +598,7 @@
 }).call(this);
 
 (function ($) {
-	// preload image
+	// preload image;
 	var images = ["/public/misc/images/arrow_academy2.png"];
 
 	$.each(images, function (index) {
@@ -1103,6 +1103,7 @@
 	   			next_r.css({
 	   				position: "relative",
 	   				width: next_r_c.width() -1,
+	   				height: next_r.height(),
 	   				overflow: "hidden"
 	   			});
 	   			next_r_c.css({

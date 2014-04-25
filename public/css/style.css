@@ -64,6 +64,10 @@ html, body {
     font-size: 12px;
 }
 
+.body .left-bar .left-bar-menu .hover-menu a{
+    color: #fff;
+}
+
 .body .left-bar .left-bar-menu .hover-menu .arrow {
     border: 10px solid #c81240;
     height: 0px;
@@ -1051,3 +1055,29 @@ background: #6F6E7A;
     position: relative;
     overflow: hidden;
 }
+
+/*.s2 .slides .slide-item {
+    display: table-row;
+}
+
+.s2 .slides .slide-item.hideme {
+    display: none;
+}
+
+.s2 .slides .slide-item .l {
+    display: table-cell;
+    vertical-align: middle;
+    float: inherit;
+}
+
+.s2 .slides .slide-item .r {
+    display: table-cell;
+    vertical-align: middle;
+    float: inherit;
+    width: 50%
+}
+
+.s2 .slides .slide-item .r .r-c {
+    margin-left: 144px;
+    margin-right: 78px;
+}*/

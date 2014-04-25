@@ -976,6 +976,9 @@ background: #6F6E7A;
     background: #fff;
     border-right: 1px solid #989898;
     line-height: 52px;
+    text-indent: 10000px;
+    background: url(../misc/images/news_small_arrow_left.png) no-repeat;
+    background-position: center;
 }
 
 .s5 .news-block .news-detail .news-pager  .links .next {
@@ -984,6 +987,9 @@ background: #6F6E7A;
     height: 52px;
     border-right: 1px solid #989898;
     line-height: 52px;
+    text-indent: 10000px;
+    background: url(../misc/images/news_small_arrow_right.png) no-repeat;
+    background-position: center;
 }
 
 .s5 .news-block .news-detail .news-pager  .back {
@@ -1007,9 +1013,16 @@ background: #6F6E7A;
 }
 
 .s5 .news-block .news-detail .news-pager  .back {
-    width: 65px;
+    width: 88px;
     height: 52px;
     line-height: 52px;
+    background: url(../misc/images/news_list.png) no-repeat;
+    background-position: 75% center;
+    color: #595757;
+}
+
+.s5 .news-block .news-detail .news-pager  .back:hover {
+    cursor: pointer;
 }
 
 .s5 .news-block .news-detail .news-content .body .c {
@@ -1036,6 +1049,36 @@ background: #6F6E7A;
     background-position: center;
 }
 
+.s5 .news-block .news-detail .news-detail-right > .wrapper .left .btn {
+    background: url(../misc/images/news_arrow_left.png) no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 131px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.s5 .news-block .news-detail .news-detail-right > .wrapper .right .btn {
+    background: url(../misc/images/news_arrow_right.png) no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 131px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.s5 .news-block .news-detail .news-detail-right > .wrapper .right .close-btn {
+    width: 100%;
+    height: 100px;
+    background: url(../misc/images/news_close.png) no-repeat;
+    background-position: center;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
 .s5 .news-block .news-detail .news-detail-right > .wrapper .slides {
     width: 80%;
     margin: 0 auto;
@@ -1049,6 +1092,7 @@ background: #6F6E7A;
     text-align: center;
     background: url(../misc/images/new-page-mainvisual-side-2.jpg) no-repeat;
     background-position: center;
+    position: relative;
 }
 
 .s5 .news-block .news-detail .news-detail-right .slides-wrapper {
@@ -1081,3 +1125,20 @@ background: #6F6E7A;
     margin-left: 144px;
     margin-right: 78px;
 }*/
+
+.s5 .news-block .news-detail .news-content .body .bar .star{
+    background: url(../misc/images/news_star.png) no-repeat;
+    width: 12px;
+    height: 13px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.s5 .news-block .news-detail .news-pager .time .like .heart{
+background: url(../misc/images/news_heart.png) no-repeat;
+width: 16px;
+height: 13px;
+display: inline-block;
+position: relative;
+top: 3px;
+}

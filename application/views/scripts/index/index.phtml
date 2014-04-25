@@ -420,49 +420,57 @@ social progress since 1898.</h3>
 <div id="template-news-list" style="display:none">{{{newsrender}}}</div>
 
 <div id="template-news-detail" style="display:none">
-                <div class="news-detail">
-                    <div class="wrapper clearfix">
-                        <div class="news-pager bottom">
-                            <div class="time clearfix">
-                                <div class="date">{{date}}</div>
-                                <div class="like">({{like}})</div>
+    <div class="news-detail">
+        <div class="wrapper clearfix">
+            <div class="news-pager bottom">
+                <div class="time clearfix">
+                    <div class="date">{{date}}</div>
+                    <div class="like">
+                       <span class="heart"></span> ({{like}})
+                    </div>
+                </div>
+                <div class="pager-links clearfix">
+                    <div class="links">
+                        <div class="pre"><a href="/#/news-detail-pre">Pre</a></div>
+                        <div class="next"><a href="/#news-detai-next">Next</a></div>
+                    </div>
+                    <div class="back">
+                        <span>Back</span>
+                    </div>
+                </div>
+                </div>
+            <div class="news-detail-left">
+                <div class="wrapper clearfix">
+                    <div class="news-content top">
+                        <div class="img"><img src="{{{thumbnail}}}" alt=""></div>
+                        <div class="body">
+                            <div class="bar">
+                                <span class="star"></span>{{title}}
                             </div>
-                            <div class="pager-links clearfix">
-                                <div class="links">
-                                    <div class="pre"><a href="/#/news-detail-pre">Pre</a></div>
-                                    <div class="next"><a href="/#news-detai-next">Next</a></div>
-                                </div>
-                                <div class="back">
-                                    <span>Back</span>
-                                </div>
-                            </div>
-                            </div>
-                        <div class="news-detail-left">
-                            <div class="wrapper clearfix">
-                                <div class="news-content top">
-                                    <div class="img"><img src="{{{thumbnail}}}" alt=""></div>
-                                    <div class="body">
-                                        <div class="bar">{{title}}</div>
-                                        <div class="c">
-                                            <p>{{body}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news-detail-right">
-                            <div class="wrapper">
-                                <div class="left">left</div>
-                                <div class="slides">
-                                    <div class="slides-wrapper">
-                                        {{#slider}}
-                                        <img class="img-full hideme" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
-                                        {{/slider}}
-                                    </div>
-                                </div>
-                                <div class="right">right</div>
+                            <div class="c">
+                                <p>{{body}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="news-detail-right">
+                <div class="wrapper">
+                    <div class="left">
+                        <span class="btn"></span>
+                    </div>
+                    <div class="slides">
+                        <div class="slides-wrapper">
+                            {{#slider}}
+                            <img class="img-full hideme" src="/public/misc/images/pictures/news/new-page-mainvisual.jpg" alt="">
+                            {{/slider}}
+                        </div>
+                    </div>
+                    <div class="right">
+                        <span class="close-btn"></span>
+                        <span class="btn"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

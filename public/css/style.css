@@ -628,6 +628,7 @@ background: #6F6E7A;
     display: table-cell;
     border-right: 1px solid;
     padding: 0px 20px;
+    font-size: 14px;
 }
 
 .s5 .filters-con .filters .filter.filter-last {
@@ -680,10 +681,19 @@ background: #6F6E7A;
 
 .s5 .block-con .pager .left-p {
     float: left;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+    position: relative;
+    width: 150px;
 }
 
 .s5 .block-con .pager .right-p{
-    float: right;
+float: right;
+width: 150px;
+height: 100px;
+position: relative;
+overflow: hidden;
 }
 
 .footer {
@@ -1135,10 +1145,66 @@ background: #6F6E7A;
 }
 
 .s5 .news-block .news-detail .news-pager .time .like .heart{
-background: url(../misc/images/news_heart.png) no-repeat;
-width: 16px;
-height: 13px;
+    background: url(../misc/images/news_heart.png) no-repeat;
+    width: 16px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.s5 .block-con .pager .left-p .home {
+    width: 35px;
+    height: 38px;
+    background: url(../misc/images/news_home_double_left.png) no-repeat;
+    background-position: center;
+    text-indent: 1000px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -19px;
+}
+
+.s5 .block-con .pager .left-p .pre {
+    width: 91px;
+    height: 39px;
+    background: url(../misc/images/news_home_left.png) no-repeat;
+    background-position: left center;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 39px;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    left: 60px;
+}
+
+
+.s5 .block-con .pager .right-p .last {
+width: 35px;
+height: 38px;
+background: url(../misc/images/news_home_double_right.png) no-repeat;
+background-position: center;
+text-indent: 1000px;
 display: inline-block;
-position: relative;
-top: 3px;
+position: absolute;
+top: 50%;
+margin-top: -19px;
+right: 0px;
+}
+
+.s5 .block-con .pager .right-p .next {
+width: 61px;
+height: 39px;
+background: url(../misc/images/news_home_right.png) no-repeat;
+background-position: center right;
+display: inline-block;
+font-size: 13px;
+line-height: 39px;
+text-align: left;
+position: absolute;
+top: 50%;
+margin-top: -18px;
+right: 60px;
 }

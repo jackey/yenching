@@ -2048,7 +2048,7 @@
 		var container = $(".s5 .news-block");
 		Mustache.parse(detail_news_tp);
 		var speed = 1000 * 1;
-		$(".news-block li.news-item").click(function () {
+		$(".s5 .news-block").delegate(".news-block li.news-item", "click", function () {
 			var self = $(this);
 			var news_id = self.attr("data-newsid");
 			if (news_id) {
@@ -2074,8 +2074,8 @@
 						var width = details_dom.width();
 						var height = details_dom.height();
 						details_dom.css({
-							width: width - 5 ,
-							height: height -5,
+							width: width - 10 ,
+							height: height -4,
 							position: "absolute"
 						});
 						details_dom.parent().animate({

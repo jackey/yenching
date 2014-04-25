@@ -1024,10 +1024,12 @@ background: #6F6E7A;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .left{
-    width: 10%;
+    width: 5%;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    background: url(../misc/images/new-page-mainvisual-side.jpg) no-repeat;
+    background-position: center;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .slides {
@@ -1037,10 +1039,12 @@ background: #6F6E7A;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .right {
-    width: 10%;
+    width: 5%;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    background: url(../misc/images/new-page-mainvisual-side-2.jpg) no-repeat;
+    background-position: center;
 }
 
 .s5 .news-block .news-detail .news-detail-right .slides-wrapper {

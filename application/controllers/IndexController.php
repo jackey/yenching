@@ -16,5 +16,13 @@ class IndexController extends Zend_Controller_Action
         $this->view->news = $mNews->getAllNews();
         $this->view->total_news  = 2;
     }
+
+    public function testAction() {
+        $this->_helper->layout->disableLayout();
+    }
+
+    public function newAction() {
+        
+    }
 }
 

@@ -129,10 +129,9 @@ body .fn-hide {
 
 /* FULL WIDTH PAGE */
 html, body {
-    overflow: auto;
     position: relative;
     min-height: 100%;
-    height: auto !important;
+    height: 100% t;
     font-family: Proximanova;
     font-weight: normal;
 }

@@ -1304,12 +1304,27 @@ body > .maincontent {
 
 .video-js {
     margin: 0 auto;
+    float: left;
 }
 
 #yenching-video-con {
-    left: 0;
-    margin: auto;
+    float: left;
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 50%;
+    margin-left: -320px;
+    top: 130px;
 }
+
+#yenching-video-con > .closebtn{
+    position: absolute;
+    right: -26px;
+    width: 50px;
+    height: 50px;
+    top: -24px;
+    z-index: 2;
+}
+
+.video-js .vjs-tech {
+    float: left;
+}
+

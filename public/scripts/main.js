@@ -2279,21 +2279,35 @@ if(typeof String.prototype.trim !== 'function') {
 (function ($) {
 	$(function () {
 		videojs($("#yenching_video").get(0)).ready(function () {
-        console.log("Video is ready ");
-        $("#academy .home .video > img").click(function (event) {
-          event.stopPropagation();
-          event.preventDefault();
+	        console.log("Video is ready ");
+	        $("#academy .home .video > img").toggle(function (event) {
+				event.stopPropagation();
+				event.preventDefault();
+				$(".s2 .home .video").attr("data-height", $(".s2 .home .video").height());
+				$(".s2 .home .video").animate({
+					height: 450,
+				}, 500, function () {
+					$("#yenching-video-con").removeClass("hideme");
+					var player = videojs($("#yenching_video").get(0));
+					player.play();
+					$.waypoints("refresh");
+				});
+			}, function (event) {
+		        event.stopPropagation();
+		        event.preventDefault();
 
-          $(".s2 .home .video").animate({
-            height: 500,
-          }, 500, function () {
-            $("#yenching-video-con").removeClass("hideme");
-            var player = videojs($("#yenching_video").get(0));
-            player.play();
-            $.waypoints("refresh");
-          });
-        });
-    });
+	            var player = videojs($("#yenching_video").get(0));
+	            player.pause();
 
+				$(".s2 .home .video").animate({
+					height: $(".s2 .home .video").attr("data-height")
+				}, 500, function () {
+					$("#yenching-video-con").addClass("hideme");
+					$(".s2 .home .video").removeAttr("style");
+				});
+			});
+	    });
 	});
+
+
 })(jQuery);

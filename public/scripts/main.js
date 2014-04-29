@@ -2133,9 +2133,15 @@ if(typeof String.prototype.trim !== 'function') {
 // scroll
 (function ($) {
 	$(function () {
-		$(window).stellar({
-			//
+		$(window).resize(function () {
+			$(window).stellar({
+				positionProperty: "position"
+			});
 		});
+		$(window).stellar({
+			positionProperty: "position"
+		});
+
 		var mywindow = $(window);
 		var leftmenucon = $(".left-bar-menu");
 		var htmlbody = $('html,body');
@@ -2143,6 +2149,7 @@ if(typeof String.prototype.trim !== 'function') {
 		    if (mywindow.scrollTop() == 0) {
 		    	$("li.m-item", leftmenucon).removeClass("current");
 				$('li[data-section="1"]', leftmenucon).addClass("current");
+				$("#home").addClass("scrolling").siblings().removeClass("scrolling");
 		    }
 		    var max_scroll =  $(document).height() - $(window).height();
 		    if (max_scroll == mywindow.scrollTop()) {
@@ -2150,15 +2157,33 @@ if(typeof String.prototype.trim !== 'function') {
 		    	$('li[data-section="5"]', leftmenucon).addClass("current");
 		    }
 		});
+
 		$("body > .maincontent > .s").waypoint(function (direction) {
 			var data_id = $(this).attr("data-section");
+			if (data_id == 2) {
+				$(this).siblings().removeClass("scrolling");
+				var self = $(this);
+				$.resizeAcademyContentTop(function () {
+					self.addClass("scrolling");
+					$.waypoints('refresh');
+				});
+			}
+			else {
+				var player = videojs($("#yenching_video").get(0));
+				player.pause();
+				$.waypoints("refresh");
+				$(this).addClass("scrolling").siblings().removeClass("scrolling");	
+			}
+
 			$("li.m-item", leftmenucon).removeClass("current");
 			$('li[data-section="'+data_id+'"]', leftmenucon).addClass("current");
 
 		    var max_scroll =  $(document).height() - $(window).height();
+
 		    if (max_scroll == mywindow.scrollTop()) {
 		    	$("li.m-item", leftmenucon).removeClass("current");
 		    	$('li[data-section="5"]', leftmenucon).addClass("current");
+				$("#news").addClass("scrolling").siblings().removeClass("scrolling");
 		    }
 		});
 
@@ -2173,6 +2198,91 @@ if(typeof String.prototype.trim !== 'function') {
 			goToByScroll($("body > .maincontent > .s[data-section='"+data_id+"']"));
 			$("li.m-item", leftmenucon).removeClass("current");
 			$('li[data-section="'+data_id+'"]', leftmenucon).addClass("current");
+		});
+	});
+})(jQuery);
+
+(function ($) {
+	$.resizeAcademyContentTop = function(cb) {
+		// var container = $("#academy");
+		// $("#academy .content-top .header").animate({
+		// 	"padding-top": "10px",
+		// 	"padding-bottom": "38px"
+		// }, 800, function () {
+			
+		// });
+
+		// $("#academy .home .video").animate({
+		// 	"margin": 0,
+		// 	"height": 0
+		// }, 800, function () {
+		// 	$(this).hide();
+		// });
+
+		// $("#academy .header h1").animate({
+		// 	"font-size": "17px"
+		// });
+		// $("#academy  .home .c").animate({
+		// 	"font-size": "13px"
+		// }, 800);
+
+		// $("#academy .home .star").animate({
+		// 	"width": 0,
+		// 	"height": 0
+		// }, 800);
+
+
+		// setTimeout(function () {
+		// 	$("#academy .content-top .header").removeAttr("style");
+		// 	$("#academy .home .video").removeAttr("style");
+		// 	$("#academy .header h1").removeAttr("style");
+		// 	$("#academy  .home .c").removeAttr("style");
+		// 	$("#academy  .home .star").removeAttr("style");
+		// 	cb();
+		// }, 1000 * 1);
+	}
+
+	$.resizeProgramContentTop = function (cb) {
+		// var container = $("#program");
+		// $(".content-top .header", container).animate({
+		// 	"padding-top": "10px",
+		// 	"margin-bottom": "38px"
+		// }, 800, function () {
+			
+		// });
+
+		// $(".header h1", container).animate({
+		// 	"font-size": "17px"
+		// });
+		// $(".home .c", container).animate({
+		// 	"font-size": "13px"
+		// }, 800);
+
+
+		// setTimeout(function () {
+		// 		$(".content-top .header", container).removeAttr("style");
+		// 		$(".header h1", container).removeAttr("style");
+		// 		$(".home .c", container).removeAttr("style");
+		// cb();
+		// }, 1000 * 1);
+	}
+} )(jQuery);
+
+(function ($) {
+	$(function () {
+		
+		$("#academy .home .video > img").click(function (event) {
+			event.stopPropagation();
+			event.preventDefault();
+
+			$(".s2 .home .video").animate({
+				height: 500,
+			}, 500, function () {
+				$("#yenching-video-con").show();
+				var player = videojs($("#yenching_video").get(0));
+				player.play();
+				$.waypoints("refresh");
+			});
 		});
 	});
 })(jQuery);

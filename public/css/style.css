@@ -1280,3 +1280,36 @@ body > .maincontent {
     width: 100%;
     background-repeat: no-repeat;
 }
+
+#academy.scrolling .content-top .header {
+    padding-top: 10px;
+    padding-bottom: 38px;
+}
+
+#academy.scrolling .home .video {
+    display: none;
+}
+
+#academy.scrolling .header h1 {
+    font-size: 17px;
+}
+
+#academy.scrolling  .home .c {
+    font-size: 13px;
+}
+
+#academy.scrolling  .home .star {
+    display: none;
+}
+
+.video-js {
+    margin: 0 auto;
+}
+
+#yenching-video-con {
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

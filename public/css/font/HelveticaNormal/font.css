@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Helvetica-Normal';
+  src: url('Helvetica-Normal.eot'); /* IE9 Compat Modes */
+  src: url('Helvetica-Normal.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Helvetica-Normal.woff') format('woff'), /* Modern Browsers */
+       url('Helvetica-Normal.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Helvetica-Normal.svg#fd937aa859a03a194d9a84c700dba458') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

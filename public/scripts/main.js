@@ -2167,11 +2167,19 @@ if(typeof String.prototype.trim !== 'function') {
 					self.addClass("scrolling");
 					$.waypoints('refresh');
 				});
+
+        var player = videojs($("#yenching_video").get(0));
+        if (player.paused() && $("#yenching-video-con").hasClass("hideme")) {
+          player.play();
+          $.waypoints("refresh");
+        }
 			}
 			else {
 				var player = videojs($("#yenching_video").get(0));
-				player.pause();
-				$.waypoints("refresh");
+        if (!player.paused()) {
+          player.pause();
+          $.waypoints("refresh");
+        }
 				$(this).addClass("scrolling").siblings().removeClass("scrolling");	
 			}
 
@@ -2270,19 +2278,22 @@ if(typeof String.prototype.trim !== 'function') {
 
 (function ($) {
 	$(function () {
-		
-		$("#academy .home .video > img").click(function (event) {
-			event.stopPropagation();
-			event.preventDefault();
+		videojs($("#yenching_video").get(0)).ready(function () {
+        console.log("Video is ready ");
+        $("#academy .home .video > img").click(function (event) {
+          event.stopPropagation();
+          event.preventDefault();
 
-			$(".s2 .home .video").animate({
-				height: 500,
-			}, 500, function () {
-				$("#yenching-video-con").show();
-				var player = videojs($("#yenching_video").get(0));
-				player.play();
-				$.waypoints("refresh");
-			});
-		});
+          $(".s2 .home .video").animate({
+            height: 500,
+          }, 500, function () {
+            $("#yenching-video-con").removeClass("hideme");
+            var player = videojs($("#yenching_video").get(0));
+            player.play();
+            $.waypoints("refresh");
+          });
+        });
+    });
+
 	});
 })(jQuery);

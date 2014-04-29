@@ -1328,3 +1328,19 @@ body > .maincontent {
     float: left;
 }
 
+
+.s2 .home .slides .l .p-1 {
+    position: absolute;
+    top: 50%;
+    margin-top: -59px;
+    left: 7%;
+    color: #970f37;
+}
+
+.s2 .home .slides .l .p-2 {
+    position: absolute;
+    margin-top: -59px;
+    color: #970f37;
+    bottom: 30px;
+    left: 32%;
+}

@@ -2165,7 +2165,7 @@ if(typeof String.prototype.trim !== 'function') {
 		function goToByScroll(dataslide) {
 		    htmlbody.animate({
 		        scrollTop: dataslide.offset().top
-		    }, 1000, 'easeInOutExpo');
+		    }, 2000, 'easeInOutExpo');
 		}
 
 		$("li.m-item", leftmenucon).click(function () {

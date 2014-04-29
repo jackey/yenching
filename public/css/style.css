@@ -43,6 +43,7 @@
 html, body {
     min-width: 1200px;
     height: 100%;
+    font-family: "Helvetica Light";
 }
 
 .body .left-bar {
@@ -203,6 +204,7 @@ html, body {
     text-transform: uppercase;
     float: left;
     color: #cccccc;
+    font-family: "Plantin";
 }
 
 .s2 {
@@ -211,7 +213,7 @@ html, body {
 
 .s2 .header  {
     padding-top: 148px;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -226,6 +228,7 @@ html, body {
     text-transform: uppercase;
     text-align: center;
     color: #231815;
+    font-family: "Plantin";
 }
 
 .s2 .home .star {
@@ -239,9 +242,9 @@ html, body {
     margin-left: -80px;
 }
 
-
 .s2 .home .c {
     color: #231815;
+    font-family: "Helvetica Light";
 }
 
 .s2 .home .video {
@@ -269,6 +272,10 @@ html, body {
     width: 35%;
     color: #fff;
     margin-right: 90px;
+}
+
+.s2 .home .slides .r .c {
+    color: #fff;
 }
 
 .s2 .home .slide-item-1 .r {
@@ -337,6 +344,7 @@ html, body {
     line-height: 41px;
     text-transform: uppercase;
     margin-top: -1px;
+    font-family: "Plantin";
 }
 
 .s2  .slider-btns .btns .btn span {
@@ -384,6 +392,7 @@ margin-left: 10px;
 .s3 .content .header > h4 {
     color:#231815;
     margin-bottom: 25px;
+    font-family: "Helvetica Bold";
 }
 
 .s3 .home .content .header p.c {
@@ -448,10 +457,12 @@ background: #6F6E7A;
 
 .s3 .home .slide-item-0 .r-c-c .c  ul {
     padding: 0 0px;
+    padding-left: 12px;
 }
 
 .s3 .home .c  h4{
     padding: 10px 0px;
+    font-family: "Helvetica Bold";
 }
 
 .s3 .home .c  p {
@@ -474,6 +485,7 @@ background: #6F6E7A;
 .subscribe-form form .item-2 {
     width: 158px;
     padding-left:10px;
+    font-family: "Helvetica Normal";
 }
 
 .subscribe-form form .item-2 label {
@@ -573,6 +585,7 @@ background: #6F6E7A;
 
 .s4 .header .line {
     margin: 20px 0px;
+    background: #000;
 }
 
 .s4 .header {
@@ -580,8 +593,10 @@ background: #6F6E7A;
 }
 
 .s4 .header h4{
-    color:#fff;
+    color:#000;
     margin-bottom: 10px;
+    font-family: "Helvetica Bold";
+    text-align: center;
 }
 
 .s4 .slideshow {
@@ -668,6 +683,7 @@ background: #6F6E7A;
     position: absolute;
     top: 50%;
     margin-top: -52px;
+    font-family: "Helvetica Bold";
 }
 
 .s5 .block-con .news-item-date {
@@ -714,6 +730,12 @@ overflow: hidden;
 
 .s2 .slides .r .hl2 {
     text-transform: uppercase;
+    font-family: "Plantin";
+}
+
+.s2 .slides .r .hl3 {
+    font-family: "Plantin";
+    font-size: 30px;
 }
 
 .s2 .slides .r  .signature{

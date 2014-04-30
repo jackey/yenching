@@ -162,9 +162,7 @@
         
         var right_c = $("~ .btn-item", self).size();
         var total = $(".slider-btns .btns .btn", slideItems.parent()).size();
-        for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
-                $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
-        }
+
         
         // 动画开始
         next_slide.css({
@@ -211,6 +209,9 @@
             next_slide.removeAttr("style");
             content.css("right", 0);
             current_slide.removeAttr("style");
+            for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
+                    $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
+            }
             $.moving_finished(oneslide);
             
         }, window.animate_speed * 1.1);
@@ -254,8 +255,10 @@
             width: height - 1
         });
         var margin_left = -(height / 2  + slideBtnCon.height() / 2);
+        var margin_top = - (slideBtnCon.height() / 2);
         slideBtnCon.css({
-            "margin-left": margin_left
+            "margin-left": margin_left,
+            "margin-top": margin_top
         });
         slideBtnCon.css("display", "block");
         slideBtnCon.show();
@@ -268,9 +271,9 @@
         backBtnCon.each(function () {
            var self = $(this);
            var count_btns = $(".btn-item", self).size();
-           var margin_right = - (height / 2 - self.height() / 2);
+           var margin_left = - (height / 2 - self.height() / 2);
            self.css({
-               "margin-right": margin_right
+               "margin-left": margin_left
            });
            var margin_top = -(self.height() / 2);
            self.css({
@@ -278,11 +281,10 @@
            });
            self.show();
         });
-
     };
     
     $.adaptProgramSlideContentSize = function () {
-        var con = $("#academy");
+        var con = $("#program");
         var total = $(".r", con).size();
          $(".r", con).each(function (index) {
              var r = $(this);
@@ -297,11 +299,180 @@
              }
              
              r.css({
-                 "padding-left": padding_left,
-                 "padding-right": padding_right
+                 "padding-right": padding_left,
+                 "padding-left": padding_right
              });
          });
     };
+    
+    function SlideBtnClicked() {
+        var self = $(this);
+        var btnCon = self.parent();
+        var oneslide = $("body");
+        if ($.moving_is_moving(oneslide)) {
+            return;
+        }
+        else {
+            $.moving_start(oneslide);
+        }
+        var index = $.getIndexFromClass(self.attr("class"));
+        var slideItems = btnCon.parent().siblings(".slides");
+        var next_slide = $(".slide-item-" + index, slideItems);
+        var current_slide = $(".slide-item:not(.hideme)", slideItems);
+        var crt_index = $.getIndexFromClass(current_slide.attr("class"));
+        
+        if (crt_index == index) {
+            $.moving_finished(oneslide);
+            return;
+        }
+        
+        // 动画开始
+        current_slide.css({
+            "position": "absolute",
+            "z-index": 2
+        });
+        next_slide.css({
+            "z-index": 1
+        });
+        
+        // 左边图片
+        var image = $(".l img", current_slide);
+        var left_image = $(".l", current_slide);
+//        var image_width = image.width();
+//        var image_height = image.height();
+//        left_image.parent().css({
+//            "width": image_width,
+//            "height": image_height
+//        });
+        
+        left_image.animate({
+            right: -left_image.width()
+        }, window.animate_speed, function () {
+            
+        });
+        
+        // 右边内容
+        var content = $(".r", current_slide);
+        $(".r", next_slide).css({
+            "background-color": self.css("background-color")
+        });
+        console.log(self.css("background-color"));
+        
+        content.animate({
+            left: -content.width()
+        }, window.animate_speed );
+        
+        setTimeout(function () {
+            current_slide.addClass("hideme");
+            
+            // 删除临时样式
+            left_image.removeAttr("style");
+            next_slide.removeAttr("style");
+            content.css("right", 0);
+            current_slide.removeAttr("style");
+            
+            $.moving_finished(oneslide);
+        }, window.animate_speed * 1.5);
+        
+        next_slide.removeClass("hideme");
+        
+        self.addClass("hideme");
+        $(self).prevAll(".btn").each(function () {
+            $(this).addClass("hideme");
+        });
+        
+        $.resizeProgramSlideBtns();
+    }
+    
+    function BackSlideBtnClicked () {
+        var self = $(this);
+        var index = $.getIndexFromClass(self.attr("class"));
+        
+        var oneslide = $("body");
+        if ($.moving_is_moving(oneslide)) {
+            return;
+        }
+        else {
+            $.moving_start(oneslide);
+        }
+        
+        var slideItems = self.parents(".slides");
+        var next_slide = $(".slide-item-" + index, slideItems);
+        var current_slide = $(".slide-item:not(.hideme)", slideItems);
+        var crt_index = $.getIndexFromClass(current_slide.attr("class"));
+        var total = $(".slide-item", slideItems).size();
+        
+        var right_c = $("~ .btn-item", self).size();
+        var total = $(".slider-btns .btns .btn", slideItems.parent()).size();
+        
+        // 动画开始
+        next_slide.css({
+            "position": "absolute",
+            "z-index": 2
+        });
+        current_slide.css({
+            "z-index": 1
+        });
+        
+        // 左边图片
+        var image = $(".l", current_slide);
+        var left_image = $(".l", next_slide);
+        var image_width = image.width();
+        var image_height = image.height();
+        left_image.css({
+            "width": image_width,
+            "height": image_height,
+            left: -image_width
+        });
+        
+        left_image.animate({
+            left: 0
+        }, window.animate_speed, function () {
+
+        });
+        
+        // 右边内容
+        var content = $(".r", next_slide);
+        content.css({
+            "background-color": self.css("background-color"),
+            right: -($(".r", current_slide).width())
+        });
+        
+        content.animate({
+            right: 0
+        }, window.animate_speed);
+        
+        setTimeout(function () {
+            current_slide.addClass("hideme");
+            
+            // 删除临时样式
+            left_image.removeAttr("style");
+            next_slide.removeAttr("style");
+            content.css("right", 0);
+            current_slide.removeAttr("style");
+            for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
+                    $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
+            }
+            $.moving_finished(oneslide);
+            
+        }, window.animate_speed * 1.1);
+        
+        next_slide.removeClass("hideme");
+        
+        $.resizeProgramSlideBtns();
+    }
+    
+    $(function () {
+        $.adaptProgramSlideContentSize();
+        
+        // Bind Slidebtns click event
+        var btn = $("#program .slider-btns .btn");
+        btn.click(SlideBtnClicked);
+        
+        // Bind BackSlide btn click event
+        var back_btn = $("#program .btn-c .btn-item");
+        back_btn.click(BackSlideBtnClicked);
+    });
     
     $(window).load(function () {
         $.resizeProgramSlideBtns();

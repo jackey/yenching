@@ -815,13 +815,7 @@ overflow: hidden;
     display: table;
 }
 
-.s3 .home .slides .r .r-c {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 .s3 .slide-item .btn-c {
-    height: 41px;
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -832,7 +826,7 @@ overflow: hidden;
     color: #fff;
     width: 675px;
     text-align: right;
-    left: -319px;
+    left:0px;
     top: 50%;
     margin-top: -20px;
 }
@@ -854,7 +848,6 @@ overflow: hidden;
 }
 
 .s3 .slide-item .r-c-c {
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -1482,6 +1475,7 @@ body > .maincontent {
     vertical-align: middle;
     width: 50%;
     position: relative;
+    background-color: #7A7885;
 }
 
 #program .home .slides .slide-item .r .r-c {

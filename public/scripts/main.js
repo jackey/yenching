@@ -615,6 +615,7 @@ if(typeof String.prototype.trim !== 'function') {
 
 (function ($) {
 
+            return;
 	// 垂直导航条重新设置大小 位置.
 	function resize_slide_btns() {
 		var s2_slide_btns = $(".s2:not(.s3):not(.s4)").find(".slider-btns");
@@ -1168,8 +1169,8 @@ if(typeof String.prototype.trim !== 'function') {
 
 
 (function ($) {
-	$(function () {
             return;
+	$(function () {
 		$('.s2:not(.s3) .btn-c .btn-item').click(function () {
 			console.log("====================================");
 			var self = $(this);

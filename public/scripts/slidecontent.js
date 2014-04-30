@@ -520,4 +520,5 @@
     $(window).resize(function() {
         $.resizeProgramSlideBtns();
     });
+    
 })(jQuery);

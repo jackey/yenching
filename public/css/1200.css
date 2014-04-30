@@ -14,6 +14,7 @@
 
 .s3 .home .c p {
   padding: 5px 0px;
+  line-height: 100%;
 }
 .s3 .home .c h4 {
   padding: 5px 0px;
@@ -68,4 +69,18 @@
 
 .s1 .home .header-tip .logo {
   width: 400px;
+}
+
+.s2 .home .slides .slide-item-3 .line {
+  margin: 5px 0px;
+  height: 1px;
+}
+
+.s2 .slides .r .signature {
+  height: 66px;
+  margin-bottom: 0px;
+}
+
+.s2 .slides .slide-item-3 .r .hl2 {
+  font-size: 22px;
 }

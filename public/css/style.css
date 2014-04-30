@@ -404,7 +404,7 @@ margin-left: 10px;
 .s3 .content .header > h4 {
     color:#231815;
     margin-bottom: 25px;
-    font-family: "Helvetica Bold";
+    font-family: "Helvetica Light";
 }
 
 .s3 .home .content .header p.c {
@@ -474,7 +474,7 @@ background: #6F6E7A;
 
 .s3 .home .c  h4{
     padding: 10px 0px;
-    font-family: "Helvetica Bold";
+    font-family: "Helvetica Light";
 }
 
 .s3 .home .c  p {
@@ -607,7 +607,7 @@ background: #6F6E7A;
 .s4 .header h4{
     color:#000;
     margin-bottom: 10px;
-    font-family: "Helvetica Bold";
+    font-family: "Helvetica Light";
     text-align: center;
 }
 
@@ -695,7 +695,7 @@ background: #6F6E7A;
     position: absolute;
     top: 50%;
     margin-top: -52px;
-    font-family: "Helvetica Bold";
+    font-family: "Helvetica Light";
 }
 
 .s5 .block-con .news-item-date {

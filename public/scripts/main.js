@@ -912,7 +912,6 @@ if(typeof String.prototype.trim !== 'function') {
 	   		console.log("SLIDE INDEX: " + index);
 	   		var nextShowSlide = $(".slide-item-" + index, con);
 	   		console.log("nextShowSlide count: " + nextShowSlide.size());
-	   		
 
 	   		var total = $(".slider-btns .btns .btn", con.parent()).size();
 	   		for (var i = index; i < parseInt(total); i++) {

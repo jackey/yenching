@@ -350,11 +350,14 @@ html, body {
     text-transform: uppercase;
     margin-top: -1px;
     font-family: "Plantin";
+    position: relative;
+    overflow: hidden;
 }
 
 .s2  .slider-btns .btns .btn span {
     margin-right: 200px;
     display: inline-block;
+    position: relative;
 }
 
 .s2  .slider-btns .btns .btn .b-icon {
@@ -801,7 +804,7 @@ overflow: hidden;
 }
 
 .s3 .home .slides .r-c .next-icon{
-    margin-top: 20px;
+    margin-top: 35px;
     float: right;
 }
 
@@ -868,11 +871,11 @@ overflow: hidden;
 }
 
 .s3 .slide-item.slide-item-2 .r-c-c {
-    margin-left: 128px;
+    
 }
 
 .s3 .slide-item.slide-item-3 .r-c-c {
-    margin-left: 141px;
+   
 }
 
 .s3 .slide-item.slide-item-3 .r-c .line {
@@ -924,7 +927,7 @@ overflow: hidden;
 }
 
 .s3 .home .slide-item-0 .c, .s3 .home .slide-item-3 .c {
-    height: 531px;
+  
 }
 
 .slidesjs-pagination {

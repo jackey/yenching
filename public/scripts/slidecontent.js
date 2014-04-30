@@ -115,9 +115,10 @@
             "background-color": self.css("background-color")
         });
         console.log(self.css("background-color"));
-        
+        var back_btn_count = $(".btn-c .btn-item", current_slide).size();
+        var total = $(".slider-btns .btns .btn", slideItems.parent()).size();
         content.animate({
-            right: -($(".r", current_slide).width())
+            right: -($(".r", current_slide).width() + (total - back_btn_count) * btn_width)
         }, window.animate_speed  );
         
         setTimeout(function () {
@@ -199,7 +200,27 @@
         
         content.animate({
             right: 0
-        }, window.animate_speed);
+        }, window.animate_speed, function () {
+            for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
+               
+            }
+            (function next(i) {
+               if (i < 0) {
+                 return;
+               }
+               var btn = $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent());
+               if (btn.hasClass("hideme")) {
+                  btn.removeClass("hideme");
+                  $("> span", btn).css({
+                    bottom: - ($("> span", btn).height() / 2 - 5)
+                  }).animate({
+                    bottom: 0
+                  }, 300);
+                  next (i - 1);
+               }
+            })(parseInt(total)- parseInt(right_c)  - 1);
+            $.moving_finished(oneslide);
+        });
         
         setTimeout(function () {
             current_slide.addClass("hideme");
@@ -209,10 +230,6 @@
             next_slide.removeAttr("style");
             content.css("right", 0);
             current_slide.removeAttr("style");
-            for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
-                    $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
-            }
-            $.moving_finished(oneslide);
             
         }, window.animate_speed * 1.1);
         
@@ -338,12 +355,6 @@
         // 左边图片
         var image = $(".l img", current_slide);
         var left_image = $(".l", current_slide);
-//        var image_width = image.width();
-//        var image_height = image.height();
-//        left_image.parent().css({
-//            "width": image_width,
-//            "height": image_height
-//        });
         
         left_image.animate({
             right: -left_image.width()
@@ -356,11 +367,13 @@
         $(".r", next_slide).css({
             "background-color": self.css("background-color")
         });
-        console.log(self.css("background-color"));
         
+        var back_btn_count = $(".btn-c .btn-item", current_slide).size();
+        var total = $(".slider-btns .btns .btn", slideItems.parent()).size();
         content.animate({
-            left: -content.width()
-        }, window.animate_speed );
+            left: - ( content.width() + ( total - back_btn_count) * btn_width)
+        }, window.animate_speed * 1 );
+        console.log(- ( content.width() + ( total - back_btn_count) * btn_width));
         
         setTimeout(function () {
             current_slide.addClass("hideme");
@@ -368,7 +381,8 @@
             // 删除临时样式
             left_image.removeAttr("style");
             next_slide.removeAttr("style");
-            content.css("right", 0);
+            content.css("right", "auto");
+            content.css("left", "auto");
             current_slide.removeAttr("style");
             
             $.moving_finished(oneslide);
@@ -400,6 +414,10 @@
         var next_slide = $(".slide-item-" + index, slideItems);
         var current_slide = $(".slide-item:not(.hideme)", slideItems);
         var crt_index = $.getIndexFromClass(current_slide.attr("class"));
+        if (crt_index == index) {
+          $.moving_finished(oneslide);
+          return;
+        }
         var total = $(".slide-item", slideItems).size();
         
         var right_c = $("~ .btn-item", self).size();
@@ -422,11 +440,11 @@
         left_image.css({
             "width": image_width,
             "height": image_height,
-            left: -image_width
+            right: -image_width
         });
         
         left_image.animate({
-            left: 0
+            right: 0
         }, window.animate_speed, function () {
 
         });
@@ -435,12 +453,35 @@
         var content = $(".r", next_slide);
         content.css({
             "background-color": self.css("background-color"),
-            right: -($(".r", current_slide).width())
+            left: -($(".r", current_slide).width())
         });
         
         content.animate({
-            right: 0
-        }, window.animate_speed);
+            left: 0
+        }, window.animate_speed, function () {
+            (function next(i) {
+              if (i >= index) {
+                console.log(i);
+                var showing_btn = $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent());
+                if (showing_btn.hasClass("hideme")) {
+                  showing_btn.removeClass("hideme");
+                  $.resizeProgramSlideBtns();
+                  $("> span", showing_btn).css({
+                     top: - ($("> span", showing_btn).height() / 2 - 5)
+                   }).animate({
+                     top: 0
+                   }, 300, function () {
+                     
+                   });
+                }
+                next(i - 1);
+              }
+              else {
+                return;
+              }
+            })(total - 1);
+            $.resizeProgramSlideBtns();
+        });
         
         setTimeout(function () {
             current_slide.addClass("hideme");
@@ -450,16 +491,14 @@
             next_slide.removeAttr("style");
             content.css("right", 0);
             current_slide.removeAttr("style");
-            for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
-                    $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
-            }
+
             $.moving_finished(oneslide);
             
         }, window.animate_speed * 1.1);
         
         next_slide.removeClass("hideme");
-        
         $.resizeProgramSlideBtns();
+        
     }
     
     $(function () {

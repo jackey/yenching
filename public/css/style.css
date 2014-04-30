@@ -256,6 +256,10 @@ html, body {
     position: relative;
 }
 
+.s2 .home .video img:hover {
+    cursor: pointer;
+}
+
 .s2 .home .slides {
     position: relative;
     background-color: #970F37;
@@ -305,7 +309,8 @@ html, body {
     background-position: center center;
     background-size: 100%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -81px;
+    top: -2px;
     z-index: 1000;
 }
 
@@ -316,10 +321,10 @@ html, body {
 .s2  .slider-btns {
     height: 138px;
     left: 50%;
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=9);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     top: 50%;
     margin-top: -69px;
     z-index: 999;
@@ -1245,6 +1250,7 @@ right: 0px;
     overflow: hidden;
     height: 120%;
     background-size: 100%;
+    position: relative;
 }
 
 body > .maincontent {
@@ -1343,4 +1349,87 @@ body > .maincontent {
     color: #970f37;
     bottom: 30px;
     left: 32%;
+}
+
+#home .home-nav {
+    position: absolute;
+    right: 0px;
+    top: 68px;
+    background-color: #B41a3c;
+    color: #fff;
+    padding: 20px 10px 20px 32px;
+    font-size:14px;
+    width: 176px;
+}
+
+#home .home-nav .more-info {
+    line-height: 149%;
+    font-family: "SimHei";
+    text-align: right;
+    margin-top: 20px;
+}
+
+#home .home-nav .more-info .p3 {
+    margin-top: 25px;
+}
+
+#home .home-nav .more-info .p3 .for-app{
+    font-weight: bold;
+}
+
+#home .home-nav .more-info .p3 .for-inquiry {
+    font-weight: bold;
+}
+
+#home .home-nav .lan-bar li.item-1{
+    float: left;
+    border-right: 1px solid #fff;
+    padding-right: 22px;
+}
+
+#home .home-nav .lan-bar li.item-2{
+    float: left;
+    padding-left: 22px;
+}
+
+#home .home-nav .lan-bar li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#academy.s2 .home .slides .r {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#academy.s2 .home .slides .slide-item{
+    display: table;
+}
+
+#academy.s2 .home .slides .slide-item .l {
+    display: table-cell;
+    float: none;
+    width: 50%;
+}
+#academy.s2 .home .slides .slide-item .r {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#academy.s2 .home .slides .slide-item .r .r-c {
+    width: 743px;
+    margin-left: 123px;
+}
+
+#academy.s2 .home .slides .slide-item .r .r-c-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#academy.s2 .home .slides .slide-item.hideme {
+    display: none;
 }

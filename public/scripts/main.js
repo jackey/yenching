@@ -694,12 +694,14 @@ if(typeof String.prototype.trim !== 'function') {
 
 	$(function () {
 		// 垂直导航条重新设置大小 位置.
-		var resize_slide_btns_fn = resize_slide_btns();
+            var resize_slide_btns_fn = resize_slide_btns();
 	    $(window).load(function () {
+                return;
 	    	resize_slide_btns_fn();
 	    	resize_right_slide_btns();
 	    });
 	    $(window).resize(function () {
+                return;
 	    	resize_slide_btns_fn();
 	    	resize_right_slide_btns();
 	    });
@@ -1033,6 +1035,7 @@ if(typeof String.prototype.trim !== 'function') {
 
 	   	// s2 垂直导航条点击事件处理
 	   	$(".s2:not(.s4):not(.s3)").find(".slider-btns li.btn").click(function () {
+                    return;
 	   		var self = $(this);
 	   		var cls = self.attr("class");
 	   		try {
@@ -1166,6 +1169,7 @@ if(typeof String.prototype.trim !== 'function') {
 
 (function ($) {
 	$(function () {
+            return;
 		$('.s2:not(.s3) .btn-c .btn-item').click(function () {
 			console.log("====================================");
 			var self = $(this);
@@ -2277,6 +2281,13 @@ if(typeof String.prototype.trim !== 'function') {
 } )(jQuery);
 
 (function ($) {
+    $(function () {
+        $("#home .home-nav .lan-bar").toggle(function () {
+            $(this).siblings(".more-info").removeClass("hideme");
+        }, function () {
+            $(this).siblings(".more-info").addClass("hideme");
+        });
+    });
 	$(function () {
 		videojs($("#yenching_video").get(0)).ready(function () {
 	        console.log("Video is ready ");
@@ -2308,6 +2319,12 @@ if(typeof String.prototype.trim !== 'function') {
 			});
 	    });
 	});
+})(jQuery);
 
 
+(function ($) {
+    $.computeContentWidth = function (num_of_bars, width_of_bars, total_width) {
+        var cut_width = num_of_bars * width_of_bars;
+        return total_width - cut_width;
+    };
 })(jQuery);

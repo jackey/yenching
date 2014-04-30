@@ -1,4 +1,7 @@
+// Acadamy
 (function ($) {
+    window.animate_speed = 1000 * 1;
+    var btn_width = 41;
     $.resizeAcademySlideBtns = function () {
         var con = $("#academy");
         var slideBtnCon = $(".slider-btns", con);
@@ -12,9 +15,299 @@
             "margin-left": margin_left
         });
         slideBtnCon.css("display", "block");
+        slideBtnCon.show();
+        
+        // Btn-c
+        var backBtnCon = $(".btn-c", con);
+        backBtnCon.css({
+            width: height - 1
+        });
+        backBtnCon.each(function () {
+           var self = $(this);
+           var count_btns = $(".btn-item", self).size();
+           var margin_right = - (height / 2 - self.height() / 2);
+           self.css({
+               "margin-right": margin_right
+           });
+           var margin_top = -(self.height() / 2);
+           self.css({
+               "margin-top": margin_top
+           });
+           self.show();
+        });
+
+    };
+    
+    $.adaptSlideContentSize = function () {
+        var con = $("#academy");
+        var total = $(".r", con).size();
+         $(".r", con).each(function (index) {
+             var r = $(this);
+             if (r.siblings(".btn-c").size()) {
+                var right_btns_count = $(".btn-item" ,r.siblings(".btn-c")).size();
+                var padding_right = btn_width * right_btns_count;
+                var padding_left = btn_width * (total - right_btns_count - 1);
+             }
+             else {
+                var padding_right = btn_width * index;
+                var padding_left = btn_width * (total - index - 1);
+             }
+             
+             r.css({
+                 "padding-left": padding_left,
+                 "padding-right": padding_right
+             });
+         });
+    };
+    
+    function SlideBtnClicked() {
+        var self = $(this);
+        var btnCon = self.parent();
+        var oneslide = $("body");
+        if ($.moving_is_moving(oneslide)) {
+            return;
+        }
+        else {
+            $.moving_start(oneslide);
+        }
+        var index = $.getIndexFromClass(self.attr("class"));
+        var slideItems = btnCon.parent().siblings(".slides");
+        var next_slide = $(".slide-item-" + index, slideItems);
+        var current_slide = $(".slide-item:not(.hideme)", slideItems);
+        var crt_index = $.getIndexFromClass(current_slide.attr("class"));
+        
+        if (crt_index == index) {
+            $.moving_finished(oneslide);
+            return;
+        }
+        
+        // 动画开始
+        current_slide.css({
+            "position": "absolute",
+            "z-index": 2
+        });
+        next_slide.css({
+            "z-index": 1
+        });
+        
+        // 左边图片
+        var image = $(".l img", current_slide);
+        var left_image = $(".l img", current_slide);
+        var image_width = image.width();
+        var image_height = image.height();
+        left_image.parent().css({
+            "width": image_width,
+            "height": image_height
+        });
+        left_image.css({
+            "position": "absolute",
+        });
+        
+        left_image.animate({
+            left: -image_width
+        }, window.animate_speed, function () {
+
+        });
+        
+        // 右边内容
+        var content = $(".r", current_slide);
+        $(".r", next_slide).css({
+            "background-color": self.css("background-color")
+        });
+        console.log(self.css("background-color"));
+        
+        content.animate({
+            right: -($(".r", current_slide).width())
+        }, window.animate_speed  );
+        
+        setTimeout(function () {
+            current_slide.addClass("hideme");
+            
+            // 删除临时样式
+            left_image.removeAttr("style");
+            next_slide.removeAttr("style");
+            content.css("right", 0);
+            current_slide.removeAttr("style");
+            
+            $.moving_finished(oneslide);
+        }, window.animate_speed * 1.1);
+        
+        next_slide.removeClass("hideme");
+        
+        self.addClass("hideme");
+        $("~ .btn", self).each(function () {
+            $(this).addClass("hideme");
+        });
+        
+        $.resizeAcademySlideBtns();
+    }
+    
+    function BackSlideBtnClicked () {
+        var self = $(this);
+        var index = $.getIndexFromClass(self.attr("class"));
+        
+        var oneslide = $("body");
+        if ($.moving_is_moving(oneslide)) {
+            return;
+        }
+        else {
+            $.moving_start(oneslide);
+        }
+        
+        var slideItems = self.parents(".slides");
+        var next_slide = $(".slide-item-" + index, slideItems);
+        var current_slide = $(".slide-item:not(.hideme)", slideItems);
+        var crt_index = $.getIndexFromClass(current_slide.attr("class"));
+        var total = $(".slide-item", slideItems).size();
+        
+        var right_c = $("~ .btn-item", self).size();
+        var total = $(".slider-btns .btns .btn", slideItems.parent()).size();
+        for (var i = 0; i < parseInt(total)- parseInt(right_c); i++) {
+                $(".slider-btns .btns .btn-" + (i + 1), slideItems.parent()).removeClass("hideme");
+        }
+        
+        // 动画开始
+        next_slide.css({
+            "position": "absolute",
+            "z-index": 2
+        });
+        current_slide.css({
+            "z-index": 1
+        });
+        
+        // 左边图片
+        var image = $(".l", current_slide);
+        var left_image = $(".l", next_slide);
+        var image_width = image.width();
+        var image_height = image.height();
+        left_image.css({
+            "width": image_width,
+            "height": image_height,
+            left: -image_width
+        });
+        
+        left_image.animate({
+            left: 0
+        }, window.animate_speed, function () {
+
+        });
+        
+        // 右边内容
+        var content = $(".r", next_slide);
+        content.css({
+            "background-color": self.css("background-color"),
+            right: -($(".r", current_slide).width())
+        });
+        
+        content.animate({
+            right: 0
+        }, window.animate_speed);
+        
+        setTimeout(function () {
+            current_slide.addClass("hideme");
+            
+            // 删除临时样式
+            left_image.removeAttr("style");
+            next_slide.removeAttr("style");
+            content.css("right", 0);
+            current_slide.removeAttr("style");
+            $.moving_finished(oneslide);
+            
+        }, window.animate_speed * 1.1);
+        
+        next_slide.removeClass("hideme");
+        
+        $.resizeAcademySlideBtns();
+    }
+    
+    $(function () {
+        $.adaptSlideContentSize();
+        
+        // Bind Slidebtns click event
+        var btn = $("#academy .slider-btns .btn");
+        btn.click(SlideBtnClicked);
+        
+        // Bind BackSlide btn click event
+        var back_btn = $("#academy .btn-c .btn-item");
+        back_btn.click(BackSlideBtnClicked);
+        
+    });
+    $(window).load(function () {
+        $.resizeAcademySlideBtns();
+    });
+    
+    $(window).resize(function() {
+        $.resizeAcademySlideBtns();
+    });
+})(jQuery);
+
+// Program
+(function ($) {
+    var btn_width = 41;
+    $.resizeProgramSlideBtns = function () {
+        var con = $("#program");
+        var slideBtnCon = $(".slider-btns", con);
+        var slidesCon = slideBtnCon.siblings(".slides");
+        var height = $(slidesCon).height();
+        var width = $(slidesCon).width();
+        slideBtnCon.css({
+            width: height - 1
+        });
+        var margin_left = -(height / 2  + slideBtnCon.height() / 2);
+        slideBtnCon.css({
+            "margin-left": margin_left
+        });
+        slideBtnCon.css("display", "block");
+        slideBtnCon.show();
+        
+        // Btn-c
+        var backBtnCon = $(".btn-c", con);
+        backBtnCon.css({
+            width: height - 1
+        });
+        backBtnCon.each(function () {
+           var self = $(this);
+           var count_btns = $(".btn-item", self).size();
+           var margin_right = - (height / 2 - self.height() / 2);
+           self.css({
+               "margin-right": margin_right
+           });
+           var margin_top = -(self.height() / 2);
+           self.css({
+               "margin-top": margin_top
+           });
+           self.show();
+        });
+
+    };
+    
+    $.adaptProgramSlideContentSize = function () {
+        var con = $("#academy");
+        var total = $(".r", con).size();
+         $(".r", con).each(function (index) {
+             var r = $(this);
+             if (r.siblings(".btn-c").size()) {
+                var right_btns_count = $(".btn-item" ,r.siblings(".btn-c")).size();
+                var padding_right = btn_width * right_btns_count;
+                var padding_left = btn_width * (total - right_btns_count - 1);
+             }
+             else {
+                var padding_right = btn_width * index;
+                var padding_left = btn_width * (total - index - 1);
+             }
+             
+             r.css({
+                 "padding-left": padding_left,
+                 "padding-right": padding_right
+             });
+         });
     };
     
     $(window).load(function () {
-        $.resizeAcademySlideBtns();
+        $.resizeProgramSlideBtns();
+    });
+    
+    $(window).resize(function() {
+        $.resizeProgramSlideBtns();
     });
 })(jQuery);

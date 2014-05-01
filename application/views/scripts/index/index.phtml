@@ -408,7 +408,7 @@ social progress since 1898.</h3>
                               </div>
                             </li>
                             <?php foreach ($news_items as $key => $news_item): ?>
-                                <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img class="img-full" src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
+                                <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img class="img-full" data-src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
                             <?php endforeach;?>
                             <?php endforeach;?>
                         </ul>
@@ -439,11 +439,16 @@ social progress since 1898.</h3>
 </div>
 
 <div id="template-news-item" style="display:none">
-    <li class="news-item news-item-{{id}}" data-newsid="{{news_id}}"><img src="{{{thumbnail}}}?>" alt=""></li>
+    <li class="news-item news-item-{{id}}" data-newsid="{{news_id}}"><img class="img-full" src="{{{thumbnail}}}?>" alt=""></li>
 </div>
 
 <div id="template-news-date" style="display:none">
-    <li class="news-item news-item-date"><div class="v-c">{{date}}</div></li>
+  <li class="news-item news-item-date">
+    <div class="v-c">
+      <span><?php echo $date ?></span>
+      <img src="/public/misc/images/news_bg.png" class="img-full" alt="" />
+    </div>
+  </li>
 </div>
 
 <div id="template-news-list" style="display:none">{{{newsrender}}}</div>

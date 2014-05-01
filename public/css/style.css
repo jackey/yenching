@@ -465,6 +465,7 @@ background: #6F6E7A;
     list-style-position: inside;
     padding: 0 20px;
     line-height: 30px;
+    margin-left: -20px;
 }
 
 .s3 .home .slide-item-0 .r-c-c .c  ul {
@@ -482,11 +483,11 @@ background: #6F6E7A;
 }
 
 .subscribe-form form {
-    width: 79%;
+    width: 100%;
     margin: 0 auto;
     display: table;
-    margin-left: 15px;
     margin-top: 10%;
+    margin-left: -10px;
 }
 
 .subscribe-form form .item {
@@ -672,9 +673,8 @@ background: #6F6E7A;
 
 .s5 .block-con .news-item {
     float: left;
-    width: 181px;
-    height: 181px;
     position: relative;
+    width:20%
 }
 
 .s5 .news-block {
@@ -692,11 +692,19 @@ background: #6F6E7A;
 }
 
 .s5 .block-con .news-item-date .v-c {
-    position: absolute;
-    top: 50%;
-    margin-top: -52px;
     font-family: "Helvetica Light";
+    position: relative;
 }
+
+.s5 .block-con .news-item-date .v-c span{
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+  top: 50%;
+  margin-top: -15%;
+}
+
 
 .s5 .block-con .news-item-date {
     padding-top: 20px;
@@ -708,6 +716,7 @@ background: #6F6E7A;
     color: #fff;
     padding: 0px;
     margin: 0px;
+    width: 20%;
 }
 
 .s5 .block-con .pager a, .s5 .block-con .pager a:active, .s5 .block-con .pager a.link, .s5 .block-con .pager a:hover {
@@ -1090,8 +1099,13 @@ overflow: hidden;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    background: url(../misc/images/new-page-mainvisual-side.jpg) no-repeat;
     background-position: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    margin-top: -43px;
+    width: 47px;
+    height: 87px;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .left .btn {
@@ -1107,9 +1121,14 @@ overflow: hidden;
     background: url(../misc/images/news_arrow_right.png) no-repeat;
     background-position: center;
     display: inline-block;
-    height: 131px;
-    width: 100%;
     cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0px;
+    width: 47px;
+    height: 87px;
+    margin-top: -43px;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .right .close-btn {
@@ -1118,14 +1137,20 @@ overflow: hidden;
     background: url(../misc/images/news_close.png) no-repeat;
     background-position: center;
     display: inline-block;
-    position: absolute;
     top: 0px;
     left: 0px;
     cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    margin-left: -60px;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .slides {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     display: table-cell;
 }
@@ -1513,4 +1538,18 @@ body > .maincontent {
     position: absolute;
     margin-top: -60px;
     height: auto;
+}
+
+.subscribe-form {
+  position: absolute;
+  bottom: 7%;
+}
+
+.s3 .home .c ul p {
+  padding: 0px;
+  line-height: 100%;
+}
+
+li h5.slide-l-t {
+  padding: 1% 0px;
 }

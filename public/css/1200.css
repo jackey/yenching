@@ -28,10 +28,10 @@
 }
 
 .subscribe-form form {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   display: table;
-  margin-left: 15px;
+  margin-left: 0px;
   margin-top: 0%;
 }
 
@@ -83,4 +83,8 @@
 
 .s2 .slides .slide-item-3 .r .hl2 {
   font-size: 22px;
+}
+
+.subscribe-form {
+  bottom: 4%;
 }

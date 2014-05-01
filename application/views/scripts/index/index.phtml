@@ -191,11 +191,11 @@ social progress since 1898.</h3>
                                                 <p>Scholars work closely with the faculty and are required to enrich their academic knowledge outside the classroom by completing an internship or conducting a Field Study Intensive, which are guided by a faculty mentor. </p>
                                                 <ul>
                                                     <li>
-                                                        <b>Internship</b>
+                                                        <h5 class="slide-l-t">Internship</h5>
                                                         <p>Scholars can gain practical “hands-on” learning experience at one of Yenching Academy’s partners, which comprise of over 100 leading international and domestic corporations, government institutions, and NGOS. These internships are designed to complement a scholar’s concentration area and is integrated into the curriculum, as well as guided by a faculty member. </p>
                                                     </li>
                                                     <li>
-                                                        <b>Field Study Intensives</b>
+                                                        <h5 class="slide-l-t">Field Study Intensives</h5>
                                                         <p>Rather than limiting research to the confinements of the classroom, Yenching Scholars are required to participate in field studies around China, in which they engage in on-site research projects in their area of concentration with a faculty member. These field studies not only provide a richer learning experience, but also engage scholars in in-depth research projects.  </p>
                                                     </li>
                                                 </ul>
@@ -401,9 +401,14 @@ social progress since 1898.</h3>
                     <div class="block-con">
                         <ul class="news-list clearfix">
                             <?php foreach ($this->news as $date =>  $news_items) :?>
-                            <li class="news-item news-item-date "><div class="v-c"><?php echo $date ?></div></li>
+                            <li class="news-item news-item-date ">
+                              <div class="v-c">
+                                <span><?php echo $date ?></span>
+                                <img src="/public/misc/images/news_bg.png" class="img-full" alt="" />
+                              </div>
+                            </li>
                             <?php foreach ($news_items as $key => $news_item): ?>
-                                <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
+                                <li data-newsid="<?php echo $news_item["news_id"]?>" class="news-item news-item-<?php echo $key+1?>"><img class="img-full" src="<?php echo $news_item["images"]["thumbnail"]?>" alt=""></li>
                             <?php endforeach;?>
                             <?php endforeach;?>
                         </ul>

@@ -175,3 +175,9 @@ body {
 #program.s2 .home .slides  .slide-item-2 .r  .hl2{
     font-size: 2.5em;
 }
+
+.s5 .block-con .news-item-date .v-c span {
+  font-family: "Helvetica";
+  margin-top: -34%;
+  font-size: 0.8em;
+}

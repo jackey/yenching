@@ -762,7 +762,7 @@ overflow: hidden;
     text-transform: uppercase;
     font-family: "Plantin Std";
     font-size: 4.5em;
-    margin-bottom: 23px;
+    margin-bottom: 17px;
 }
 
 .s2 .slides .r .hl3 {
@@ -1636,4 +1636,5 @@ li h5.slide-l-t {
 .s2 .home .slides  .slide-item-1 .r .c > p {
     font-family: "Plantin Std";
     text-align: left;
+    font-size: 1.5em;
 }

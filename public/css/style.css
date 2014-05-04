@@ -246,10 +246,10 @@ html, body {
 .s2 .home .c {
     color: #231815;
     font-family: "Helvetica Light";
-    text-align: center;
     word-wrap: normal;
     word-break: break-all;
     font-size: 1.5em;
+    text-align: justify;
 }
 
 .s2 .home .video {

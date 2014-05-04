@@ -21,11 +21,11 @@
 }
 
 .font-size-20 {
-    font-size: 20px;
+    font-size: 1.4em;
 }
 
 .font-size-25 {
-    font-size: 25px;
+    font-size: 1.5em;
 }
 
 .font-size-18 {
@@ -51,9 +51,9 @@ html, body {
     left: 0px;
     top: 50%;
     background: #B41A3C;
-    height: 354px;
+    height: 350px;
     width: 50px;
-    margin-top: -177px;
+    margin-top: -175px;
     z-index: 10000;
 }
 
@@ -100,7 +100,7 @@ html, body {
 .body .left-bar .left-bar-menu {
     position: absolute;
     top: 50%;
-    margin-top: -180px;
+    margin-top: -175px;
 }
 
 .body .left-bar .left-bar-menu .m-item {
@@ -212,16 +212,16 @@ html, body {
 }
 
 .s2 .header  {
-    padding-top: 148px;
+    padding-top: 12%;
     width: 60%;
     margin: 0 auto;
 }
 
 .s2 .header  .line{
-    height: 2px;
+    height: 1px;
     width: 100%;
     background: #000;
-    margin: 40px 0px;
+    margin: 4% 0px;
 }
 
 .s2 .header h1 {
@@ -229,6 +229,8 @@ html, body {
     text-align: center;
     color: #231815;
     font-family: "Plantin";
+    height: 45px;
+    line-height: 45px;
 }
 
 .s2 .home .star {
@@ -246,6 +248,9 @@ html, body {
     color: #231815;
     font-family: "Helvetica Light";
     text-align: center;
+    word-wrap: normal;
+    word-break: break-all;
+    font-size: 1.5em;
 }
 
 .s2 .home .video {
@@ -281,8 +286,8 @@ html, body {
 
 .s2 .home .slides .r .c {
     color: #fff;
-    text-align: left;
-    font-size: 0.8em;
+    font-size: 1em;
+    text-align: justify;
 }
 
 .s2 .home .slide-item-1 .r {
@@ -407,7 +412,9 @@ margin-left: 10px;
 .s3 .content .header > h4 {
     color:#231815;
     margin-bottom: 25px;
-    font-family: "Helvetica Light";
+    font-family: "Helvetica";
+    text-align: center;
+    font-weight: bold;
 }
 
 .s3 .home .content .header p.c {
@@ -508,7 +515,7 @@ background: #6F6E7A;
     padding-bottom: 7px;
     display: block;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 0.8em;
 }
 
 .subscribe-form form .item-2 input{
@@ -923,7 +930,7 @@ overflow: hidden;
 .s3 .next-icon .next_txt{
     margin-left: 5px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 0.9em;
 }
 
 .s3 .next-icon .n-icon {
@@ -1555,4 +1562,30 @@ body > .maincontent {
 
 li h5.slide-l-t {
   padding: 1% 0px;
+}
+
+.s2 .home .slides .slide-item-2  .r-c ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-top: 5%;
+}
+
+.s2 .home .slides .slide-item-2  .r-c ul li{
+    padding: 1%;
+}
+
+.s2 .home .slides .slide-item-1  .r-c .line{
+    margin: 2% 0px;
+}
+
+#program .home .slide-item.slide-item-3 .c .r-c-slide-1 ul {
+    list-style-position: inside;
+}
+
+#program .home .slide-item.slide-item-3 .c .r-c-slide-1 ul li.li-2 {
+    margin: 3% 0px;
+}
+
+.s3 .home .slide-item.slide-item-3 .c .r-c-slide-1 ul p {
+    margin-left: 0px;
 }

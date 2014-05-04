@@ -556,7 +556,7 @@ background: #6F6E7A;
 .next-icon .p-icon {
     width: 15px;
     height: 29px;
-    background: url(../misc/images/right_on.png) no-repeat;
+    background: url(../misc/images/arrow-grey.png) no-repeat;
     background-position: center;
     float: left;
 }
@@ -580,13 +580,13 @@ background: #6F6E7A;
 .next-icon .n-icon {
     width: 15px;
     height: 29px;
-    background: url(../misc/images/left_on.png) no-repeat;
+    background: url(../misc/images/arrow-grey2.png) no-repeat;
     background-position: center;
     float: left;
     margin-left: 25px;
 }
 
-.next-icon .next_txt:hover {
+.next-icon .p-icon:hover,  .next-icon .n-icon:hover{
     cursor: pointer;
 }
 

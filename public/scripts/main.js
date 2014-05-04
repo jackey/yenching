@@ -1439,16 +1439,16 @@ if(typeof String.prototype.trim !== 'function') {
 	   		self.removeClass("n-icon-on");
 		});
 
-		$(".s3 .slide-item-0 .next-icon .next_txt .btn").click(function () {
-			var self = $(this);
+		// $(".s3 .slide-item-0 .next-icon .next_txt .btn").click(function () {
+		// 	var self = $(this);
 
-			if (self.text().trim() == "NEXT") {
-				$(".s3 .slide-item-0 .next-icon .n-icon").trigger("click");
-			}
-			else {
-				$(".s3 .slide-item-0 .next-icon .p-icon").trigger("click");
-			}
-		});
+		// 	if (self.text().trim() == "NEXT") {
+		// 		$(".s3 .slide-item-0 .next-icon .n-icon").trigger("click");
+		// 	}
+		// 	else {
+		// 		$(".s3 .slide-item-0 .next-icon .p-icon").trigger("click");
+		// 	}
+		// });
 	});
 
 	$(function () {
@@ -1477,16 +1477,16 @@ if(typeof String.prototype.trim !== 'function') {
 	   		self.removeClass("n-icon-on");
 		});
 
-		$(".s3 .slide-item-3 .next-icon .next_txt .btn").click(function () {
-			var self = $(this);
-			if (self.text().trim() == self.attr("data-nt")) {
-				$(".s3 .slide-item-3 .next-icon .n-icon").trigger("click");
-			}
-			else {
-				console.log("SLIDE TO PREVIOUS");
-				$(".s3 .slide-item-3 .next-icon .p-icon").trigger("click");
-			}
-		});
+		// $(".s3 .slide-item-3 .next-icon .next_txt .btn").click(function () {
+		// 	var self = $(this);
+		// 	if (self.text().trim() == self.attr("data-nt")) {
+		// 		$(".s3 .slide-item-3 .next-icon .n-icon").trigger("click");
+		// 	}
+		// 	else {
+		// 		console.log("SLIDE TO PREVIOUS");
+		// 		$(".s3 .slide-item-3 .next-icon .p-icon").trigger("click");
+		// 	}
+		// });
 	});
 })(jQuery);
 

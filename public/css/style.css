@@ -1436,21 +1436,24 @@ body > .maincontent {
 
 #home .home-nav .more-info .for-app-mail {
     text-decoration: underline;
+    font-size: 12px;
 }
 
 #home .home-nav .more-info .for-inquiry-mail {
     text-decoration: underline;
+    font-size: 12px;
 }
 
 #home .home-nav .lan-bar li.item-1{
     float: left;
     border-right: 1px solid #fff;
-    padding-right: 22px;
+    padding-right: 33px;
 }
 
 #home .home-nav .lan-bar li.item-2{
-    float: left;
+    float: right;
     padding-left: 22px;
+    text-align: right;
 }
 
 #home .home-nav .lan-bar li a{

@@ -710,9 +710,9 @@ background: #6F6E7A;
 .s5 .block-con .news-item-date .v-c span{
   position: absolute;
   width: 100px;
-    height: 81px;
+    height: 96px;
     top: 50%;
-    margin-top: -40px;
+    margin-top: -48px;
     left: 50%;
     margin-left: -50px;
 }

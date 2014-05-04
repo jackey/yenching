@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Helvetica Light';
-  src: url('helvetica-light.eot'); /* IE9 Compat Modes */
-  src: url('helvetica-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('helvetica-light.woff') format('woff'), /* Modern Browsers */
-       url('helvetica-light.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('helvetica-light.svg#53fc34fb6737daa8ac541a82b0a99ee9') format('svg'); /* Legacy iOS */
+  src: url('Helvetica LT 35 Thin.eot'); /* IE9 Compat Modes */
+  src: url('Helvetica LT 35 Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Helvetica LT 35 Thin.woff') format('woff'), /* Modern Browsers */
+       url('Helvetica LT 35 Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Helvetica LT 35 Thin.svg#3c5c708c388a2ae89cf5c9f5d91fee6c') format('svg'); /* Legacy iOS */
        
   font-style:   normal;
   font-weight:  200;

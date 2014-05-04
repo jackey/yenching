@@ -140,3 +140,19 @@ body {
     margin-bottom: 99px;
     padding-top: 99px;
 }
+
+#program.s3 .slides .slide-item-0  .r-c-slide-2 p{
+    padding: 1% 0px;
+}
+
+#program.s3 .slides .slide-item-0 .r-c-slide-2 p.p2 {
+    padding: 2% 0px;
+}
+
+#program.s3 .slides .slide-item-0  .r-c-slide-2 ul li .slide-l-t {
+    padding: 0px;
+}
+
+#program.s3 .slides .slide-item-0  .r-c-slide-2 ul li p {
+    padding: 0px;
+}

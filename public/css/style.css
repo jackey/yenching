@@ -1611,3 +1611,24 @@ li h5.slide-l-t {
     top: 1px;
 }
 
+#program.s3 .slides .slide-item-0  .r-c-slide-2 p{
+    padding: 1% 0px;
+    line-height: 120%;
+}
+
+#program.s3 .slides .slide-item-0 .r-c-slide-2 p.p2 {
+    padding: 2% 0px;
+}
+
+#program.s3 .slides .slide-item-0  .r-c-slide-2 ul li .slide-l-t {
+    padding: 0px;
+    font-weight: bold;
+}
+
+#program.s3 .slides .slide-item-0  .r-c-slide-2 ul li p {
+    padding: 0px;
+}
+
+.s3 .home .slide-item-0 .c .r-c-slide-2 ul li {
+    margin-top: 2%;
+}

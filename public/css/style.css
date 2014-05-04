@@ -617,8 +617,9 @@ background: #6F6E7A;
 .s4 .header h4{
     color:#000;
     margin-bottom: 10px;
-    font-family: "Helvetica Light";
-    text-align: center;
+    font-family: "Helvetica";
+    text-align: justify;
+    font-weight: bold;
 }
 
 .s4 .slideshow {

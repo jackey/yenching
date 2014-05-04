@@ -364,6 +364,7 @@ html, body {
     margin-right: 200px;
     display: inline-block;
     position: relative;
+    top: 5%;
 }
 
 .s2  .slider-btns .btns .btn .b-icon {
@@ -373,6 +374,8 @@ width: 17px;
 height: 17px;
 display: inline-block;
 margin-left: 10px;
+position: relative;
+top: 2px;
 }
 
 .s2  .slider-btns .btns .btn-1 {
@@ -804,6 +807,8 @@ overflow: hidden;
     margin-right: 200px;
     display: inline-block;
     font-family: "Plantin Std";
+    position: relative;
+    top: 8%;
 }
 
 .slide-item .btn-c span:hover {
@@ -817,6 +822,8 @@ overflow: hidden;
     height: 17px;
     display: inline-block;
     margin-left: 10px;
+    position: relative;
+    top: 2px;
 }
 
 .s3 .home .slides .r-c .line {

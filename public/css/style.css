@@ -681,7 +681,7 @@ background: #6F6E7A;
 .s5 .block-con .news-item {
     float: left;
     position: relative;
-    width:20%
+    width:10%
 }
 
 .s5 .news-block {
@@ -723,7 +723,7 @@ background: #6F6E7A;
     color: #fff;
     padding: 0px;
     margin: 0px;
-    width: 20%;
+    width: 10%;
 }
 
 .s5 .block-con .pager a, .s5 .block-con .pager a:active, .s5 .block-con .pager a.link, .s5 .block-con .pager a:hover {
@@ -759,11 +759,12 @@ overflow: hidden;
 .s2 .slides .r .hl2 {
     text-transform: uppercase;
     font-family: "Plantin Std";
+    font-size: 4.5em;
 }
 
 .s2 .slides .r .hl3 {
-    font-family: "Plantin";
-    font-size: 30px;
+    font-family: "Plantin Std";
+    font-size: 2.8em;
 }
 
 .s2 .slides .r  .signature{

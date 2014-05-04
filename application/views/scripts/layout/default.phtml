@@ -27,6 +27,11 @@
     </script>
 </head>
 <body class="body">
+    <div id="yenching-video-con" class="hideme">
+        <video data-setup='{"example_option":true}' id="yenching_video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="640" height="264" poster="">
+            <source src="" type='' type='video/mp4'/>
+        </video>
+    </div>
     <div class="left-bar ">
         <ul class="left-bar-menu clearfix">
             <li class="m-item m-item-0"></li>
@@ -43,6 +48,7 @@
     <div class="maincontent">
         <?php echo $this->layout()->content?>
     </div>
+
 
 </body>
 </html>

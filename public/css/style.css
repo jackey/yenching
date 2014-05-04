@@ -1411,9 +1411,13 @@ body > .maincontent {
 
 #home .home-nav .more-info {
     line-height: 149%;
-    font-family: "SimHei";
+    font-family: "Helvetica Light";
     text-align: right;
     margin-top: 20px;
+}
+
+#home .home-nav .more-info > p {
+    font-family: "黑体";
 }
 
 #home .home-nav .more-info .p3 {
@@ -1422,10 +1426,20 @@ body > .maincontent {
 
 #home .home-nav .more-info .p3 .for-app{
     font-weight: bold;
+    font-family: "Helvetica";
 }
 
 #home .home-nav .more-info .p3 .for-inquiry {
     font-weight: bold;
+    font-family: "Helvetica";
+}
+
+#home .home-nav .more-info .for-app-mail {
+    text-decoration: underline;
+}
+
+#home .home-nav .more-info .for-inquiry-mail {
+    text-decoration: underline;
 }
 
 #home .home-nav .lan-bar li.item-1{

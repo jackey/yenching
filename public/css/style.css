@@ -561,9 +561,6 @@ background: #6F6E7A;
     float: left;
 }
 
-.next-icon .p-icon:hover {
-    background: url(../misc/images/right.png) no-repeat;
-}
 
 .next-icon .p-icon.p-icon-on {
     background: url(../misc/images/right.png) no-repeat;

@@ -51,9 +51,9 @@ html, body {
     left: 0px;
     top: 50%;
     background: #B41A3C;
-    height: 340px;
+    height: 354px;
     width: 50px;
-    margin-top: -230px;
+    margin-top: -177px;
     z-index: 10000;
 }
 
@@ -91,7 +91,7 @@ html, body {
     background: #cccccc;
     height: 240px;
     width: 50px;
-    margin-top: -180px;
+    margin-top: -120px;
     z-index: 10000;
     background: url(../misc/images/menu_social.jpg) no-repeat;
     background-position: center center;
@@ -191,7 +191,7 @@ html, body {
 
 .s1 .home .header-tip {
     position: fixed;
-    top: 98px;
+    top: 9.6%;
 }
 
 .s1 .home .header-tip .logo {
@@ -203,7 +203,7 @@ html, body {
 .s1 .home .header-tip .t {
     text-transform: uppercase;
     float: left;
-    color: #cccccc;
+    color: #595757;
     font-family: "Plantin";
 }
 
@@ -245,6 +245,7 @@ html, body {
 .s2 .home .c {
     color: #231815;
     font-family: "Helvetica Light";
+    text-align: center;
 }
 
 .s2 .home .video {
@@ -280,6 +281,7 @@ html, body {
 
 .s2 .home .slides .r .c {
     color: #fff;
+    text-align: left;
 }
 
 .s2 .home .slide-item-1 .r {
@@ -1377,9 +1379,9 @@ body > .maincontent {
 }
 
 #home .home-nav {
-    position: absolute;
+    position: fixed;
     right: 0px;
-    top: 68px;
+    top: 6%;
     background-color: #B41a3c;
     color: #fff;
     padding: 20px 10px 20px 32px;

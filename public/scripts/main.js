@@ -1935,6 +1935,9 @@ if(typeof String.prototype.trim !== 'function') {
 					height: parent_height
 				}, speed);
 			});
+      // setTimeout(function () {
+      //   $(".news-block-list-con", container).show();
+      // }, 500);
 		});
 
 		// news detail "X" clicked
@@ -1950,6 +1953,10 @@ if(typeof String.prototype.trim !== 'function') {
 					height: parent_height
 				}, speed);
 			});
+
+      // setTimeout(function () {
+      //   $(".news-block-list-con", container).show();
+      // }, 500);
 		});
 
 		// news detail panel --> next news
@@ -2083,6 +2090,7 @@ if(typeof String.prototype.trim !== 'function') {
 	$(function () {
 		var detail_news_tp = $("#template-news-detail").html();
 		var container = $(".s5 .news-block");
+    container.css("width", $(".news-block-list-con", container).width());
 		Mustache.parse(detail_news_tp);
 		var speed = 1000 * 1;
 		$(".s5 .news-block").delegate(".news-block li.news-item", "click", function () {
@@ -2111,7 +2119,7 @@ if(typeof String.prototype.trim !== 'function') {
 						var width = details_dom.width();
 						var height = details_dom.height();
 						details_dom.css({
-							width: width - 10 ,
+							width: width ,
 							height: height -4,
 							position: "absolute"
 						});
@@ -2125,6 +2133,7 @@ if(typeof String.prototype.trim !== 'function') {
 								details_dom.css({
 									// width: 'auto'
 								});
+                //$(".news-block-list-con", container).hide();
 							});
 						});
 					});

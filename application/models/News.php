@@ -103,12 +103,12 @@ class Application_Model_News
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array(
-						"thumbnail" => "/public/misc/images/pictures/news/n16.jpg", 
+						"thumbnail" => "/public/misc/images/pictures/news/n38.jpg",
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							)
 						)
 					),
@@ -120,10 +120,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n17.jpg",  
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							)
 						)
 					),
@@ -135,10 +135,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n18.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -149,10 +149,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n19.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -163,10 +163,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n20.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -177,10 +177,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n21.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -191,10 +191,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n23.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				),
@@ -207,10 +207,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n11.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -221,10 +221,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n12.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -235,10 +235,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n13.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -249,10 +249,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n14.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -263,10 +263,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n15.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				),
@@ -279,10 +279,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n1.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -293,10 +293,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n2.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -307,10 +307,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n3.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 			),
@@ -323,10 +323,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n4.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -337,10 +337,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n6.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -351,10 +351,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n8.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -365,10 +365,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n9.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				array(
@@ -379,10 +379,10 @@ class Application_Model_News
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n10.jpg", 
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual.jpg"
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
 				),

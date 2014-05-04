@@ -1102,7 +1102,8 @@ overflow: hidden;
 
 .s5 .news-block .news-detail .news-content .body .c {
     color: #595757;
-    font-size: 14px;
+    font-size: 12px;
+    text-transform: lowercase;
 }
 
 .s5 .news-block .news-detail .news-content .body .bar {
@@ -1646,3 +1647,15 @@ li h5.slide-l-t {
 #program.s2 .home .slides  .slide-item-2 .r  .hl2{
     font-size: 2.5em;
 }
+
+.news-content {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.news-content  .img {
+    width: 70%;
+}
+
+

@@ -157,3 +157,17 @@ body {
 #program.s3 .slides .slide-item-0  .r-c-slide-2 ul li p {
     padding: 0px;
 }
+
+.s2 .slides .slide-item-1 .r .hl2 {
+  margin-bottom: 3px;
+}
+
+.s2 .home .slides  .slide-item-1 .r .c > p {
+  padding:6px 0;
+  font-size: 1.5em;
+}
+
+#program.s2 .home .slides  .slide-item-1 .r .c .line {
+  margin: 1% auto;
+  margin-bottom: 3%;
+}

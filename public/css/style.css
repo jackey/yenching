@@ -1632,3 +1632,8 @@ li h5.slide-l-t {
 .s3 .home .slide-item-0 .c .r-c-slide-2 ul li {
     margin-top: 2%;
 }
+
+.s2 .home .slides  .slide-item-1 .r .c > p {
+    font-family: "Plantin Std";
+    text-align: left;
+}

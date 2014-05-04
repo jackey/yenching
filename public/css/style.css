@@ -561,7 +561,6 @@ background: #6F6E7A;
     float: left;
 }
 
-
 .next-icon .p-icon.p-icon-on {
     background: url(../misc/images/right.png) no-repeat;
 }
@@ -914,6 +913,7 @@ overflow: hidden;
 
 .s3 .home .slides .slide-item.slide-item-0 .r-c .line {
     margin: 30px auto;
+    margin-top: 20px;
 }
 
 .s3 .apply-btn {

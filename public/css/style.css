@@ -803,6 +803,7 @@ overflow: hidden;
 .slide-item .btn-c   span  {
     margin-right: 200px;
     display: inline-block;
+    font-family: "Plantin Std";
 }
 
 .slide-item .btn-c span:hover {

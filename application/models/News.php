@@ -313,22 +313,6 @@ class Application_Model_News
 								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
-			),
-			"2015 MAR" => array(
-				array(
-					"news_id" => 16,
-					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
-					"like"=> "15",
-					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
-					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n4.jpg", 
-						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
-							))
-					),
 				array(
 					"news_id" => 17,
 					"title" => "The Yenching Academy 2",
@@ -371,6 +355,22 @@ class Application_Model_News
 								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
 							))
 					),
+			),
+			"2015 MAR" => array(
+				array(
+					"news_id" => 18,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n9.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
 				array(
 					"news_id" => 20,
 					"title" => "The Yenching Academy 2",
@@ -378,6 +378,224 @@ class Application_Model_News
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n10.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 28,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n39.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+
+				array(
+					"news_id" => 22,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n38.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+
+				array(
+					"news_id" => 23,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n37.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+
+				array(
+					"news_id" => 24,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n36.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+
+				array(
+					"news_id" => 25,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n35.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),		
+					
+
+				array(
+					"news_id" => 25,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n34.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),		
+				),
+				"2015 NOV" => array(
+				array(
+					"news_id" => 30,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n34.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),	
+				array(
+					"news_id" => 31,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n30.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),	
+				array(
+					"news_id" => 32,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n28.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),	
+				array(
+					"news_id" => 33,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n23.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 34,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n27.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 35,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n25.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 36,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n28.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 37,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n10.jpg", 
+						"slider" => array(
+								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+							))
+					),
+				array(
+					"news_id" => 38,
+					"title" => "The Yenching Academy 2",
+					"date" => "5/5/2015",
+					"like"=> "15",
+					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n11.jpg", 
 						"slider" => array(
 								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
 								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",

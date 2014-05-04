@@ -125,3 +125,18 @@ body {
 .s2 .slides .slide-item-3 .r .hl3 {
   font-size: 2.5em;
 }
+
+.s3 .header  > .line {
+    background: #231815;
+    margin: 17px 0px;
+    margin-top: 12px;
+}
+
+.s3 .content .header > h4 {
+    margin-bottom: 17px;
+}
+
+.s3 .header {
+    margin-bottom: 99px;
+    padding-top: 99px;
+}

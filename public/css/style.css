@@ -412,7 +412,7 @@ top: 2px;
 
 .s3 .content .header > h4 {
     color:#231815;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-family: "Helvetica";
     text-align: center;
     font-weight: bold;
@@ -423,12 +423,13 @@ top: 2px;
 }
 
 .s3 .header {
-    margin-bottom: 160px;
+    margin-bottom: 150px;
 }
 
-.s3 .header .line {
+.s3 .header  > .line {
     background: #231815;
     margin: 25px 0px;
+    margin-top: 25px;
 }
 
 .s3 .home .slides {
@@ -1606,5 +1607,9 @@ li h5.slide-l-t {
 
 .s2 .slides .slide-item-3 .r .hl3 {
     font-size: 2.5em;
+}
+
+.s3 .slider-btns .btns .btn span {
+    top: 1px;
 }
 

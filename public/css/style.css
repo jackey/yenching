@@ -962,7 +962,7 @@ overflow: hidden;
 .slidesjs-pagination {
     position: absolute;
     position: absolute;
-    bottom: 0px;
+    bottom: 23px;
     z-index: 100;
     left: 50%;
     width: 125px;

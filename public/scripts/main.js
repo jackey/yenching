@@ -2345,3 +2345,77 @@ if(typeof String.prototype.trim !== 'function') {
       });
     });
 })(jQuery);
+
+(function ($) {
+  $(function () {
+    var videoconver = $(".overconver-video");
+    var video = videojs("yenching-video-con");
+    videoconver.click(function () {
+      var videocon = $("#yenching-video-con");
+      video.pause();
+
+      videocon.css({
+        top: 0,
+        bottom: 0,
+        left:0,
+        right: 0,
+        margin: "auto"
+      }).animate({
+        width: 0,
+        height: 0,
+      }, 1000 * 1, function () {
+        videocon.removeAttr("style");
+        videoconver.removeAttr("style");
+      });
+    });
+    video.on("fullscreenchange", function () {
+      var videocon = $("#yenching-video-con");
+      var videoconver = $(".overconver-video");
+      if (video.isFullScreen()) {
+        videocon.css({
+          "margin-left": 0,
+          "margin-top": 0,
+          "position": "static"
+        });
+        videoconver.css("opacity", 1);
+      }
+      else {
+        videocon.removeAttr("style");
+        videocon.css("display", 'block');
+        videoconver.removeAttr("style");
+      }
+    });
+    video.ready(function () {
+      var videocon = $("#yenching-video-con");
+      var videoconver = $(".overconver-video");
+      $("#academy .video img").click(function () {
+        videoconver.show();
+        var width = videocon.width();
+        var height = videocon.height();
+
+        videocon.css({
+          width: "0px",
+          height: "0px",
+          top: 0,
+          bottom: 0,
+          left:0,
+          right: 0,
+          margin: "auto"
+        });
+        videocon.css("display", "block");
+        videocon.animate({
+          width: width,
+          height: height
+        }, 1000 * 1, function () {
+          videocon.removeAttr("style");
+          videocon.css("display", "block");
+        });
+      });
+    });
+
+  });
+})(jQuery);
+
+
+
+

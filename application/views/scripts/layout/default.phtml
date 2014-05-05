@@ -27,11 +27,13 @@
     </script>
 </head>
 <body class="body">
-    <div id="yenching-video-con" class="hideme">
-        <video data-setup='{"example_option":true}' id="yenching_video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="640" height="264" poster="">
-            <source src="" type='' type='video/mp4'/>
-        </video>
-    </div>
+    <video id="yenching-video-con" class="video-js vjs-default-skin"
+      controls preload="auto" width="950" height="540"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup='{"example_option":true}'>
+        <source src="/public/misc/videos/video_960x540_c.mp4" type='video/mp4' />
+    </video>
+    <div class="overconver-video"></div>
     <div class="left-bar ">
         <ul class="left-bar-menu clearfix">
             <li class="m-item m-item-0"></li>

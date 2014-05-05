@@ -1361,11 +1361,16 @@ body > .maincontent {
 }
 
 #yenching-video-con {
+    width: 950px;
+    height: 540px;
     float: left;
-    position: absolute;
+    position: fixed;
     left: 50%;
-    margin-left: -320px;
-    top: 130px;
+    margin-left: -475px;
+    top: 50%;
+    margin-top: -270px;
+    z-index: 10000;
+    display: none;
 }
 
 #yenching-video-con > .closebtn{
@@ -1675,4 +1680,25 @@ li h5.slide-l-t {
     width: 70%;
 }
 
+.overconver-video {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    z-index: 9999;
+    opacity: 0.5;
+    display: none;
+}
+
+
+.vjs-default-skin .vjs-big-play-button {
+    background-image: url(../misc/images/icon_play_video.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    width: 75px;
+    height: 80px;
+    margin-left: -37px;
+    top: 50%;
+    margin-top: -40px;
+}
 

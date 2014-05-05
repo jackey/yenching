@@ -1362,7 +1362,7 @@ body > .maincontent {
 
 #yenching-video-con {
     width: 950px;
-    height: 540px;
+    height: 534px;
     float: left;
     position: fixed;
     left: 50%;
@@ -1689,7 +1689,6 @@ li h5.slide-l-t {
     opacity: 0.5;
     display: none;
 }
-
 
 .vjs-default-skin .vjs-big-play-button {
     background-image: url(../misc/images/icon_play_video.png);

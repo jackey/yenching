@@ -9,6 +9,140 @@ if(typeof String.prototype.trim !== 'function') {
   }
 }
 
+;(function ($) {
+    // Namespace all events.
+    var eventNamespace = 'waitForImages';
+
+    // CSS properties which contain references to images.
+    $.waitForImages = {
+        hasImageProperties: ['backgroundImage', 'listStyleImage', 'borderImage', 'borderCornerImage', 'cursor']
+    };
+
+    // Custom selector to find `img` elements that have a valid `src` attribute and have not already loaded.
+    $.expr[':'].uncached = function (obj) {
+        // Ensure we are dealing with an `img` element with a valid `src` attribute.
+        if (!$(obj).is('img[src!=""]')) {
+            return false;
+        }
+
+        // Firefox's `complete` property will always be `true` even if the image has not been downloaded.
+        // Doing it this way works in Firefox.
+        var img = new Image();
+        img.src = obj.src;
+        return !img.complete;
+    };
+
+    $.fn.waitForImages = function (finishedCallback, eachCallback, waitForAll) {
+
+        var allImgsLength = 0;
+        var allImgsLoaded = 0;
+
+        // Handle options object.
+        if ($.isPlainObject(arguments[0])) {
+            waitForAll = arguments[0].waitForAll;
+            eachCallback = arguments[0].each;
+      // This must be last as arguments[0]
+      // is aliased with finishedCallback.
+            finishedCallback = arguments[0].finished;
+        }
+
+        // Handle missing callbacks.
+        finishedCallback = finishedCallback || $.noop;
+        eachCallback = eachCallback || $.noop;
+
+        // Convert waitForAll to Boolean
+        waitForAll = !! waitForAll;
+
+        // Ensure callbacks are functions.
+        if (!$.isFunction(finishedCallback) || !$.isFunction(eachCallback)) {
+            throw new TypeError('An invalid callback was supplied.');
+        }
+
+        return this.each(function () {
+            // Build a list of all imgs, dependent on what images will be considered.
+            var obj = $(this);
+            var allImgs = [];
+            // CSS properties which may contain an image.
+            var hasImgProperties = $.waitForImages.hasImageProperties || [];
+            // To match `url()` references.
+            // Spec: http://www.w3.org/TR/CSS2/syndata.html#value-def-uri
+            var matchUrl = /url\(\s*(['"]?)(.*?)\1\s*\)/g;
+
+            if (waitForAll) {
+
+                // Get all elements (including the original), as any one of them could have a background image.
+                obj.find('*').addBack().each(function () {
+                    var element = $(this);
+
+                    // If an `img` element, add it. But keep iterating in case it has a background image too.
+                    if (element.is('img:uncached')) {
+                        allImgs.push({
+                            src: element.attr('src'),
+                            element: element[0]
+                        });
+                    }
+
+                    $.each(hasImgProperties, function (i, property) {
+                        var propertyValue = element.css(property);
+                        var match;
+
+                        // If it doesn't contain this property, skip.
+                        if (!propertyValue) {
+                            return true;
+                        }
+
+                        // Get all url() of this element.
+                        while (match = matchUrl.exec(propertyValue)) {
+                            allImgs.push({
+                                src: match[2],
+                                element: element[0]
+                            });
+                        }
+                    });
+                });
+            } else {
+                // For images only, the task is simpler.
+                obj.find('img:uncached')
+                    .each(function () {
+                    allImgs.push({
+                        src: this.src,
+                        element: this
+                    });
+                });
+            }
+
+            allImgsLength = allImgs.length;
+            allImgsLoaded = 0;
+
+            // If no images found, don't bother.
+            if (allImgsLength === 0) {
+                finishedCallback.call(obj[0]);
+            }
+
+            $.each(allImgs, function (i, img) {
+
+                var image = new Image();
+
+                // Handle the image loading and error with the same callback.
+                $(image).on('load.' + eventNamespace + ' error.' + eventNamespace, function (event) {
+                    allImgsLoaded++;
+
+                    // If an error occurred with loading the image, set the third argument accordingly.
+                    eachCallback.call(img.element, allImgsLoaded, allImgsLength, event.type == 'load');
+
+                    if (allImgsLoaded == allImgsLength) {
+                        finishedCallback.call(obj[0]);
+                        return false;
+                    }
+
+                });
+
+                image.src = img.src;
+            });
+        });
+    };
+}(jQuery));
+
 // Generated by CoffeeScript 1.6.1
 (function() {
 
@@ -1962,67 +2096,6 @@ if(typeof String.prototype.trim !== 'function') {
 		// news detail panel --> next news
 		var detail_news_tp = $("#template-news-detail").html();
 		Mustache.parse(detail_news_tp);
-		$(".s5 .news-block").delegate(".pager-links .links .next", "click", function () {
-			console.log("CICKED NEXT NEWS BUTTON");
-			var container = $(".s5 .news-block");
-			var details_dom_old = $(".news-detail", container);
-      container.css("width", $(".news-block-list-con", container).width());
-			details_dom_old.addClass("old");
-			var news_id = details_dom_old.attr("data-newsid");
-			if (news_id) {
-				$.loadNextNews(news_id, function (news) {
-					if (!news) {
-						console.log("EMPTY NEWS ");
-						return;
-					}
-					news["slider"] = news["images"]["slider"];
-					news["thumbnail"] = news["images"]["thumbnail"];
-					var details_html = Mustache.render(detail_news_tp, news);
-
-					container.prepend(details_html);
-					var details_dom = $(".news-detail:not(.old)", container);
-					details_dom.attr("data-newsid", news["news_id"]);
-					details_dom.css({
-						"display": "none",
-						"z-index": 2
-					});
-					details_dom_old.css({
-						"z-index": 1
-					});
-					$(".img-full:eq(0)", details_dom).load(function () {
-						details_dom.css("display", "block");
-						var width = details_dom.width();
-						var height = details_dom.height();
-						details_dom.css({
-							width: width ,
-							height: height -5,
-							position: "absolute"
-						});
-						details_dom.parent().animate({
-							height: height
-						},speed, function () {
-							console.log("WIDTH: " + width + " HEIGHT: " + height);
-							details_dom.animate({
-								left: "0%"
-							}, speed, function () {
-								details_dom.css({
-									// width: 'auto'
-								});
-								details_dom_old.remove();
-							});
-						});
-					});
-
-					// append event ;
-					var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
-					var slider = slider_el.customslidesjs();
-					slider_el.data("slider", slider);
-
-				});
-			}
-		});
-
-		// news detail panel --> pre news
 		$(".s5 .news-block").delegate(".pager-links .links .pre", "click", function () {
 			console.log("CICKED NEXT NEWS BUTTON");
 			var container = $(".s5 .news-block");
@@ -2031,56 +2104,117 @@ if(typeof String.prototype.trim !== 'function') {
 			details_dom_old.addClass("old");
 			var news_id = details_dom_old.attr("data-newsid");
 			if (news_id) {
+				$.loadNextNews(news_id, function (news) {
+          if (!news || (Object.prototype.toString.apply( news) == "[object Array]" && !news.length)) {
+            console.log("EMPTY NEWS ");
+            return;
+          }
+					news["slider"] = news["images"]["slider"];
+					news["thumbnail"] = news["images"]["thumbnail"];
+					var details_html = Mustache.render(detail_news_tp, news);
+          $(details_html).waitForImages(function () {
+            container.prepend(details_html);
+            var details_dom = $(".news-detail:not(.old)", container);
+            details_dom.attr("data-newsid", news["news_id"]);
+            details_dom.css({
+              "display": "none",
+              "z-index": 2
+            });
+            details_dom_old.css({
+              "z-index": 1
+            });
+            $(".img-full:eq(0)", details_dom).load(function () {
+              details_dom.css("display", "block");
+              var width = details_dom.width();
+              var height = details_dom.height();
+              details_dom.css({
+                width: width ,
+                height: height -5,
+                position: "absolute"
+              });
+              details_dom.parent().animate({
+                height: height
+              },speed, function () {
+                console.log("WIDTH: " + width + " HEIGHT: " + height);
+                details_dom.animate({
+                  left: "0%"
+                }, speed, function () {
+                  details_dom.css({
+                    // width: 'auto'
+                  });
+                  details_dom_old.remove();
+                });
+              });
+            });
+
+            // append event ;
+            var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
+            var slider = slider_el.customslidesjs();
+            slider_el.data("slider", slider);
+          });
+				});
+			}
+		});
+
+		// news detail panel --> pre news
+		$(".s5 .news-block").delegate(".pager-links .links .next", "click", function () {
+			console.log("CICKED NEXT NEWS BUTTON");
+			var container = $(".s5 .news-block");
+			var details_dom_old = $(".news-detail", container);
+      container.css("width", $(".news-block-list-con", container).width());
+			details_dom_old.addClass("old");
+			var news_id = details_dom_old.attr("data-newsid");
+			if (news_id) {
 				$.loadPreNews(news_id, function (news) {
-					if (!news) {
+					if (!news || (Object.prototype.toString.apply( news) == "[object Array]" && !news.length)) {
 						console.log("EMPTY NEWS ");
 						return;
 					}
 					news["slider"] = news["images"]["slider"];
 					news["thumbnail"] = news["images"]["thumbnail"];
 					var details_html = Mustache.render(detail_news_tp, news);
+          $(details_html).waitForImages(function () {
+            container.prepend(details_html);
+            var details_dom = $(".news-detail:not(.old)", container);
+            details_dom.attr("data-newsid", news["news_id"]);
+            details_dom.css({
+              "display": "none",
+              "z-index": 2
+            });
+            details_dom_old.css({
+              "z-index": 1
+            });
+            $(".img-full:eq(0)", details_dom).load(function () {
+              details_dom.css("display", "block");
+              var width = details_dom.width();
+              var height = details_dom.height();
+              details_dom.css({
+                width: width ,
+                height: height -5,
+                position: "absolute",
+                right: "100%",
+                left: "auto"
+              });
+              details_dom.parent().animate({
+                height: height
+              },speed, function () {
+                console.log("WIDTH: " + width + " HEIGHT: " + height);
+                details_dom.animate({
+                  right: "0%"
+                }, speed, function () {
+                  details_dom.css({
+                    // width: 'auto'
+                  });
+                  details_dom_old.remove();
+                });
+              });
+            });
 
-					container.prepend(details_html);
-					var details_dom = $(".news-detail:not(.old)", container);
-					details_dom.attr("data-newsid", news["news_id"]);
-					details_dom.css({
-						"display": "none",
-						"z-index": 2
-					});
-					details_dom_old.css({
-						"z-index": 1
-					});
-					$(".img-full:eq(0)", details_dom).load(function () {
-						details_dom.css("display", "block");
-						var width = details_dom.width();
-						var height = details_dom.height();
-						details_dom.css({
-							width: width ,
-							height: height -5,
-							position: "absolute",
-							right: "100%",
-							left: "auto"
-						});
-						details_dom.parent().animate({
-							height: height
-						},speed, function () {
-							console.log("WIDTH: " + width + " HEIGHT: " + height);
-							details_dom.animate({
-								right: "0%"
-							}, speed, function () {
-								details_dom.css({
-									// width: 'auto'
-								});
-								details_dom_old.remove();
-							});
-						});
-					});
-
-					// append event ;
-					var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
-					var slider = slider_el.customslidesjs();
-					slider_el.data("slider", slider);
-
+            // append event ;
+            var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
+            var slider = slider_el.customslidesjs();
+            slider_el.data("slider", slider);
+          });
 				});
 			}
 		});
@@ -2100,51 +2234,61 @@ if(typeof String.prototype.trim !== 'function') {
 			var news_id = self.attr("data-newsid");
 			if (news_id) {
 				$.loadNews({news_id: news_id}, function (news) {
-					if (!news) {
-						return;
-					}
+          if (!news || (Object.prototype.toString.apply( news) == "[object Array]" && !news.length)) {
+            console.log("EMPTY NEWS ");
+            return;
+          }
 					news["slider"] = news["images"]["slider"];
 					news["thumbnail"] = news["images"]["thumbnail"];
 					var details_html = Mustache.render(detail_news_tp, news);
 					// remove before;
 					$(".news-detail", container).remove();
-					container.prepend(details_html);
-					var details_dom = $(".news-detail", container);
-					// details_dom.css({
-					// 	width: "1px",
-					// 	height: "1px"
-					// });
-					details_dom.attr("data-newsid", news["news_id"]);
-					details_dom.css("display", "none");
-					$(".img-full:eq(0)", details_dom).load(function () {
-						details_dom.css("display", "block");
-						var width = details_dom.width();
-						var height = details_dom.height();
-						details_dom.css({
-							width: width ,
-							height: height -4,
-							position: "absolute"
-						});
-						details_dom.parent().animate({
-							height: height
-						},speed, function () {
-							console.log("WIDTH: " + width + " HEIGHT: " + height);
-							details_dom.animate({
-								left: "0%"
-							}, speed, function () {
-								details_dom.css({
-									// width: 'auto'
-								});
-                //$(".news-block-list-con", container).hide();
-							});
-						});
-					});
+          $(details_html).waitForImages(function () {
+            // do something when all images loaded
+              container.prepend(details_html);
+              var details_dom = $(".news-detail", container);
+              // details_dom.css({
+              //  width: "1px",
+              //  height: "1px"
+              // });
+              details_dom.attr("data-newsid", news["news_id"]);
+              details_dom.css("display", "none");
+              $(".img-full:eq(0)", details_dom).load(function () {
+                details_dom.css("display", "block");
+                var width = details_dom.width();
+                var height = details_dom.height();
+                details_dom.css({
+                  width: width ,
+                  height: height -4,
+                  position: "absolute"
+                });
+                details_dom.parent().animate({
+                  height: height
+                },speed, function () {
+                  console.log("WIDTH: " + width + " HEIGHT: " + height);
+                  details_dom.animate({
+                    left: "0%"
+                  }, speed, function () {
+                    details_dom.css({
+                      // width: 'auto'
+                    });
+                    //$(".news-block-list-con", container).hide();
+                  });
+                });
+              });
 
-					// append event ;
-					var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
-					var slider = slider_el.customslidesjs();
-					slider_el.data("slider", slider);
+              // append event ;
+              var slider_el = $(".news-block .news-detail:not(.old) .news-detail-right .slides .slides-wrapper");
+              var slider = slider_el.customslidesjs();
+              slider_el.data("slider", slider);
+          }, function (loaded, count, success) {
+            if ($(details_html).hasClass("watiforimages-loaded")) {
+              return;
+            }
+            else {
 
+            }
+          });
 				});
 			}
 		});
@@ -2183,18 +2327,18 @@ if(typeof String.prototype.trim !== 'function') {
 		$("body > .maincontent > .s").waypoint(function (direction) {
 			var data_id = $(this).attr("data-section");
 			if (data_id == 2) {
-                            $(this).siblings().removeClass("scrolling");
-                            var self = $(this);
-                            $.resizeAcademyContentTop(function () {
-                                    self.addClass("scrolling");
-                                    $.waypoints('refresh');
-                            });
+          $(this).siblings().removeClass("scrolling");
+          var self = $(this);
+          $.resizeAcademyContentTop(function () {
+                  self.addClass("scrolling");
+                  $.waypoints('refresh');
+          });
 			}
 			else {
-                          $(this).addClass("scrolling").siblings().removeClass("scrolling");
+        $(this).addClass("scrolling").siblings().removeClass("scrolling");
 			}
                         
-                        $(this).trigger("scrolling");
+        $(this).trigger("scrolling");
 
 			$("li.m-item", leftmenucon).removeClass("current");
 			$('li[data-section="'+data_id+'"]', leftmenucon).addClass("current");

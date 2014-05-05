@@ -2353,7 +2353,6 @@ if(typeof String.prototype.trim !== 'function') {
     videoconver.click(function () {
       var videocon = $("#yenching-video-con");
       video.pause();
-
       videocon.css({
         top: 0,
         bottom: 0,
@@ -2383,6 +2382,7 @@ if(typeof String.prototype.trim !== 'function') {
         videocon.removeAttr("style");
         videocon.css("display", 'block');
         videoconver.removeAttr("style");
+        videoconver.css("display", "block");
       }
     });
     video.ready(function () {

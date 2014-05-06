@@ -95,6 +95,7 @@ html, body {
     z-index: 10000;
     background: url(../misc/images/menu_social.jpg) no-repeat;
     background-position: center center;
+    cursor: pointer;
 }
 
 .body .left-bar .left-bar-menu {
@@ -1699,3 +1700,20 @@ li h5.slide-l-t {
     margin-top: -40px;
 }
 
+.btn-pk{
+  width: 175px;
+  height: 43px;
+  background: url("../misc/images/pku_btn.png") no-repeat;
+  background-position: center center;
+  position: absolute;
+  left: 60%;
+  bottom: 80px;
+  cursor: pointer;
+  display: block;
+  text-indent: -10000000px;
+}
+
+.s3 .apply-btn a {
+  color: #fff;
+  text-decoration: none;
+}

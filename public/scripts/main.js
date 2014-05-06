@@ -2563,3 +2563,17 @@ if(typeof String.prototype.trim !== 'function') {
 
 
 
+function rotate(angle){
+    if (angle >= 0) {
+        var rotation = Math.PI * angle / 180;
+    } else {
+        var rotation = Math.PI * (360+angle) / 180;
+    }
+    var c = Math.cos(rotation),
+    s = Math.sin(rotation);
+    var filter = "progid:DXImageTransform.Microsoft.Matrix(M11="+c+",M12="+(-s)+",M21="+s+",M22="+c+",SizingMethod='auto expand')";
+    
+    console.log(filter);
+}
+
+rotate(270);

@@ -71,7 +71,7 @@ if(typeof String.prototype.trim !== 'function') {
             if (waitForAll) {
 
                 // Get all elements (including the original), as any one of them could have a background image.
-                obj.find('*').addBack().each(function () {
+                obj.find('*').each(function () {
                     var element = $(this);
 
                     // If an `img` element, add it. But keep iterating in case it has a background image too.
@@ -2615,6 +2615,36 @@ if(typeof String.prototype.trim !== 'function') {
           }
         }
       }
+    });
+  });
+})(jQuery);
+
+// Loading icon
+(function () {
+  $(function () {
+    var opacity = 10;
+    var ie_opacity = 100;
+    var total = $("img").size();
+    var step = 10 / total;
+    var ie_step = 100 / total;
+    $("body").waitForImages({
+      finished: function () {
+        $(".loading-icon").css("display", "none");
+        $(".overconver-loading").css("display", "none");
+      },
+      each: function () {
+        opacity = opacity - step;
+        if (opacity > 0) {
+          $(".loading-icon").css("opacity", opacity / 10);
+        }
+        ie_opacity = ie_opacity - ie_step;
+        if (ie_opacity > 1) {
+          $(".loading-icon").css({"-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"});
+          //console.log("progid:DXImageTransform.Microsoft.Alpha(Opacity="+parseInt(ie_opacity)+")");
+        }
+
+      },
+      waitForAll: true
     });
   });
 })(jQuery);

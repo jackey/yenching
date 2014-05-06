@@ -1685,6 +1685,8 @@ li h5.slide-l-t {
     width: 100%;
     background: #000;
     z-index: 9999;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
     opacity: 0.5;
     display: none;
 }
@@ -1716,4 +1718,28 @@ li h5.slide-l-t {
 .s3 .apply-btn a {
   color: #fff;
   text-decoration: none;
+}
+
+.loading-icon {
+  width: 66px;
+  height: 164px;
+  position: fixed;
+  top: 50%;
+  background: url(../misc/images/loading-1920-2.png) no-repeat;
+  background-position: center center;
+  z-index: 10000;
+  left: 50%;
+  margin-left: -33px;
+  margin-top: -182px;
+}
+
+.overconver-loading {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    z-index: 9999;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: 0.5;
 }

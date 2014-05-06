@@ -14,6 +14,12 @@
         slideBtnCon.css({
             "margin-left": margin_left
         });
+        if (window.isIE8) {
+          var margin_top = (slideBtnCon.height())/2;
+          slideBtnCon.css({
+            "margin-top": -margin_top
+          });
+        }
         slideBtnCon.css("display", "block");
         slideBtnCon.show();
         
@@ -24,15 +30,26 @@
         });
         backBtnCon.each(function () {
            var self = $(this);
+           
            var count_btns = $(".btn-item", self).size();
-           var margin_right = - (height / 2 - self.height() / 2);
-           self.css({
-               "margin-right": margin_right
-           });
-           var margin_top = -(self.height() / 2);
-           self.css({
-               "margin-top": margin_top
-           });
+           if (!window.isIE8) {
+            var margin_right = - (height / 2 - self.height() / 2);
+            self.css({
+                "margin-right": margin_right
+            });
+            var margin_top = -(self.height() / 2);
+            self.css({
+                "margin-top": margin_top
+            });
+           }
+           else {
+              var margin_top = (self.height())/2;
+              self.css({
+                "margin-top": (- margin_top),
+                "margin-right": - ( self.height() - count_btns * btn_width)
+              });
+           }
+           
            self.show();
         });
 
@@ -274,9 +291,13 @@
         var margin_left = -(height / 2  + slideBtnCon.height() / 2);
         var margin_top = - (slideBtnCon.height() / 2);
         slideBtnCon.css({
-            "margin-left": margin_left,
             "margin-top": margin_top
         });
+        if (!window.isIE8) {
+          slideBtnCon.css({
+              "margin-left": margin_left
+          });
+        }
         slideBtnCon.css("display", "block");
         slideBtnCon.show();
         

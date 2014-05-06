@@ -2353,7 +2353,7 @@ if(typeof String.prototype.trim !== 'function') {
                         $("#news").addClass("scrolling").siblings().removeClass("scrolling");
                         $("#news").trigger("scrolling");
 		    }
-		}, {offset: 20});
+		});
 
 		function goToByScroll(dataslide) {
                   if ($.moving_is_moving(htmlbody)) {
@@ -2363,6 +2363,7 @@ if(typeof String.prototype.trim !== 'function') {
                     $.moving_start(htmlbody);
                   }
                   if (dataslide.size()) {
+                    var scrollTop = $(document).scrollTop();
 		    htmlbody.animate({
 		        scrollTop: dataslide.offset().top
 		    }, 2000, 'easeInOutExpo', function () {
@@ -2591,7 +2592,6 @@ if(typeof String.prototype.trim !== 'function') {
         var index = activeItem.attr("data-section");
         if (index) {
           index = parseInt(index);
-          console.log(index);
           var pre_link = $(this).siblings("[data-section="+ (index - 1) +"]");
           if (pre_link.size()) {
             pre_link.trigger("click");

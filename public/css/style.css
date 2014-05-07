@@ -1422,6 +1422,7 @@ body > .maincontent {
     padding: 20px 10px 20px 32px;
     font-size:14px;
     width: 176px;
+    z-index: 2;
 }
 
 #home .home-nav .more-info {

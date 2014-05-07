@@ -52,7 +52,7 @@ html, body {
     top: 50%;
     background: #B41A3C;
     height: 350px;
-    width: 50px;
+    width: 2.7%;
     margin-top: -175px;
     z-index: 10000;
 }
@@ -99,14 +99,12 @@ html, body {
 }
 
 .body .left-bar .left-bar-menu {
-    position: absolute;
-    top: 50%;
-    margin-top: -175px;
+    
 }
 
 .body .left-bar .left-bar-menu .m-item {
     float: left;
-    width: 50px;
+    width: 100%;
     height: 50px;
     text-indent: 10000px;
 }

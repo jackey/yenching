@@ -2634,15 +2634,13 @@ if(typeof String.prototype.trim !== 'function') {
       },
       each: function () {
         opacity = opacity - step;
-        if (opacity > 0) {
+        if (opacity > 2) {
           $(".loading-icon").css("opacity", opacity / 10);
         }
         ie_opacity = ie_opacity - ie_step;
         if (ie_opacity > 1) {
           $(".loading-icon").css({"-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"});
-          //console.log("progid:DXImageTransform.Microsoft.Alpha(Opacity="+parseInt(ie_opacity)+")");
         }
-
       },
       waitForAll: true
     });

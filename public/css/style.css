@@ -1493,6 +1493,7 @@ body > .maincontent {
     display: table;
     top: 0px;
     left: 0px;
+    overflow: hidden;
 }
 
 #academy .home .slides .slide-item .l {
@@ -1548,6 +1549,7 @@ body > .maincontent {
     display: table;
     top: 0px;
     left: 0px;
+    overflow: hidden;
 }
 
 #program .home .slides .slide-item .l {

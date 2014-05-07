@@ -112,6 +112,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-0 {
     background: url(../misc/images/menu_site_up.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-0:hover {
@@ -121,6 +122,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-1 {
     background: url(../misc/images/menu_site_home.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-1:hover{
@@ -129,11 +131,14 @@ html, body {
 
 .body .left-bar .left-bar-menu .m-item-1.current{
     background-image: url(../misc/images/menu_site_home_on.png);
+    background-size: 100%;
+    background-position: center center;
 }
 
 .body .left-bar .left-bar-menu .m-item-2 {
     background: url(../misc/images/menu_site_academy.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-2:hover, .body .left-bar .left-bar-menu .m-item-2.current {
@@ -143,6 +148,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-3 {
     background: url(../misc/images/menu_site_program.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-3:hover, .body .left-bar .left-bar-menu .m-item-3.current {
@@ -152,6 +158,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-4 {
     background: url(../misc/images/menu_site_residential.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-4:hover, .body .left-bar .left-bar-menu .m-item-4.current {
@@ -161,6 +168,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-5 {
     background: url(../misc/images/menu_site_news.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-5:hover,.body .left-bar .left-bar-menu .m-item-5.current {
@@ -170,6 +178,7 @@ html, body {
 .body .left-bar .left-bar-menu .m-item-6 {
     background: url(../misc/images/menu_site_down.png) no-repeat;
     background-position: center center;
+    background-size: 100%;
 }
 
 .body .left-bar .left-bar-menu .m-item-6:hover {

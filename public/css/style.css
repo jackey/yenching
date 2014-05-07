@@ -87,7 +87,7 @@ html, body {
 .body .right-bar {
     position: fixed;
     right: 0px;
-    top: 35%;
+    top: 30%;
     background: #cccccc;
     z-index: 10000;
     background: url(../misc/images/menu_social.jpg) no-repeat;

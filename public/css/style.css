@@ -87,15 +87,14 @@ html, body {
 .body .right-bar {
     position: fixed;
     right: 0px;
-    top: 50%;
+    top: 35%;
     background: #cccccc;
-    margin-top: -8%;
     z-index: 10000;
     background: url(../misc/images/menu_social.jpg) no-repeat;
     background-position: center center;
     cursor: pointer;
     width: 3%;
-    height: 24%;
+    height: 30%;
     background-size: 100%;
 }
 

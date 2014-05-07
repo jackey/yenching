@@ -182,7 +182,12 @@ body {
   font-size: 0.8em;
 }
 
-
 .btn-pk {
   left: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .body .left-bar {
+    
+  }
 }

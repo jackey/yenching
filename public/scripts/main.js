@@ -1485,7 +1485,8 @@ if(typeof String.prototype.trim !== 'function') {
 			menu.append("<div class='arrow'></div>");
 			con.append(menu);
 			menu.show();
-			menu.css({top: index * 50 + 50 - menu.outerHeight() });
+                        var height = self.height() << 0;
+			menu.css({top: index * height + height - 10 - menu.outerHeight() });
 		}, function () {
 			var self = $(this);
 			var con = $(this).parent();
@@ -2646,3 +2647,18 @@ if(typeof String.prototype.trim !== 'function') {
     });
   });
 })(jQuery);
+
+(function () {
+  $(function () {
+    $("img").each(function () {
+      var img = $(this);
+      if (img.attr("img-src")) {
+        img.attr("src", img.attr("img-src"));
+      }
+    });
+    
+    $(".bg-style").each(function () {
+      $(this).attr("style", $(this).attr("bg-style"));
+    });
+  });
+})();

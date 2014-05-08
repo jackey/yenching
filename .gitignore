@@ -2,3 +2,5 @@
 *.mov
 public/misc/videos/video_960x540.mp4
 Zend
+data
+admin/sites/default/files/

@@ -165,7 +165,7 @@ if(typeof String.prototype.trim !== 'function') {
         active: false,
         effect: "fade",
         interval: 5000,
-        auto: false,
+        auto: true,
         swap: true,
         pauseOnHover: false,
         restartDelay: 2500
@@ -2621,32 +2621,32 @@ if(typeof String.prototype.trim !== 'function') {
 })(jQuery);
 
 // Loading icon
-(function () {
-  $(function () {
-    var opacity = 10;
-    var ie_opacity = 100;
-    var total = $("img").size();
-    var step = 10 / total;
-    var ie_step = 100 / total;
-    $("body").waitForImages({
-      finished: function () {
-        $(".loading-icon").css("display", "none");
-        $(".overconver-loading").css("display", "none");
-      },
-      each: function () {
-        opacity = opacity - step;
-        if (opacity > 2) {
-          $(".loading-icon").css("opacity", opacity / 10);
-        }
-        ie_opacity = ie_opacity - ie_step;
-        if (ie_opacity > 1) {
-          $(".loading-icon").css({"-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"});
-        }
-      },
-      waitForAll: true
-    });
-  });
-})(jQuery);
+//(function () {
+//  $(function () {
+//    var opacity = 10;
+//    var ie_opacity = 100;
+//    var total = $("img").size();
+//    var step = 10 / total;
+//    var ie_step = 100 / total;
+//    $("body").waitForImages({
+//      finished: function () {
+//        $(".loading-icon").css("display", "none");
+//        $(".overconver-loading").css("display", "none");
+//      },
+//      each: function () {
+//        opacity = opacity - step;
+//        if (opacity > 2) {
+//          $(".loading-icon").css("opacity", opacity / 10);
+//        }
+//        ie_opacity = ie_opacity - ie_step;
+//        if (ie_opacity > 1) {
+//          $(".loading-icon").css({"-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"});
+//        }
+//      },
+//      waitForAll: true
+//    });
+//  });
+//})(jQuery);
 
 (function () {
   $(function () {

@@ -2514,6 +2514,7 @@ if(typeof String.prototype.trim !== 'function') {
 
 (function ($) {
   $(function () {
+      
     var videoconver = $(".overconver-video");
     var video = videojs("yenching-video-con");
     videoconver.click(function () {
@@ -2578,6 +2579,8 @@ if(typeof String.prototype.trim !== 'function') {
         });
       });
     });
+    
+
 
   });
 })(jQuery);

@@ -117,9 +117,10 @@
             "height": image_height
         });
         left_image.css({
-            "position": "absolute",
+            "position": "relative",
         });
         
+        console.log("LEFT IMAGE AINIMATE START");
         left_image.animate({
             left: -image_width
         }, window.animate_speed, function () {
@@ -139,6 +140,7 @@
         }, window.animate_speed  );
         
         setTimeout(function () {
+            console.log("ANIMATE FINISHED");
             current_slide.addClass("hideme");
             
             // 删除临时样式
@@ -150,6 +152,7 @@
             $.moving_finished(oneslide);
         }, window.animate_speed * 1.1);
         
+        console.log("BEGIN REMOVE hideme class on next slide");
         next_slide.removeClass("hideme");
         
         self.addClass("hideme");
@@ -192,11 +195,12 @@
         });
         
         // 左边图片
-        var image = $(".l", current_slide);
-        var left_image = $(".l", next_slide);
+        var image = $(".l img", current_slide);
+        var left_image = $(".l img", next_slide);
         var image_width = image.width();
         var image_height = image.height();
         left_image.css({
+            "position": "relative",
             "width": image_width,
             "height": image_height,
             left: -image_width

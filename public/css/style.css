@@ -207,6 +207,7 @@ height: 14.28%;
 .s1 .home .header-tip {
     position: absolute;
     top: 9.6%;
+    width: 100%;
 }
 
 .s1 .home .header-tip .logo {
@@ -215,11 +216,16 @@ height: 14.28%;
     text-align: center;
 }
 
+.s1 .home .header-tip .logo > img {
+  width: 50%;
+}
+
 .s1 .home .header-tip .t {
     text-transform: uppercase;
     float: left;
     color: #595757;
     font-family: "Plantin";
+    font-size: 2.5em;
 }
 
 .s2 {
@@ -1424,9 +1430,9 @@ body > .maincontent {
     top: 6%;
     background-color: #B41a3c;
     color: #fff;
-    padding: 20px 10px 20px 32px;
-    font-size:14px;
-    width: 176px;
+    padding: 1% 0.5% 1% 1%;
+    font-size: 0.9em;
+    width: 11%;
     z-index: 2;
 }
 
@@ -1434,15 +1440,16 @@ body > .maincontent {
     line-height: 149%;
     font-family: "Helvetica Light";
     text-align: right;
-    margin-top: 20px;
+    margin-top: 10%;
 }
 
-#home .home-nav .more-info > p {
+#home .home-nav .more-info .p1,  #home .home-nav .more-info .p2{
     font-family: "黑体";
+    font-size: 0.9em;
 }
 
 #home .home-nav .more-info .p3 {
-    margin-top: 25px;
+    margin-top: 10%;
 }
 
 #home .home-nav .more-info .p3 .for-app{
@@ -1466,15 +1473,17 @@ body > .maincontent {
 }
 
 #home .home-nav .lan-bar li.item-1{
-    float: left;
-    border-right: 1px solid #fff;
-    padding-right: 33px;
+  float: left;
+  border-right: 1px solid #fff;
+  padding-right: 28px;
+  font-family: "黑体";
+  width: 17%;
 }
 
 #home .home-nav .lan-bar li.item-2{
-    float: right;
-    padding-left: 22px;
-    text-align: right;
+  float: right;
+  padding-right: 10px;
+  text-align: right;
 }
 
 #home .home-nav .lan-bar li a{

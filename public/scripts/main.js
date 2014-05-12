@@ -2366,7 +2366,7 @@ if(typeof String.prototype.trim !== 'function') {
                   if (dataslide.size()) {
                     var scrollTop = $(document).scrollTop();
 		    htmlbody.animate({
-		        scrollTop: dataslide.offset().top
+		        scrollTop: dataslide.offset().top + 2
 		    }, 2000, 'easeInOutExpo', function () {
                       $.moving_finished(htmlbody);
                     });

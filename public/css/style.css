@@ -233,7 +233,7 @@ height: 14.28%;
 }
 
 .s2 .header  {
-    padding-top: 12%;
+    padding-top: 160px;
     width: 60%;
     margin: 0 auto;
 }
@@ -242,7 +242,7 @@ height: 14.28%;
     height: 1px;
     width: 100%;
     background: #000;
-    margin: 2% 0px;
+    margin: 30px 0px 33px 0px;
 }
 
 .s2 .header h1 {
@@ -267,16 +267,18 @@ height: 14.28%;
 
 .s2 .home .c {
     color: #231815;
-    font-family: "Helvetica Light";
-    font-size: 1.5em;
+    font-family: "Helvetica";
+    font-size: 1.3em;
     text-align: justify;
+    font-weight: lighter;
+    line-height: 1.3em;
 }
 
 .s2 .home .video {
     text-transform: uppercase;
     text-align: center;
     color: #fff;
-    margin-top: 80px;
+    margin-top: 92px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -434,7 +436,7 @@ top: 2px;
 
 .s3 .content .header > h4 {
     color:#231815;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-family: "Helvetica";
     text-align: center;
     font-weight: bold;
@@ -445,14 +447,14 @@ top: 2px;
 }
 
 .s3 .header {
-    margin-bottom: 150px;
-    padding-top: 150px;
+    margin-bottom: 170px;
+    padding-top: 160px;
 }
 
 .s3 .header  > .line {
     background: #231815;
-    margin: 25px 0px;
-    margin-top: 25px;
+    background: #231815;
+    margin: 26px 0px;
 }
 
 .s3 .home .slides {
@@ -628,7 +630,7 @@ background: #6F6E7A;
 }
 
 .s4 .header .line {
-    margin: 20px 0px;
+    margin: 25px 0px 26px 0px;
     background: #000;
 }
 
@@ -639,7 +641,7 @@ background: #6F6E7A;
 
 .s4 .header h4{
     color:#000;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     font-family: "Helvetica";
     text-align: center;
     font-weight: bold;

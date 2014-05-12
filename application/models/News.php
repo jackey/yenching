@@ -95,27 +95,24 @@ class Application_Model_News
 
 	public function getAllNews() {
 		$news = array(
-			"2015 JUN" => array(
+			"2014 May" => array(
 				array(
-					"news_id" => 1,
-					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
-					"like"=> "15",
-					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+					"news_id" => 510,
+					"title" => "关于燕京学堂校舍建设的说明",
+					"date" => "5/5/2014",
+					"like"=> "300",
+          "body" => "",
 					"images" => array(
-						"thumbnail" => "/public/misc/images/pictures/news/n38.jpg",
+						"thumbnail" => "/public/misc/images/pictures/news/n510.jpg",
 						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+								"/public/misc/images/pictures/news/n510_slide1.jpg",
 							)
 						)
 					),
 				array(
 					"news_id" => 2,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n17.jpg",  
@@ -130,7 +127,7 @@ class Application_Model_News
 				array(
 					"news_id" => 3,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n18.jpg", 
@@ -144,7 +141,7 @@ class Application_Model_News
 				array(
 					"news_id" => 4,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n19.jpg", 
@@ -158,7 +155,7 @@ class Application_Model_News
 				array(
 					"news_id" => 5,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n20.jpg", 
@@ -172,7 +169,7 @@ class Application_Model_News
 				array(
 					"news_id" => 6,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n21.jpg", 
@@ -186,7 +183,7 @@ class Application_Model_News
 				array(
 					"news_id" => 7,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n23.jpg", 
@@ -198,11 +195,11 @@ class Application_Model_News
 							))
 					),
 				),
-			"2015 MAY" => array(
+			"2014 April" => array(
 				array(
 					"news_id" => 8,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n11.jpg", 
@@ -216,7 +213,7 @@ class Application_Model_News
 				array(
 					"news_id" => 9,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n12.jpg", 
@@ -230,7 +227,7 @@ class Application_Model_News
 				array(
 					"news_id" => 10,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n13.jpg", 
@@ -244,7 +241,7 @@ class Application_Model_News
 				array(
 					"news_id" => 11,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n14.jpg", 
@@ -258,7 +255,7 @@ class Application_Model_News
 				array(
 					"news_id" => 12,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n15.jpg", 
@@ -270,11 +267,11 @@ class Application_Model_News
 							))
 					),
 				),
-			"2015 aug" => array(
+			"2014 Mar" => array(
 				array(
 					"news_id" => 13,
 					"title" => "The Yenching Academy", 
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n1.jpg", 
@@ -288,7 +285,7 @@ class Application_Model_News
 				array(
 					"news_id" => 14,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n2.jpg", 
@@ -302,7 +299,7 @@ class Application_Model_News
 				array(
 					"news_id" => 15,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n3.jpg", 
@@ -316,7 +313,7 @@ class Application_Model_News
 				array(
 					"news_id" => 17,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n6.jpg", 
@@ -330,7 +327,7 @@ class Application_Model_News
 				array(
 					"news_id" => 21,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n8.jpg", 
@@ -344,7 +341,7 @@ class Application_Model_News
 				array(
 					"news_id" => 18,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n9.jpg", 
@@ -356,11 +353,11 @@ class Application_Model_News
 							))
 					),
 			),
-			"2015 MAR" => array(
+			"2014 Feb" => array(
 				array(
 					"news_id" => 18,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n9.jpg", 
@@ -374,7 +371,7 @@ class Application_Model_News
 				array(
 					"news_id" => 20,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n10.jpg", 
@@ -388,7 +385,7 @@ class Application_Model_News
 				array(
 					"news_id" => 28,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n39.jpg", 
@@ -403,7 +400,7 @@ class Application_Model_News
 				array(
 					"news_id" => 22,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n38.jpg", 
@@ -418,7 +415,7 @@ class Application_Model_News
 				array(
 					"news_id" => 23,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n37.jpg", 
@@ -433,7 +430,7 @@ class Application_Model_News
 				array(
 					"news_id" => 24,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n36.jpg", 
@@ -448,7 +445,7 @@ class Application_Model_News
 				array(
 					"news_id" => 25,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "2/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n35.jpg", 
@@ -464,7 +461,7 @@ class Application_Model_News
 				array(
 					"news_id" => 25,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "2/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n34.jpg", 
@@ -476,11 +473,11 @@ class Application_Model_News
 							))
 					),		
 				),
-				"2015 NOV" => array(
+				"2014 JAN" => array(
 				array(
 					"news_id" => 30,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n34.jpg", 
@@ -494,7 +491,7 @@ class Application_Model_News
 				array(
 					"news_id" => 31,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n30.jpg", 
@@ -508,7 +505,7 @@ class Application_Model_News
 				array(
 					"news_id" => 32,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n28.jpg", 
@@ -522,7 +519,7 @@ class Application_Model_News
 				array(
 					"news_id" => 33,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n23.jpg", 
@@ -536,7 +533,7 @@ class Application_Model_News
 				array(
 					"news_id" => 34,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n27.jpg", 
@@ -550,7 +547,7 @@ class Application_Model_News
 				array(
 					"news_id" => 35,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n25.jpg", 
@@ -564,7 +561,7 @@ class Application_Model_News
 				array(
 					"news_id" => 36,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n28.jpg", 
@@ -578,7 +575,7 @@ class Application_Model_News
 				array(
 					"news_id" => 37,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "5/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n10.jpg", 
@@ -592,7 +589,7 @@ class Application_Model_News
 				array(
 					"news_id" => 38,
 					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2015",
+					"date" => "1/5/2014",
 					"like"=> "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n11.jpg", 

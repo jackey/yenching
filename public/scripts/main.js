@@ -1574,16 +1574,16 @@ if(typeof String.prototype.trim !== 'function') {
 	   		self.removeClass("n-icon-on");
 		});
 
-		// $(".s3 .slide-item-0 .next-icon .next_txt .btn").click(function () {
-		// 	var self = $(this);
+		 $(".s3 .slide-item-0 .next-icon .next_txt .btn").click(function () {
+		 	var self = $(this);
 
-		// 	if (self.text().trim() == "NEXT") {
-		// 		$(".s3 .slide-item-0 .next-icon .n-icon").trigger("click");
-		// 	}
-		// 	else {
-		// 		$(".s3 .slide-item-0 .next-icon .p-icon").trigger("click");
-		// 	}
-		// });
+		 	if (self.text().trim() == "NEXT") {
+		 		$(".s3 .slide-item-0 .next-icon .n-icon").trigger("click");
+		 	}
+		 	else {
+		 		$(".s3 .slide-item-0 .next-icon .p-icon").trigger("click");
+		 	}
+		 });
 	});
 
 	$(function () {
@@ -1612,16 +1612,16 @@ if(typeof String.prototype.trim !== 'function') {
 	   		self.removeClass("n-icon-on");
 		});
 
-		// $(".s3 .slide-item-3 .next-icon .next_txt .btn").click(function () {
-		// 	var self = $(this);
-		// 	if (self.text().trim() == self.attr("data-nt")) {
-		// 		$(".s3 .slide-item-3 .next-icon .n-icon").trigger("click");
-		// 	}
-		// 	else {
-		// 		console.log("SLIDE TO PREVIOUS");
-		// 		$(".s3 .slide-item-3 .next-icon .p-icon").trigger("click");
-		// 	}
-		// });
+		 $(".s3 .slide-item-3 .next-icon .next_txt .btn").click(function () {
+		 	var self = $(this);
+		 	if (self.text().trim() == self.attr("data-nt")) {
+		 		$(".s3 .slide-item-3 .next-icon .n-icon").trigger("click");
+		 	}
+		 	else {
+		 		console.log("SLIDE TO PREVIOUS");
+		 		$(".s3 .slide-item-3 .next-icon .p-icon").trigger("click");
+		 	}
+		 });
 	});
 })(jQuery);
 
@@ -1759,7 +1759,7 @@ if(typeof String.prototype.trim !== 'function') {
 					var thumbnail = newslist[key][i]["images"]["thumbnail"];
 					var news_id = newslist[key][i]["news_id"];
 					index += i;
-					c += Mustache.render(news_item_tp, {id: id, thumbnail: thumbnail, news_id: news_id});
+					c += Mustache.render(news_item_tp, {id: id, thumbnail: thumbnail, news_id: news_id, title: newslist[key][i]["title"]});
 				}
 			}
 			return c;
@@ -2392,67 +2392,9 @@ if(typeof String.prototype.trim !== 'function') {
 
 (function ($) {
 	$.resizeAcademyContentTop = function(cb) {
-		// var container = $("#academy");
-		// $("#academy .content-top .header").animate({
-		// 	"padding-top": "10px",
-		// 	"padding-bottom": "38px"
-		// }, 800, function () {
-			
-		// });
-
-		// $("#academy .home .video").animate({
-		// 	"margin": 0,
-		// 	"height": 0
-		// }, 800, function () {
-		// 	$(this).hide();
-		// });
-
-		// $("#academy .header h1").animate({
-		// 	"font-size": "17px"
-		// });
-		// $("#academy  .home .c").animate({
-		// 	"font-size": "13px"
-		// }, 800);
-
-		// $("#academy .home .star").animate({
-		// 	"width": 0,
-		// 	"height": 0
-		// }, 800);
-
-
-		// setTimeout(function () {
-		// 	$("#academy .content-top .header").removeAttr("style");
-		// 	$("#academy .home .video").removeAttr("style");
-		// 	$("#academy .header h1").removeAttr("style");
-		// 	$("#academy  .home .c").removeAttr("style");
-		// 	$("#academy  .home .star").removeAttr("style");
-		// 	cb();
-		// }, 1000 * 1);
 	}
 
 	$.resizeProgramContentTop = function (cb) {
-		// var container = $("#program");
-		// $(".content-top .header", container).animate({
-		// 	"padding-top": "10px",
-		// 	"margin-bottom": "38px"
-		// }, 800, function () {
-			
-		// });
-
-		// $(".header h1", container).animate({
-		// 	"font-size": "17px"
-		// });
-		// $(".home .c", container).animate({
-		// 	"font-size": "13px"
-		// }, 800);
-
-
-		// setTimeout(function () {
-		// 		$(".content-top .header", container).removeAttr("style");
-		// 		$(".header h1", container).removeAttr("style");
-		// 		$(".home .c", container).removeAttr("style");
-		// cb();
-		// }, 1000 * 1);
 	}
 } )(jQuery);
 
@@ -2579,9 +2521,6 @@ if(typeof String.prototype.trim !== 'function') {
         });
       });
     });
-    
-
-
   });
 })(jQuery);
 
@@ -2623,34 +2562,7 @@ if(typeof String.prototype.trim !== 'function') {
   });
 })(jQuery);
 
-// Loading icon
-//(function () {
-//  $(function () {
-//    var opacity = 10;
-//    var ie_opacity = 100;
-//    var total = $("img").size();
-//    var step = 10 / total;
-//    var ie_step = 100 / total;
-//    $("body").waitForImages({
-//      finished: function () {
-//        $(".loading-icon").css("display", "none");
-//        $(".overconver-loading").css("display", "none");
-//      },
-//      each: function () {
-//        opacity = opacity - step;
-//        if (opacity > 2) {
-//          $(".loading-icon").css("opacity", opacity / 10);
-//        }
-//        ie_opacity = ie_opacity - ie_step;
-//        if (ie_opacity > 1) {
-//          $(".loading-icon").css({"-ms-filter": "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"});
-//        }
-//      },
-//      waitForAll: true
-//    });
-//  });
-//})(jQuery);
-
+// Lazy load
 (function () {
   $(function () {
     $("img").each(function () {
@@ -2665,3 +2577,23 @@ if(typeof String.prototype.trim !== 'function') {
     });
   });
 })();
+
+(function ($) {
+  $(function () {
+    $(".news-block-list-con .block-con").delegate(".news-item", "mouseenter mouseleave", function (event) {
+      var self = $(this);
+      if (event.type === 'mouseenter') {
+        if (self.attr("data-newsid")) {
+          self.addClass("hover");
+          self.append("<h3>"+self.attr("data-title")+"</h3>");
+        }
+      }
+      else {
+        if (self.attr("data-newsid")) {
+          self.removeClass("hover");
+          $("h3", self).remove();
+        }
+      }
+    });
+  });
+})(jQuery);

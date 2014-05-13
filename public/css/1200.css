@@ -26,7 +26,6 @@ body {
 }
 .s3 .home .c h4 {
   padding: 5px 0px;
-  font-family: "Helvetica light";
   color: #fff;
   font-size: 1em;
 }
@@ -135,11 +134,6 @@ body {
 
 .s3 .content .header > h4 {
     margin-bottom: 17px;
-}
-
-.s3 .header {
-    margin-bottom: 99px;
-    padding-top: 99px;
 }
 
 #program.s3 .slides .slide-item-0  .r-c-slide-2 p{

@@ -2,6 +2,9 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
   console = {};
   console.log = function() {};
 }
+else {
+    //console.log = function() {};
+}
 
 if(typeof String.prototype.trim !== 'function') {
   String.prototype.trim = function() {
@@ -2071,9 +2074,6 @@ if(typeof String.prototype.trim !== 'function') {
                         container.animate({
                                 height: parent_height
                         }, speed);
-      // setTimeout(function () {
-      //   $(".news-block-list-con", container).show();
-      // }, 500);
 		});
 
 		// news detail "X" clicked
@@ -2088,10 +2088,6 @@ if(typeof String.prototype.trim !== 'function') {
                         container.animate({
                                 height: parent_height
                         }, speed);
-
-      // setTimeout(function () {
-      //   $(".news-block-list-con", container).show();
-      // }, 500);
 		});
 
 		// news detail panel --> next news
@@ -2429,28 +2425,35 @@ if(typeof String.prototype.trim !== 'function') {
         }
         var news_list = $(".news-list li", self);
         var total = news_list.size();
-        (function render_img(index) {
-          if (index >= total) {
-            $.moving_finished(self);
-            return;
-          }
-          else {
-            var img = $("> img",$(news_list.get(index)));
-            if (img.size() && !img.attr("src")) {
-              var image = img.get(0);
-              image.src = img.attr("data-src");
-              image.onload = function () {
-                setTimeout(function () {
-                  render_img(index + 1);
-                }, 300);
-              };
-              img.hide().fadeIn("slow");
-            }
-            else {
-              render_img(index + 1);
-            }
-          }
-        })(0);
+        (function () {
+            var img = $("> img",news_list);
+            img.each(function () {
+                $(this).attr("src", $(this).attr("data-src"));
+            });
+        })();
+        // 按照顺序加载
+//        (function render_img(index) {
+//          if (index >= total) {
+//            $.moving_finished(self);
+//            return;
+//          }
+//          else {
+//            var img = $("> img",$(news_list.get(index)));
+//            if (img.size() && !img.attr("src")) {
+//              var image = img.get(0);
+//              image.src = img.attr("data-src");
+//              image.onload = function () {
+//                setTimeout(function () {
+//                  render_img(index + 1);
+//                }, 300);
+//              };
+//              img.hide().fadeIn("slow");
+//            }
+//            else {
+//              render_img(index + 1);
+//            }
+//          }
+//        })(0);
       });
     });
 })(jQuery);

@@ -2067,11 +2067,10 @@ if(typeof String.prototype.trim !== 'function') {
 			var parent_height = $(".news-block-list-con", container).height();
 			details_dom.animate({
 				left: "100%"
-			}, speed, function () {
-				container.animate({
-					height: parent_height
-				}, speed);
-			});
+			}, speed);
+                        container.animate({
+                                height: parent_height
+                        }, speed);
       // setTimeout(function () {
       //   $(".news-block-list-con", container).show();
       // }, 500);
@@ -2085,11 +2084,10 @@ if(typeof String.prototype.trim !== 'function') {
 			var parent_height = $(".news-block-list-con", container).height();
 			details_dom.animate({
 				left: "100%"
-			}, speed, function () {
-				container.animate({
-					height: parent_height
-				}, speed);
-			});
+			}, speed);
+                        container.animate({
+                                height: parent_height
+                        }, speed);
 
       // setTimeout(function () {
       //   $(".news-block-list-con", container).show();
@@ -2265,18 +2263,21 @@ if(typeof String.prototype.trim !== 'function') {
                   height: height -4,
                   position: "absolute"
                 });
+//                details_dom.parent().css({
+//                    height: height
+//                });
+                console.log("WIDTH: " + width + " HEIGHT: " + height);
                 details_dom.parent().animate({
                   height: height
-                },speed, function () {
-                  console.log("WIDTH: " + width + " HEIGHT: " + height);
-                  details_dom.animate({
-                    left: "0%"
-                  }, speed, function () {
-                    details_dom.css({
-                      // width: 'auto'
-                    });
-                    //$(".news-block-list-con", container).hide();
+                },speed);
+                
+                details_dom.animate({
+                  left: "0%"
+                }, speed, function () {
+                  details_dom.css({
+                    // width: 'auto'
                   });
+                  //$(".news-block-list-con", container).hide();
                 });
               });
 

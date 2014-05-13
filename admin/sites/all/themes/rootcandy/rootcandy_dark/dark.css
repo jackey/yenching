@@ -234,3 +234,8 @@ label.label-help {
 .vertical-tabs-list .summary {
   color: #898989;
 }
+
+img.imagefield-field_slide_images {
+    width: 50%;
+    height: 50%;
+}

@@ -313,7 +313,7 @@ function imagefield_filefield_data_info() {
  * @{
  * @see imagefield_theme().
  */
-function theme_imagefield_image($file, $alt = '', $title = '', $attributes = NULL, $getsize = TRUE) {
+function theme_imagefield_image($file, $alt = '', $title = '', $attributes = NULL, $getsize = FALSE) {
   $file = (array) $file;
 
   if ($getsize) {

@@ -582,15 +582,14 @@ background: #6F6E7A;
 }
 
 .next-icon .p-icon {
-    width: 15px;
+    width: 32px;
     height: 29px;
-    background: url(../misc/images/arrow-grey.png) no-repeat;
     background-position: center;
     float: left;
 }
 
 .next-icon .p-icon.p-icon-on {
-    background: url(../misc/images/right.png) no-repeat;
+    background: url(../misc/images/right-1.png) no-repeat;
 }
 
 .next-icon .next_txt {
@@ -602,9 +601,8 @@ background: #6F6E7A;
 }
 
 .next-icon .n-icon {
-    width: 15px;
+    width: 23px;
     height: 29px;
-    background: url(../misc/images/arrow-grey2.png) no-repeat;
     background-position: center;
     float: left;
     margin-left: 25px;
@@ -615,7 +613,7 @@ background: #6F6E7A;
 }
 
 .next-icon .n-icon.n-icon-on {
-    background: url(../misc/images/left.png) no-repeat;
+    background: url(../misc/images/left-2.png) no-repeat;
 }
 
 .s4 {
@@ -716,6 +714,10 @@ background: #6F6E7A;
     float: left;
     position: relative;
     width:10%
+}
+
+.s5 .block-con .news-item.hover {
+  background: #C1093D;
 }
 
 .s5 .news-block {
@@ -1163,7 +1165,7 @@ overflow: hidden;
     margin-top: -43px;
     width: 47px;
     height: 87px;
-    left:20.5%;
+    left: 21.5%;
 }
 
 .s5 .news-block .news-detail .news-detail-right > .wrapper .left .btn {
@@ -1183,7 +1185,7 @@ overflow: hidden;
     position: absolute;
     z-index: 2;
     top: 50%;
-    right: 6px;
+    right: 15px;
     width: 47px;
     height: 87px;
     margin-top: -43px;
@@ -1791,14 +1793,14 @@ li h5.slide-l-t {
 }
 
 .s5 .block-con .news-item.hover img{
-    opacity: 0.5;
-    -webkit-opacity: 0.5;  
-    -moz-opacity: 0.5;  
-    -khtml-opacity: 0.5;  
-    opacity: .5;  
-    filter:alpha(opacity=50);  
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 0.1;
+    -webkit-opacity: 0.1;  
+    -moz-opacity: 0.1;  
+    -khtml-opacity: 0.1;  
+    opacity: .1;  
+    filter:alpha(opacity=10);  
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
     cursor: pointer;
 }
 
@@ -1810,7 +1812,7 @@ li h5.slide-l-t {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: #000;
+  color: #fff;
   font-weight: bold;
   font-family: "Helvetica";
     cursor: pointer;

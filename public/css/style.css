@@ -1053,7 +1053,6 @@ overflow: hidden;
 .s5 .news-block .news-detail > .wrapper {
     margin: 0 2%;
     border-left: 1px solid #818181;
-    border-right: 1px solid #818181;
     position: relative;
 }
 
@@ -1201,10 +1200,10 @@ overflow: hidden;
     cursor: pointer;
     position: absolute;
     z-index: 2;
-    top: 0px;
-    right: 0px;
-    width: 60px;
-    height: 60px;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
     margin-left: -61px;
 }
 

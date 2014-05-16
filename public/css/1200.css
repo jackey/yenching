@@ -100,8 +100,7 @@ body {
 }
 
 .s2 .header h1  {
-  line-height: 40px;
-  height: 40px;
+  
 }
 
 .s2 .slides .r .hl2 {
@@ -127,13 +126,11 @@ body {
 }
 
 .s3 .header  > .line {
-    background: #231815;
-    margin: 17px 0px;
-    margin-top: 12px;
+  
 }
 
 .s3 .content .header > h4 {
-    margin-bottom: 17px;
+  
 }
 
 #program.s3 .slides .slide-item-0  .r-c-slide-2 p{

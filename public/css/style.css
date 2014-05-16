@@ -267,11 +267,11 @@ height: 14.28%;
 
 .s2 .home .c {
     color: #231815;
-    font-family: "Helvetica";
+    font-family: "Helvetica light";
     font-size: 1.3em;
     text-align: justify;
     font-weight: lighter;
-    line-height: 1.3em;
+    line-height: 1.5em;
 }
 
 .s2 .home .video {
@@ -308,7 +308,7 @@ height: 14.28%;
 
 .s2 .home .slides .r .c {
     color: #fff;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: justify;
 }
 
@@ -625,6 +625,7 @@ background: #6F6E7A;
     background-position: center;
     height: 72px;
     z-index: 11;
+    top: -1px;
 }
 
 .s4 .home .slideshow-item  img{
@@ -637,8 +638,8 @@ background: #6F6E7A;
 }
 
 .s4 .header {
-    margin-bottom: 100px;
-    padding-top: 100px;
+    margin-bottom: 155px;
+    padding-top: 155px;
 }
 
 .s4 .header h4{
@@ -796,7 +797,7 @@ overflow: hidden;
 .s2 .slides .r .hl2 {
     text-transform: uppercase;
     font-family: "Plantin Std";
-    font-size: 4.5em;
+    font-size: 3.5em;
     line-height: 90%;
 }
 
@@ -1455,19 +1456,17 @@ body > .maincontent {
     width: 100%;
 }
 
-
-
-
 #home .home-nav .more-info {
     line-height: 149%;
-    font-family: "Helvetica Light";
+    font-family: "Helvetica";
     text-align: right;
     margin-top: 10%;
     padding-right: 5%;
+    font-family: "Helvetica";
+    font-weight: lighter;
 }
 
 #home .home-nav .more-info .p1,  #home .home-nav .more-info .p2{
-    font-family: "黑体";
     font-size: 0.9em;
 }
 
@@ -1496,7 +1495,6 @@ body > .maincontent {
 #home .home-nav .lan-bar li.item-1{
   float: left;
   border-right: 1px solid #fff;
-  font-family: "黑体";
   width: 39%;
   text-align: center;
 }

@@ -642,7 +642,12 @@ background: #6F6E7A;
   width: 67%;
 }
 
-.s4 .header h4{
+.s4 .header {
+    padding-top: 155px;
+    margin-bottom: 155px;
+}
+
+ h4{
     color:#000;
     margin-bottom: 25px;
     font-family: "Helvetica";

@@ -43,7 +43,8 @@
 html, body {
     min-width: 1200px;
     height: 100%;
-    font-family: "Helvetica Light";
+    font-family: "Helvetica";
+    font-weight: lighter;
 }
 
 .body .left-bar {

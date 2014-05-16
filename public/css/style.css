@@ -268,7 +268,7 @@ height: 14.28%;
 
 .s2 .home .c {
     color: #231815;
-    font-family: "Helvetica light";
+    font-family: "Helvetica";
     font-size: 1.3em;
     text-align: justify;
     font-weight: lighter;
@@ -309,7 +309,7 @@ height: 14.28%;
 
 .s2 .home .slides .r .c {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: justify;
 }
 
@@ -514,6 +514,8 @@ background: #6F6E7A;
 .s3 .home .c  h4{
     padding: 10px 0px;
     font-family: "Helvetica";
+    text-align: left;
+    color: #fff;
 }
 
 .s3 .home .c  p {
@@ -643,8 +645,8 @@ background: #6F6E7A;
 }
 
 .s4 .header {
-    padding-top: 155px;
-    margin-bottom: 155px;
+    padding-top: 150px;
+    margin-bottom: 150px;
 }
 
  h4{

@@ -638,9 +638,8 @@ background: #6F6E7A;
     background: #000;
 }
 
-.s4 .header {
-  margin-bottom: 140px;
-  padding-top: 140px;
+.s2 .header {
+  width: 67%;
 }
 
 .s4 .header h4{

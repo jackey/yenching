@@ -96,6 +96,30 @@ class Application_Model_News
 	public function getAllNews() {
 		$news = array(
 			"2014 May" => array(
+                            array(
+                                "news_id" => 610,
+                                "title" => "Message From Ban ki-moon",
+                                "date" => "21/5/2014",
+                                "like" => "150",
+                                "images" => array(
+						"thumbnail" => "/public/misc/images/news2-s.jpg",
+                                                "slider" => array(
+								"/public/misc/images/news2-b.jpg",
+					)
+				),
+                            ),
+                            array(
+                                "news_id" => 611,
+                                "title" => "Message From Michelle Obama",
+                                "date" => "21/5/2014",
+                                "like" => "150",
+                                "images" => array(
+						"thumbnail" => "/public/misc/images/news3-s.jpg",
+                                                "slider" => array(
+								"/public/misc/images/news3-b.jpg",
+					)
+				),
+                            ),
 				array(
 					"news_id" => 510,
 					"title" => "关于燕京学堂校舍建设的说明",
@@ -103,9 +127,9 @@ class Application_Model_News
 					"like"=> "300",
           "body" => "",
 					"images" => array(
-						"thumbnail" => "/public/misc/images/pictures/news/n510.jpg",
+						"thumbnail" => "/public/misc/images/news1-s.jpg",
 						"slider" => array(
-								"/public/misc/images/pictures/news/n510_slide1.jpg",
+								"/public/misc/images/news1-b.jpg",
 							)
 						)
 					),
@@ -159,34 +183,6 @@ class Application_Model_News
 					"like" => "15",
 					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
 					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n20.jpg", 
-						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
-							))
-					),
-				array(
-					"news_id" => 6,
-					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2014",
-					"like" => "15",
-					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
-					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n21.jpg", 
-						"slider" => array(
-								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
-								"/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
-							))
-					),
-				array(
-					"news_id" => 7,
-					"title" => "The Yenching Academy 2",
-					"date" => "5/5/2014",
-					"like" => "15",
-					"body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
-					"images" => array("thumbnail" => "/public/misc/images/pictures/news/n23.jpg", 
 						"slider" => array(
 								"/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
 								"/public/misc/images/pictures/news/new-page-mainvisual2.jpg",

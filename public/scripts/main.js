@@ -167,7 +167,7 @@ if(typeof String.prototype.trim !== 'function') {
       play: {
         active: false,
         effect: "fade",
-        interval: 5000,
+        interval: 3000,
         auto: true,
         swap: true,
         pauseOnHover: false,

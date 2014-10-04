@@ -1,7 +1,7 @@
 <?php
 
 class Application_Model_News {
-
+  public static $api_host = "http://yenchingacademy.org";
   /**
    * 
    * @param type $num
@@ -10,7 +10,7 @@ class Application_Model_News {
    * @return int
    */
   public function getNewsListFromServer($num = 7, $page = 1, $type = FALSE) {
-    $host = "http://yenchingacademy.org/admin/index.php?q=api/news";
+    $host = self::$api_host."/admin/index.php?q=api/news";
     $client = new Zend_Http_Client($host);
     $client->setMethod(Zend_Http_Client::GET);
     $client->setParameterGet("num", $num)
@@ -71,7 +71,7 @@ class Application_Model_News {
   }
 
   public function getNextNewsFromServer($news_id, $type = FALSE) {
-    $host = "http://yenchingacademy.org/admin/index.php?q=api/news";
+    $host = self::$api_host."/admin/index.php?q=api/news";
     $client = new Zend_Http_Client($host);
     $client->setMethod(Zend_Http_Client::GET);
     $client->setParameterGet("news_id", $news_id)
@@ -89,7 +89,7 @@ class Application_Model_News {
   }
 
   public function getPreNewsFromServer($news_id, $type = FALSE) {
-    $host = "http://yenchingacademy.org/admin/index.php?q=api/news";
+    $host = self::$api_host."/admin/index.php?q=api/news";
     $client = new Zend_Http_Client($host);
     $client->setMethod(Zend_Http_Client::GET);
     $client->setParameterGet("news_id", $news_id)
@@ -106,7 +106,7 @@ class Application_Model_News {
   }
 
   public function getNewsFromServer($news_id) {
-    $host = "http://yenchingacademy.org/admin/index.php?q=api/news/" . $news_id;
+    $host = self::$api_host."/admin/index.php?q=api/news/" . $news_id;
     $client = new Zend_Http_Client($host);
     $client->setMethod(Zend_Http_Client::GET);
 
@@ -121,7 +121,7 @@ class Application_Model_News {
     if (!empty($categories)) {
       return $categories;
     }
-    $host = "http://yenchingacademy.org/admin/index.php?q=api/category/";
+    $host = self::$api_host."/admin/index.php?q=api/category/";
     $client = new Zend_Http_Client($host);
     $client->setMethod(Zend_Http_Client::GET);
 

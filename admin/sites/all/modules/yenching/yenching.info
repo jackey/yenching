@@ -1,0 +1,7 @@
+name = Yenching
+description = .
+dependencies[] = content
+package = Yenching
+core = 6.x
+php = 5.0
+

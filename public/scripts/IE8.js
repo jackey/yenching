@@ -1,0 +1,1 @@
+window.isIE8 = true;

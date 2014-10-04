@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Plantin Std';
+  src: url('PlantinStd.eot'); /* IE9 Compat Modes */
+  src: url('PlantinStd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('PlantinStd.woff') format('woff'), /* Modern Browsers */
+       url('PlantinStd.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('PlantinStd.svg#ee538eccdbb75fde87f5aec466e16dc8') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

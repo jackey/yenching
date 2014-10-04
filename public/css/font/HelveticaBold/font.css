@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Helvetica Bold';
+  src: url('Helvetica Bold .eot'); /* IE9 Compat Modes */
+  src: url('Helvetica Bold .eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Helvetica Bold .woff') format('woff'), /* Modern Browsers */
+       url('Helvetica Bold .ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Helvetica Bold .svg#d0677fe4d81fb2180b1e5f49fa979d84') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  500;
+}
+

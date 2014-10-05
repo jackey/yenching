@@ -150,7 +150,7 @@ function api_callback_load_news_category() {
   $taxonomy_terms = taxonomy_get_tree(1);
   $ret = array();
   foreach ($taxonomy_terms as $term) {
-    if (!empty($term->parent) && array_shift($term->parent) != 0) {
+    if (!empty($term->parents) && array_shift($term->parents) != 0) {
       
     }
     else {

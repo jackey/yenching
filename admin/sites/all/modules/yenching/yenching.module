@@ -147,7 +147,16 @@ function api_callback_load_news_category() {
 //  $options = content_allowed_values(content_fields("field_category", "news"));
 //  
 //  print json_encode($options);
-  $taxonomy_terms = taxonomy_get_tree("1");
-  print_r($taxonomy_terms);
+  $taxonomy_terms = taxonomy_get_tree(1);
+  $ret = array();
+  foreach ($taxonomy_terms as $term) {
+    if (!empty($term->parent) && array_shift($term->parent) != 0) {
+      
+    }
+    else {
+      $ret[] = $term->name;
+    }
+  }
+  print json_encode($ret);
   die();
 }

@@ -155,7 +155,7 @@ function api_callback_load_news_category() {
       
     }
     else {
-      $ret[$term->name] = $term->name;
+      $ret[$term->tid] = $term->name;
     }
   }
   print json_encode($ret);

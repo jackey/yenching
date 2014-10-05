@@ -144,9 +144,10 @@ function api_callback_for_load_news($news_id) {
 }
 
 function api_callback_load_news_category() {
-//  $options = content_allowed_values(content_fields("field_category", "news"));
-//  
-//  print json_encode($options);
+  $options = content_allowed_values(content_fields("field_category", "news"));
+  
+  print json_encode($options);
+  die();
   $taxonomy_terms = taxonomy_get_tree(1);
   $ret = array();
   foreach ($taxonomy_terms as $term) {

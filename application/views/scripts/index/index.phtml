@@ -453,31 +453,33 @@ In order to help select the approximately 35 percent of the student cohort who w
             <?php foreach ($this->categories as $key => $category) :?>
             <?php $newsList = $this->newsInCategory[$key];?>
             <?php $firstNews = array_shift($newsList);?>
-              <div class="blocks blocks-<?php echo $i + 1?> <?php if (count($this->categories) == $i + 1) echo "blocks-last"; ?> clearfix">
-                <div class="item-1" data-newsid="<?php echo $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
-                  <img src="<?php echo $firstNews["images"]["thumbnail"]?>" alt="" />
-                  <div class="con">
-                    <div class="category"><?php echo $category?> <span class="star"></span></div>
-                    <div class="p">
-                      <h5><?php echo $firstNews["title"]?></h5>
-                      <p class="c"><?php echo strip_tags($firstNews["body"])?> </p>
+              <div data-category="<?php echo $category ?>" class="blocks blocks-<?php echo $i + 1?> <?php if (count($this->categories) == $i + 1) echo "blocks-last"; ?> clearfix">
+                <div class="items-con"><div class="items clearfix" data-page="1">
+                  <div class="item-1" data-newsid="<?php echo $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
+                    <img src="<?php echo $firstNews["images"]["thumbnail"]?>" alt="" />
+                    <div class="con">
+                      <div class="category"><?php echo $category?> <span class="star"></span></div>
+                      <div class="p">
+                        <h5><?php echo $firstNews["title"]?></h5>
+                        <p class="c"><?php echo strip_tags($firstNews["body"])?> </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <?php foreach ($newsList as $index => $news): ?>
-                  <div data-newsid="<?php echo $news["news_id"]?>" data-title="<?php echo $news["title"]?>" class="item item-<?php echo $index + 2?>">
-                    <img src="<?php echo $news["images"]["thumbnail"]?>" alt="" />
-                  </div>
-                <?php endforeach;?>
+                  <?php foreach ($newsList as $index => $news): ?>
+                    <div data-newsid="<?php echo $news["news_id"]?>" data-title="<?php echo $news["title"]?>" class="item item-<?php echo $index + 2?>">
+                      <img src="<?php echo $news["images"]["thumbnail"]?>" alt="" />
+                    </div>
+                  <?php endforeach;?>
+                </div></div>
                 <?php $count = $this->countInCategory[$key];?>
                 <?php $items_of_page = 7;?>
                 <?php $page_num = $count % $items_of_page === 0 ? $count / $items_of_page : round($count /$items_of_page, 0, PHP_ROUND_HALF_EVEN)  + 1; ?>
-                <div class="block-pager">
+                <div class="block-pager" data-maxpage="<?php echo $page_num?>">
                   <ul class="pager clearfix">
                     <li class="pager-link pager-first"><< </li>
                     <li class="pager-link pager-prev"><</li>
                     <?php for ($page_index = 0; $page_index < $page_num; $page_index++): ?>
-                      <li class="pager-link pager-<?php $page_index ?>"> <?php echo $page_index + 1?> </li>
+                      <li class="pager-link pager-<?php echo $page_index + 1 ?> <?php echo $page_index == 0 ? "active": ""?>" data-index="<?php echo $page_index + 1?>"> <?php echo $page_index + 1?> </li>
                     <?php endfor;?>
                     <li class="pager-link pager-next">> </li>
                     <li class="pager-link pager-last">>></li>

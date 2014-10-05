@@ -1706,6 +1706,7 @@ if (typeof String.prototype.trim !== 'function') {
 
 (function($) {
   $.moving_start = function(con) {
+    console.log("MOVE START");
     con.addClass("moving");
   }
   $.moving_is_moving = function(con) {
@@ -2964,3 +2965,125 @@ if (typeof String.prototype.trim !== 'function') {
     });
   });
 })(jQuery);
+
+// 新闻分页功能
+(function ($) {
+  $(function () {
+
+    // 一次性加载剩余新闻
+    $(".s7 .block-content").waitForImages(function () {
+      $(".s7 .block-pager").each(function () {
+        var pagerLinks = $(".pager-link[data-index]", $(this));
+        var pagerIndex = 2;
+        if (pagerLinks.size() <= 1) return;
+        var self = $(pagerLinks.get(pagerIndex - 1)),
+          category = self.parents(".blocks").data("category"),
+          blocksEl = self.parents(".blocks");
+
+        if (self.size() < 1) {
+          return;
+        }
+
+        function loadNextPageNews(cb) {
+          if (pagerIndex -1 >= pagerLinks.size()) {
+            return;
+          }
+          cb || (cb = function () {});
+          $.ajax({
+            url: "api/nextpagenewsv2",
+            type: "GET",
+            data: {page: pagerIndex, category: category},
+            success: function (res) {
+              cb.apply(this, [res]);
+
+              loadNextPageNews(cb);
+            }
+          });
+        }
+
+        loadNextPageNews(function (res) {
+            var items = $("<div class='items clearfix'></div>").append($(res));
+            $(".items", blocksEl).css({
+              width: $(".items", blocksEl).width()
+            });
+            items.css({width: $(".items", blocksEl).width()})
+                    .attr("data-page", pagerIndex);
+
+            $(".items-con", blocksEl).css({
+              width: $(".items", blocksEl).width() * pagerIndex
+            }).append(items);
+
+            pagerIndex += 1;
+        });
+      });
+    });
+    
+    (function($) {
+      $.moving_start = function(con) {
+        con.addClass("moving-v");
+      };
+      $.moving_is_moving = function(con) {
+        return con.hasClass("moving-v");
+      };
+      $.moving_finished = function(con) {
+        con.removeClass("moving-v");
+      };
+    })(jQuery);
+    
+    $(".s7 .block-pager .pager-link").click(function () {
+      var self = $(this);
+      var pagerIndex = self.data("index"),
+        blocksEl = self.parents(".blocks");
+        
+      console.log("CLICKED: " + self.attr("class"));
+        
+      if(self.hasClass("active")) {
+        return;
+      }
+      
+      if (typeof pagerIndex == "undefined") {
+        if (self.hasClass("pager-first")) {
+          pagerIndex = 1;
+          self.siblings("[data-index='"+pagerIndex+"']").trigger("click");
+          return;
+        }
+        else if (self.hasClass("pager-last")) {
+          pagerIndex = self.parents(".block-pager").data("maxpage") * 1;
+          self.siblings("[data-index='"+pagerIndex+"']").trigger("click");
+          return;
+        }
+        else if (self.hasClass("pager-next")) {
+          pagerIndex = self.siblings(".active").data("index") + 1;
+          self.siblings("[data-index='"+pagerIndex+"']").trigger("click");
+          return;
+        }
+        else if (self.hasClass("pager-prev")) {
+          pagerIndex = self.siblings(".active").data("index") - 1;
+          self.siblings("[data-index='"+pagerIndex+"']").trigger("click");
+          return;
+        }
+      }
+      
+      if ($.moving_is_moving(blocksEl)) {
+        //return;
+      }
+      $.moving_start(blocksEl);
+      
+      var loadedItems = $(".items[data-page='"+pagerIndex+"']", blocksEl);
+      if (loadedItems.size()) {
+          var crtIndex = $(self).siblings(".active").data("index");
+          var rightMargin = (pagerIndex - crtIndex) * $(".items", blocksEl).width();
+          $(".items-con", blocksEl).animate({
+            right: 1*$(".items-con", blocksEl).css("right").replace(/(px|auto)/ig, "") + rightMargin
+          }, 1000, function () {
+            self.siblings().removeClass("active"); 
+            self.addClass("active");
+            $.moving_finished(blocksEl);
+          });
+      }
+      else {
+        $.moving_finished(blocksEl);
+      }
+    });
+  });
+})(window.jQuery);

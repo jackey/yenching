@@ -23,6 +23,27 @@ class ApiController extends Zend_Controller_Action
             $this->responseJSON($news_list);
         }
     }
+    
+    public function nextpagenewsv2Action() {
+      $nextPageNum = $this->getRequest()->getParam('page');
+      $category = $this->getRequest()->getParam("category");
+      
+      $mNews = new Application_Model_News();
+      $newsList = array();
+      $ret = $mNews->getNewsListFromServer(7, $nextPageNum, $category);
+      foreach ($ret["list"] as $news) {
+        foreach ($news as $n) {
+          $newsList[] = $n;
+        }
+      }
+      
+      $categories = Application_Model_News::getNewsCategory();
+      $this->view->categories = $categories;
+      $this->view->newsList = $newsList;
+      $this->view->category = $category;
+      header("Content-Type: text/html; charset=utf-8");
+      $this->_helper->layout()->disableLayout();
+    }
 
     public function nextnewsAction() {
         $news_id = $this->getRequest()->getParam("news_id", FALSE);

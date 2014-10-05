@@ -1,0 +1,17 @@
+<?php $newsList = $this->newsList;?>
+<?php $firstNews = array_shift($newsList);?>
+<div class="item-1" data-newsid="<?php echo $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
+  <img src="<?php echo $firstNews["images"]["thumbnail"]?>" alt="" />
+  <div class="con">
+    <div class="category"><?php echo $this->category?> <span class="star"></span></div>
+    <div class="p">
+      <h5><?php echo $firstNews["title"]?></h5>
+      <p class="c"><?php echo strip_tags($firstNews["body"])?> </p>
+    </div>
+  </div>
+</div>
+<?php foreach ($newsList as $index => $news): ?>
+  <div data-newsid="<?php echo $news["news_id"]?>" data-title="<?php echo $news["title"]?>" class="item item-<?php echo $index + 2?>">
+    <img src="<?php echo $news["images"]["thumbnail"]?>" alt="" />
+  </div>
+<?php endforeach;?>

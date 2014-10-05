@@ -40,7 +40,7 @@
   }
 </style>
   
-<div class="errcon">
+<!--<div class="errcon">
   <div class="err">
     <span>Error</span>
     <span>(404)</span>
@@ -54,7 +54,7 @@
 
 <div class="error-logo">
   <img src="/public/misc/images/404_logo.png" alt="" />
-</div>
+</div>-->
 
-<?php print_r($this->exception);?>
+<?php print ($this->exception->getMessage());?>
 

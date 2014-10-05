@@ -24,6 +24,7 @@ class Application_Model_News {
     $res = $client->request();
     $body = $res->getBody();
     $ret = json_decode($body, TRUE);
+    
     if (isset($ret["count"])) {
       $newsCount = $ret["count"];
       $news = $ret["list"];

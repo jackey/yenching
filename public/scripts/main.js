@@ -2408,7 +2408,8 @@ if (typeof String.prototype.trim !== 'function') {
     $(".s5 .news-block").delegate(".news-block li.news-item", "click", function() {
       $.hanlderNewsItemClicked.apply(this, arguments);
     });
-    $(".s7 .block-content").delegate(".blocks > div", "click", function () {
+    $(".s7 .block-content").delegate(".blocks .items > div[data-newsid]", "click", function () {
+      console.log($(this));
       $.hanlderNewsItemClicked.apply(this, arguments);
     });
   });

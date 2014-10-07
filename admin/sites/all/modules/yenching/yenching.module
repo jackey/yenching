@@ -144,20 +144,20 @@ function api_callback_for_load_news($news_id) {
 }
 
 function api_callback_load_news_category() {
-//  $options = content_allowed_values(content_fields("field_category", "news"));
-//  
-//  print json_encode($options);
-//  die();
-  $taxonomy_terms = taxonomy_get_tree(1);
-  $ret = array();
-  foreach ($taxonomy_terms as $term) {
-    if (!empty($term->parents) && array_shift($term->parents) != 0) {
-      
-    }
-    else {
-      $ret[$term->tid] = $term->name;
-    }
-  }
-  print json_encode($ret);
+  $options = content_allowed_values(content_fields("field_category", "news"));
+  
+  print json_encode($options);
   die();
+//  $taxonomy_terms = taxonomy_get_tree(1);
+//  $ret = array();
+//  foreach ($taxonomy_terms as $term) {
+//    if (!empty($term->parents) && array_shift($term->parents) != 0) {
+//      
+//    }
+//    else {
+//      $ret[$term->tid] = $term->name;
+//    }
+//  }
+//  print json_encode($ret);
+//  die();
 }

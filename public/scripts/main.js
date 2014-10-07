@@ -3019,24 +3019,11 @@ if (typeof String.prototype.trim !== 'function') {
       });
     });
     
-    (function($) {
-      $.moving_start = function(con) {
-        con.addClass("moving-v");
-      };
-      $.moving_is_moving = function(con) {
-        return con.hasClass("moving-v");
-      };
-      $.moving_finished = function(con) {
-        con.removeClass("moving-v");
-      };
-    })(jQuery);
     
     $(".s7 .block-pager .pager-link").click(function () {
       var self = $(this);
       var pagerIndex = self.data("index"),
         blocksEl = self.parents(".blocks");
-        
-      console.log("CLICKED: " + self.attr("class"));
         
       if(self.hasClass("active")) {
         return;
@@ -3066,7 +3053,7 @@ if (typeof String.prototype.trim !== 'function') {
       }
       
       if ($.moving_is_moving(blocksEl)) {
-        //return;
+        return;
       }
       $.moving_start(blocksEl);
       

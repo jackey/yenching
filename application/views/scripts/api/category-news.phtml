@@ -1,0 +1,47 @@
+<?php $category = $this->category;?>
+<?php $key = $this->key;?>
+<?php $cid = $this->cid;?>
+<?php $totalCategory = $this->totalCategory;?>
+<?php $newsList = $category['content'];?>
+<?php $firstNews = array_shift($newsList);?>
+<div class='wrapper' data-name='all'><div class="items-con"><div class="items clearfix" data-page="1">
+  <div class="item-1" data-newsid="<?php echo $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
+    <img src="<?php echo $firstNews["images"]["thumbnail"]?>" alt="" />
+    <div class="con">
+      <div class="category"><?php echo $category['name']?> <span class="star"></span></div>
+      <div class="p">
+        <h5><?php echo $firstNews["title"]?></h5>
+        <p class="c"><?php echo strip_tags($firstNews["body"])?> </p>
+      </div>
+    </div>
+  </div>
+  <?php foreach ($newsList as $index => $news): ?>
+    <div data-newsid="<?php echo $news["news_id"]?>" data-title="<?php echo $news["title"]?>" class="item item-<?php echo $index + 2?>">
+      <img src="<?php echo $news["images"]["thumbnail"]?>" alt="" />
+    </div>
+  <?php endforeach;?>
+</div></div>
+<?php $count = $category['total'];?>
+<?php $items_of_page = 7;?>
+<?php $page_num = $count % $items_of_page === 0 ? $count / $items_of_page : round($count /$items_of_page, 0, PHP_ROUND_HALF_EVEN)  + 1;?>
+<?php if(!$page_num) $page_num = 1;?>
+<div class="block-pager" data-maxpage="<?php echo $page_num?>">
+  <?php if (!empty($totalCategory['children'])) : ?>
+    <ul class='category-pager clearfix'>
+        <li class="pager-link pager-first <?php if (empty($cid)) echo 'active'?>" data-cid='<?php echo $key?>'>All</li>
+        <?php foreach ($totalCategory['children'] as $ii => $child_term): ?>
+        <li class="pager-link pager-<?php echo $ii?> <?php if ($cid == $ii) echo 'active'; ?>" data-cid='<?php echo $ii?>'><?php echo $child_term['name']?></li>
+        <?php endforeach;?>
+    </ul>
+  <?php endif;?>
+  <ul class="pager clearfix">
+    <li class="pager-link pager-first"><< </li>
+    <li class="pager-link pager-prev"><</li>
+    <?php for ($page_index = 0; $page_index < $page_num; $page_index++): ?>
+      <li class="pager-link pager-<?php echo $page_index + 1 ?> <?php echo $page_index == 0 ? "active": ""?>" data-index="<?php echo $page_index + 1?>"> <?php echo $page_index + 1?> </li>
+    <?php endfor;?>
+    <li class="pager-link pager-next">> </li>
+    <li class="pager-link pager-last">>></li>
+  </ul>
+</div>
+</div>

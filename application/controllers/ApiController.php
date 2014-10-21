@@ -114,5 +114,38 @@ class ApiController extends Zend_Controller_Action
         $this->_helper->json($data);
     }
 
+    public function categorynewsAction() {
+        $cid = $this->getRequest()->getParam('cid');
+        $mNews = new Application_Model_News();
+        $categories = $mNews->getNewsCategory();
+        $totalCategory = null;
+        $matchedCategory = null;
+        $matchedcid = null;
+        foreach ($categories as $key => $category) {
+            if ($key == $cid){
+                $matchedCategory = $category;
+                $totalCategory = $category;
+                $matchedcid = $key;
+                break;
+            }
+            if (!empty($category['children'])) {
+                foreach ($category['children'] as $kkey => $child_term) {
+                    if ($kkey == $cid) {
+                        $matchedCategory = $child_term;
+                        $totalCategory = $category;
+                        $matchedcid = $key;
+                        break;
+                    }
+                }
+            }
+        }
+        $this->view->totalCategory = $totalCategory;
+        $this->view->key = $matchedcid;
+        $this->view->cid = $cid;
+        $this->view->category = $matchedCategory;
+        header("Content-Type: text/html; charset=utf-8");
+        $this->_helper->layout()->disableLayout();
+    }
+
 }
 

@@ -120,7 +120,8 @@ function wrapper_content_for_api($nids) {
     $is_array = false;
   }
   $ret_news = array();
-  while ($nid = array_shift($nids)) {
+  for ($i = 0; $i < count($nids); $i++) {
+    $nid = $nids[$i];
     $item = node_load($nid);
     
     $slide_images = array();
@@ -187,11 +188,13 @@ function load_all_content_in_category($tid, $start = 0, $pos = ITEMS_PER_PAGE) {
   }
 
   $total = count($nids);
+
   $nids = array_splice($nids, $start, $pos);
   
   $ret_news = wrapper_content_for_api($nids);
   
-  return array($ret_news, $total);
+  $ret = array($ret_news, $total);
+  return $ret;
 }
 
 function api_callback_load_news_category($page = 1) {
@@ -216,8 +219,8 @@ function api_callback_load_news_category($page = 1) {
     $children = taxonomy_get_children($term->tid);
     $ret[$term->tid]['children'] = array();
     foreach ($children as $c_term) {
-      list($content, $total) = load_all_content_in_category($c_term->tid, $start, $end);
-      $ret[$term->tid]['children'][$c_term->tid] = array('name' => $c_term->name, 'content' => $content, 'total' => $total);
+      list($ccontent, $ttoal) = load_all_content_in_category($c_term->tid, $start, $end);
+      $ret[$term->tid]['children'][$c_term->tid] = array('name' => $c_term->name, 'content' => $ccontent, 'total' => $ttoal);
     }
   }
   

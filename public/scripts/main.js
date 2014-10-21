@@ -3019,7 +3019,7 @@ if (typeof String.prototype.trim !== 'function') {
     });
     
     
-    $(".s7 .block-pager .pager .pager-link").click(function () {
+    $(".s7 .block-pager .pager .pager-link").live('click',function () {
       var self = $(this);
       var pagerIndex = self.data("index"),
         blocksEl = self.parents(".blocks");
@@ -3074,3 +3074,41 @@ if (typeof String.prototype.trim !== 'function') {
     });
   });
 })(window.jQuery);
+
+
+(function ($) {
+  $(function () {
+    $('.category-pager li').live("click", function () {
+      var parent = $(this).parent();
+      if ($.moving_is_moving(parent)) {
+        return;
+      }
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+      $.moving_start(parent);
+      var cid = $(this).data('cid');
+      var wrapper = $(this).parents('.wrapper[data-name]');
+      $.ajax({
+        url: '/api/categoryNews',
+        data: {cid: cid},
+        success: function (data) {
+          var html = $(data);
+          $.moving_finished(parent);
+          wrapper.parent().html(html);
+        }
+      });
+    });
+  });
+})(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+

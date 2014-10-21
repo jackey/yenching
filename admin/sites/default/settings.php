@@ -88,7 +88,8 @@
  *   $db_url = 'mysqli://username:password@localhost/databasename';
  *   $db_url = 'pgsql://username:password@localhost/databasename';
  */
-$db_url = 'mysqli://yenching_db_user:db_201#_yench!ng@50.62.209.122/yenching_db';
+//$db_url = 'mysqli://yenching_db_user:db_201#_yench!ng@50.62.209.122/yenching_db';
+$db_url = 'mysqli://root:admin@localhost/yenching_db';
 $db_prefix = '';
 
 /**

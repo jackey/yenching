@@ -30,16 +30,25 @@ class ApiController extends Zend_Controller_Action
       
       $mNews = new Application_Model_News();
       $newsList = array();
-      $ret = $mNews->getNewsListFromServer(7, $nextPageNum, $category);
-      foreach ($ret["list"] as $news) {
-        foreach ($news as $n) {
-          $newsList[] = $n;
-        }
-      }
+      $newsList = $mNews->getNewsListFromServer(7, $nextPageNum, $category);
       
       $categories = Application_Model_News::getNewsCategory();
+      foreach ($categories as $key => $term ) {
+        if ($key == $category) {
+            $category = $term['name'];
+            break;
+        }
+
+        if (!empty($term['children'])) {
+            foreach($term['children'] as $kk => $child_term) {
+                if ($kk == $category) {
+                    $category = $child_term['name'];
+                }
+            }
+        }
+      }
       $this->view->categories = $categories;
-      $this->view->newsList = $newsList;
+      $this->view->newsList = $newsList['content'];
       $this->view->category = $category;
       header("Content-Type: text/html; charset=utf-8");
       $this->_helper->layout()->disableLayout();

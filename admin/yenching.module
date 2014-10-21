@@ -1,0 +1,163 @@
+<?php
+
+function yenching_menu() {
+    $menus = array(
+        "api/news" => array(
+            "page callback" => "api_callback_for_news",
+            "access callback" => TRUE
+        ),
+        "api/news/%" => array(
+            "page callback" => "api_callback_for_load_news",
+            "access callback" => TRUE
+        ),
+        "api/category" => array(
+            "page callback" => "api_callback_load_news_category",
+            "access callback" => TRUE,
+        ),
+    );
+    
+    return $menus;
+}
+
+function api_callback_for_news() {
+    $params = $_GET;
+    $page = $params["page"] ? $params["page"] : 1;
+    $num = $params["num"] ? $params["num"] : 10;
+    $news_id = $params["news_id"] ? $params["news_id"] : -1;
+    $type = $params["type"] ? $params["type"]: FALSE;
+    $offset = $num * ($page - 1);
+    if ($news_id != -1) {
+        $pos_next = $params["next"] ? $params["next"] : 0;
+        $news_node = node_load($news_id);
+        $date = $news_node->field_publish_date[0]["value"];
+        
+        // Previous news
+        if ($pos_next == 0) {
+            $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid WHERE type='news' AND node.nid < $news_id ";
+        }
+        // Next news
+        else {
+            $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid  WHERE type='news' AND node.status = 1 AND node.nid > $news_id ";
+        }
+        
+        if ($type) {
+          $sql .= " AND field_category_value='{$type}'";
+        }
+        
+        $sql .= " ORDER BY field_publish_date_value DESC LIMIT 0,1";
+        
+        $result = db_query($sql, "news");
+    }
+    else {
+        $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid WHERE type='news' AND node.status = 1 ";
+        if ($type) {
+          $sql .= " AND  field_category_value='{$type}'";
+        }
+        
+        // Total SQL:
+        $total_sql = "SELECT COUNT(*) as count". str_replace("SELECT *", "", $sql);
+        
+        $total_result = db_query($total_sql);
+        $total_count = db_fetch_object($total_result)->count;
+        
+        $sql .= "  ORDER BY field_publish_date_value  DESC LIMIT $offset, $num";
+        $result = db_query($sql, "news");
+    }
+    
+    $news = array();
+    while ($row = db_fetch_object($result)) {
+        $news[] = node_load($row->nid);
+    }
+    $ret_news = array();
+    foreach ($news as $item) {
+        $slides = array();
+        $slide_images = array();
+        foreach ($item->field_slide_images as $slide_image) {
+            $slide_images[] = file_create_url($slide_image["filepath"]);
+        }
+        $tmp_item = array(
+            "created" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
+            "news_id" => $item->nid,
+            "title" => $item->title,
+            "body" => $item->body,
+            "like" => $item->field_likes[0]["value"],
+            "date" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
+            "images" => array(
+                "thumbnail" => file_create_url($item->field_thumbnail[0]["filepath"]),
+                "slider" => $slide_images
+            ),
+        );
+        $ret_news[] = $tmp_item;
+    }
+    
+    // group news by created
+    $group_news = array();
+    foreach ($ret_news as $ret_item) {
+        $created = date("Y M", strtotime($ret_item["date"]));
+        $group_news[$created][] = $ret_item;
+    }
+    
+    if (isset($total_count)) {
+      $ret = array(
+          "list" => $group_news,
+          "count" => $total_count
+      );
+    }
+    else {
+      $ret = $group_news;
+    }
+    
+    if ($type) {
+      print json_encode($ret);
+    }
+    else {
+      print json_encode($group_news);
+    }
+    
+    die();
+}
+
+function api_callback_for_load_news($news_id) {
+    $nid = arg(2);
+    $item = node_load($nid);
+    
+    $slide_images = array();
+    foreach ($item->field_slide_images as $slide_image) {
+        $slide_images[] = file_create_url($slide_image["filepath"]);
+    }
+    
+    $tmp_item = array(
+        "created" => date("Y-m-d", $item->created),
+        "news_id" => $item->nid,
+        "title" => $item->title,
+        "body" => $item->body,
+        "like" => $item->field_likes[0]["value"],
+        "date" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
+        "images" => array(
+            "thumbnail" => file_create_url($item->field_thumbnail[0]["filepath"]),
+            "slider" => $slide_images
+        ),
+    );
+    
+    print json_encode($tmp_item);
+    die();
+}
+
+function api_callback_load_news_category() {
+  $options = content_allowed_values(content_fields("field_category", "news"));
+  
+  print json_encode($options);
+  die();
+//  $taxonomy_terms = taxonomy_get_tree(1);
+//  $ret = array();
+//  foreach ($taxonomy_terms as $term) {
+//    if (!empty($term->parents) && array_shift($term->parents) != 0) {
+//      
+//    }
+//    else {
+//      $ret[$term->tid] = $term->name;
+//    }
+//  }
+//  print json_encode($ret);
+//  die();
+}

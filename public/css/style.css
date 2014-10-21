@@ -2425,6 +2425,15 @@ margin: 5% auto;
 .s7 .news-block .items-con .items {
   float: left;
   position: relative;
+  width: 100%;
+}
+
+.category-pager {
+    text-transform: capitalize;
+}
+
+.category-pager li.active {
+    text-decoration: underline;
 }
 
 

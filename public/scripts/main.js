@@ -2970,7 +2970,6 @@ if (typeof String.prototype.trim !== 'function') {
 // 新闻分页功能
 (function ($) {
   $(function () {
-
     // 一次性加载剩余新闻
     $(".s7 .block-content").waitForImages(function () {
       $(".s7 .block-pager").each(function () {
@@ -2978,7 +2977,7 @@ if (typeof String.prototype.trim !== 'function') {
         var pagerIndex = 2;
         if (pagerLinks.size() <= 1) return;
         var self = $(pagerLinks.get(pagerIndex - 1)),
-          category = self.parents(".blocks").data("category"),
+          category = self.parents(".blocks").data("cid"),
           blocksEl = self.parents(".blocks");
 
         if (self.size() < 1) {
@@ -3020,7 +3019,7 @@ if (typeof String.prototype.trim !== 'function') {
     });
     
     
-    $(".s7 .block-pager .pager-link").click(function () {
+    $(".s7 .block-pager .pager .pager-link").click(function () {
       var self = $(this);
       var pagerIndex = self.data("index"),
         blocksEl = self.parents(".blocks");

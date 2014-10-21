@@ -1,5 +1,7 @@
 <?php
 
+define("ITEMS_PER_PAGE", 7);
+
 function yenching_menu() {
     $menus = array(
         "api/news" => array(
@@ -22,97 +24,65 @@ function yenching_menu() {
 function api_callback_for_news() {
     $params = $_GET;
     $page = $params["page"] ? $params["page"] : 1;
-    $num = $params["num"] ? $params["num"] : 10;
+    $num = $params["num"] ? $params["num"] : ITEMS_PER_PAGE;
     $news_id = $params["news_id"] ? $params["news_id"] : -1;
     $type = $params["type"] ? $params["type"]: FALSE;
-    $offset = $num * ($page - 1);
     if ($news_id != -1) {
         $pos_next = $params["next"] ? $params["next"] : 0;
         $news_node = node_load($news_id);
+        $tid = array_shift(array_keys($news_node->taxonomy));
+        $cond_tid = 0;
+        if ($tid) {
+          $parent = array_shift(array_keys(taxonomy_get_parents($tid)));
+          if ($parent) {
+            $children = taxonomy_get_children($parent);
+            $cond_tid = array_keys($children);
+          }
+          else {
+            $children = taxonomy_get_children($tid);
+            $cond_tid = array_keys($children);
+          }
+        }
         $date = $news_node->field_publish_date[0]["value"];
         
         // Previous news
         if ($pos_next == 0) {
-            $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid WHERE type='news' AND node.nid < $news_id ";
+            $sql = "SELECT node.* FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid LEFT JOIN term_node tn on tn.nid=node.nid WHERE type='news' AND node.nid < $news_id ";
         }
         // Next news
         else {
-            $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid  WHERE type='news' AND node.status = 1 AND node.nid > $news_id ";
+            $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid  LEFT JOIN term_node tn on tn.nid=node.nid WHERE type='news' AND node.status = 1 AND node.nid > $news_id ";
         }
-        
-        if ($type) {
-          $sql .= " AND field_category_value='{$type}'";
+
+        if ($cond_tid) {
+          $placeholder = implode(', ', array_fill(0, count($cond_tid), '%d'));
+          $sql .= ' AND tid in ('.$placeholder.')';
         }
         
         $sql .= " ORDER BY field_publish_date_value DESC LIMIT 0,1";
         
-        $result = db_query($sql, "news");
+        $result = db_query($sql, "news", $cond_tid);
+
     }
     else {
-        $sql = "SELECT * FROM node LEFT JOIN content_type_news as contentnews ON contentnews.nid=node.nid WHERE type='news' AND node.status = 1 ";
-        if ($type) {
-          $sql .= " AND  field_category_value='{$type}'";
-        }
-        
-        // Total SQL:
-        $total_sql = "SELECT COUNT(*) as count". str_replace("SELECT *", "", $sql);
-        
-        $total_result = db_query($total_sql);
-        $total_count = db_fetch_object($total_result)->count;
-        
-        $sql .= "  ORDER BY field_publish_date_value  DESC LIMIT $offset, $num";
-        $result = db_query($sql, "news");
+        $start = $num * ($page - 1);
+        $end = $num * ($page);
+        list($content, $total) = load_all_content_in_category($type, $start, $end);
     }
+
     
-    $news = array();
-    while ($row = db_fetch_object($result)) {
-        $news[] = node_load($row->nid);
-    }
-    $ret_news = array();
-    foreach ($news as $item) {
-        $slides = array();
-        $slide_images = array();
-        foreach ($item->field_slide_images as $slide_image) {
-            $slide_images[] = file_create_url($slide_image["filepath"]);
-        }
-        $tmp_item = array(
-            "created" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
-            "news_id" => $item->nid,
-            "title" => $item->title,
-            "body" => $item->body,
-            "like" => $item->field_likes[0]["value"],
-            "date" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
-            "images" => array(
-                "thumbnail" => file_create_url($item->field_thumbnail[0]["filepath"]),
-                "slider" => $slide_images
-            ),
-        );
-        $ret_news[] = $tmp_item;
-    }
-    
-    // group news by created
-    $group_news = array();
-    foreach ($ret_news as $ret_item) {
-        $created = date("Y M", strtotime($ret_item["date"]));
-        $group_news[$created][] = $ret_item;
-    }
-    
-    if (isset($total_count)) {
+    if (isset($total)) {
       $ret = array(
-          "list" => $group_news,
-          "count" => $total_count
+          "content" => $content,
+          "total" => $total
       );
     }
     else {
-      $ret = $group_news;
+      $row = db_fetch_array($result);
+      $ret = wrapper_content_for_api($row['nid']);
     }
-    
-    if ($type) {
-      print json_encode($ret);
-    }
-    else {
-      print json_encode($group_news);
-    }
+
+    print json_encode($ret);
     
     die();
 }
@@ -143,21 +113,115 @@ function api_callback_for_load_news($news_id) {
     die();
 }
 
-function api_callback_load_news_category() {
-  $options = content_allowed_values(content_fields("field_category", "news"));
+function wrapper_content_for_api($nids) {
+  $is_array = true;
+  if (!is_array($nids)) {
+    $nids = array($nids);
+    $is_array = false;
+  }
+  $ret_news = array();
+  while ($nid = array_shift($nids)) {
+    $item = node_load($nid);
+    
+    $slide_images = array();
+    foreach ($item->field_slide_images as $slide_image) {
+        $slide_images[] = file_create_url($slide_image["filepath"]);
+    }
+    $tmp_item = array(
+        "created" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
+        "news_id" => $item->nid,
+        "title" => $item->title,
+        "body" => $item->body,
+        "like" => $item->field_likes[0]["value"],
+        "date" => date("Y-m-d", strtotime($item->field_publish_date[0]["value"])),
+        "images" => array(
+            "thumbnail" => file_create_url($item->field_thumbnail[0]["filepath"]),
+            "slider" => $slide_images
+        ),
+    );
+    $ret_news[] = $tmp_item;
+  }
+
+  if (count($ret_news) < ITEMS_PER_PAGE && $is_array) {
+    $n = ITEMS_PER_PAGE - count($ret_news);
+    $tmp_news = array_fill(0, $n, array(
+      "news_id" => 0,
+      "title" => "The Yenching Academy 2",
+      "date" => "1/5/2014",
+      "like" => "15",
+      "body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+      "images" => array("thumbnail" => "/public/misc/images/comingsoon.jpg",
+          "slider" => array(
+              "/public/misc/images/pictures/news/new-page-mainvisual1.jpg",
+              "/public/misc/images/pictures/news/new-page-mainvisual2.jpg",
+              "/public/misc/images/pictures/news/new-page-mainvisual3.jpg",
+              "/public/misc/images/pictures/news/new-page-mainvisual4.jpg"
+      ))
+    ));
+
+    $ret_news = array_merge($ret_news, $tmp_news);
+  }
   
-  print json_encode($options);
-  die();
-//  $taxonomy_terms = taxonomy_get_tree(1);
-//  $ret = array();
-//  foreach ($taxonomy_terms as $term) {
-//    if (!empty($term->parents) && array_shift($term->parents) != 0) {
-//      
-//    }
-//    else {
-//      $ret[$term->tid] = $term->name;
-//    }
-//  }
-//  print json_encode($ret);
+  if (!$is_array) {
+    return array_shift($ret_news);
+  }
+  return $ret_news;
+  
+}
+
+// 加载所有在某个term 下的 content
+function load_all_content_in_category($tid, $start = 0, $pos = ITEMS_PER_PAGE) {
+  $children = taxonomy_get_children($tid);
+  $tids = array($tid);
+  foreach ($children as $c_term) {
+    $tids[] = $c_term->tid;
+  }
+
+  $placeholder = implode(' , ', array_fill(0, count($tids), '%d'));
+  $sql = 'select n.nid, contentnews.* from term_node tn left join node n on n.nid = tn.nid left join content_type_news as contentnews ON contentnews.nid=n.nid where tid in ('.$placeholder.') and type="news" and status="1" order by contentnews.field_publish_date_value DESC';
+  $res = db_query($sql, $tids);
+  $nids = array();
+  
+  while ($row = db_fetch_array($res)) {
+    $nids[] = $row['nid'];
+  }
+
+  $total = count($nids);
+  $nids = array_splice($nids, $start, $pos);
+  
+  $ret_news = wrapper_content_for_api($nids);
+  
+  return array($ret_news, $total);
+}
+
+function api_callback_load_news_category($page = 1) {
+//  $options = content_allowed_values(content_fields("field_category", "news"));
+//  
+//  print json_encode($options);
 //  die();
+  $taxonomy_terms = taxonomy_get_tree(1, 0, 1, 1);
+  $items_Per_Page = ITEMS_PER_PAGE;
+  $ret = array();
+  $start = ($page - 1) * $items_Per_Page;
+  $end = ($page) * $items_Per_Page;
+  
+  foreach ($taxonomy_terms as $term) {
+    list($content, $total) = load_all_content_in_category($term->tid, $start, $end);
+    $ret[$term->tid] = array(
+      'name' => $term->name,
+      'content' => $content,
+      'total' => $total
+    );
+
+    $children = taxonomy_get_children($term->tid);
+    $ret[$term->tid]['children'] = array();
+    foreach ($children as $c_term) {
+      list($content, $total) = load_all_content_in_category($c_term->tid, $start, $end);
+      $ret[$term->tid]['children'][$c_term->tid] = array('name' => $c_term->name, 'content' => $content, 'total' => $total);
+    }
+  }
+  
+  
+  print json_encode($ret);
+  die();
 }

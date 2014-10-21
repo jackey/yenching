@@ -13,22 +13,24 @@ class IndexController extends Zend_Controller_Action
         $request = $this->getRequest();
         $mNews = new Application_Model_News();
         $params = $this->getRequest()->getParams();
-        $newsInCategory = array();
-        $countInCategory = array();
-        foreach ($mNews->getNewsCategory() as $key => $category) {
-          $ret = $mNews->getNewsListFromServer(7, 1, $key);
-          $countInCategory[$key] = $ret["count"];
-          foreach ($ret["list"] as $news) {
-            foreach ($news as $n) {
-              $newsInCategory[$key][] = $n;
-            }
-          }
-        }
+//        $newsInCategory = array();
+//        $countInCategory = array();
+//        foreach ($mNews->getNewsCategory() as $key => $category) {
+//          $ret = $mNews->getNewsListFromServer(7, 1, $key);
+//          $countInCategory[$key] = $ret["count"];
+//          foreach ($ret["list"] as $news) {
+//            foreach ($news as $n) {
+//              $newsInCategory[$key][] = $n;
+//            }
+//          }
+//        }
+//        
+//        $this->view->news = $mNews->getNewsListFromServer();
+//        $this->view->newsInCategory = $newsInCategory;
+//        $this->view->countInCategory = $countInCategory;
+//        $this->view->total_news  = 2;
+//        $this->view->categories = $mNews->getNewsCategory();
         
-        $this->view->news = $mNews->getNewsListFromServer();
-        $this->view->newsInCategory = $newsInCategory;
-        $this->view->countInCategory = $countInCategory;
-        $this->view->total_news  = 2;
         $this->view->categories = $mNews->getNewsCategory();
     }
 

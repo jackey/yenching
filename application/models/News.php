@@ -2,8 +2,8 @@
 
 class Application_Model_News {
   //public static $api_host = "http://yenchingacademy.org";
-  //public static $api_host = "http://114.215.181.57:8083";
-  public static $api_host = "http://yenching.local";
+  public static $api_host = "http://114.215.181.57:8083";
+  //public static $api_host = "http://yenching.local";
   /**
    * 
    * @param type $num

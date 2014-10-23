@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/jackeychen/Sparks/Yenching/html/admin/sites/all/modules/yenching/yenching.module</file>
-            <file>file:/Users/jackeychen/Sparks/Yenching/html/application/controllers/IndexController.php</file>
             <file>file:/Users/jackeychen/Sparks/Yenching/html/public/scripts/main.js</file>
-            <file>file:/Users/jackeychen/Sparks/Yenching/html/application/views/scripts/index/index.phtml</file>
             <file>file:/Users/jackeychen/Sparks/Yenching/html/application/models/News.php</file>
-            <file>file:/Users/jackeychen/Sparks/Yenching/html/admin/sites/default/settings.php</file>
+            <file>file:/Users/jackeychen/Sparks/Yenching/html/application/controllers/IndexController.php</file>
+            <file>file:/Users/jackeychen/Sparks/Yenching/html/admin/sites/all/modules/yenching/yenching.module</file>
             <file>file:/Users/jackeychen/Sparks/Yenching/html/admin/modules/taxonomy/taxonomy.module</file>
+            <file>file:/Users/jackeychen/Sparks/Yenching/html/admin/sites/default/settings.php</file>
+            <file>file:/Users/jackeychen/Sparks/Yenching/html/application/views/scripts/index/index.phtml</file>
         </group>
     </open-files>
 </project-private>

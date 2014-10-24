@@ -2291,11 +2291,11 @@ margin: 5% auto;
 }
 
 .s7 .block-content .blocks.blocks-last {
-    
+  margin-right: 0.6%;
 }
 
 .s7 .block-content .blocks.blocks-1 {
-  margin-left: 0.6%;
+  
 }
 
 .s7 .block-content .blocks img {

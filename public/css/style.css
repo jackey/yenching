@@ -2291,11 +2291,11 @@ margin: 5% auto;
 }
 
 .s7 .block-content .blocks.blocks-last {
-  margin-right: 0.6%;
+    
 }
 
 .s7 .block-content .blocks.blocks-1 {
-  /*margin-left: 0.6%;*/
+  margin-left: 0.6%;
 }
 
 .s7 .block-content .blocks img {
@@ -2341,15 +2341,15 @@ margin: 5% auto;
 }
 
 .s7 .block-content .blocks .item-1 .category {
-    width: 32%;
-    float: left;
-    font-size: 1.8em;
-    text-align: center;
-    text-transform: uppercase;
-    height: 120px;
-    background: #ad113c;
-    position: relative;
-    padding-top: 25px;
+  width: 32%;
+  float: left;
+  font-size: 1.8em;
+  text-align: center;
+  text-transform: uppercase;
+  height: 120px;
+  line-height: 120px;
+  background: #ad113c;
+  position: relative;
 }
 
 .s7 .block-content .blocks .item-1 .p {

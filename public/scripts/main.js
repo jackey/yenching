@@ -2970,9 +2970,8 @@ if (typeof String.prototype.trim !== 'function') {
 // 新闻分页功能
 (function ($) {
   $(function () {
-    // 一次性加载剩余新闻
-    $(".s7 .block-content").waitForImages(function () {
-      $(".s7 .block-pager").each(function () {
+    $.waitForImagesCallback = waitForImagesCallback = function() {
+      $(".s7 .block-pager .pager").each(function () {
         var pagerLinks = $(".pager-link[data-index]", $(this));
         var pagerIndex = 2;
         if (pagerLinks.size() <= 1) return;
@@ -3016,6 +3015,10 @@ if (typeof String.prototype.trim !== 'function') {
             pagerIndex += 1;
         });
       });
+    }
+    // 一次性加载剩余新闻
+    $(".s7 .block-content").waitForImages(function () {
+      waitForImagesCallback();
     });
     
     
@@ -3095,6 +3098,7 @@ if (typeof String.prototype.trim !== 'function') {
           var html = $(data);
           $.moving_finished(parent);
           wrapper.parent().html(html);
+          waitForImagesCallback();
         }
       });
     });

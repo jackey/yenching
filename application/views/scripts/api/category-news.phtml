@@ -23,7 +23,7 @@
 </div></div>
 <?php $count = $category['total'];?>
 <?php $items_of_page = 7;?>
-<?php $page_num = $count % $items_of_page === 0 ? $count / $items_of_page : round($count /$items_of_page, 0, PHP_ROUND_HALF_EVEN)  + 1;?>
+<?php $page_num = $count % $items_of_page === 0 ? $count / $items_of_page : intval($count /$items_of_page)  + 1;?>
 <?php if(!$page_num) $page_num = 1;?>
 <div class="block-pager" data-maxpage="<?php echo $page_num?>">
   <?php if (!empty($totalCategory['children'])) : ?>

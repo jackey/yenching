@@ -2970,7 +2970,7 @@ if (typeof String.prototype.trim !== 'function') {
 // 新闻分页功能
 (function ($) {
   $(function () {
-    $.waitForImagesCallback = waitForImagesCallback = function() {
+    $.waitForImagesCallback = waitForImagesCallback = function(cid) {
       $(".s7 .block-pager .pager").each(function () {
         var pagerLinks = $(".pager-link[data-index]", $(this));
         var pagerIndex = 2;
@@ -2978,6 +2978,10 @@ if (typeof String.prototype.trim !== 'function') {
         var self = $(pagerLinks.get(pagerIndex - 1)),
           category = self.parents(".blocks").data("cid"),
           blocksEl = self.parents(".blocks");
+
+        if (typeof cid != 'undefined') {
+          category = cid;
+        }
 
         if (self.size() < 1) {
           return;
@@ -3098,7 +3102,7 @@ if (typeof String.prototype.trim !== 'function') {
           var html = $(data);
           $.moving_finished(parent);
           wrapper.parent().html(html);
-          waitForImagesCallback();
+          waitForImagesCallback(cid);
         }
       });
     });

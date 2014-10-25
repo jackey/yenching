@@ -32,6 +32,9 @@ class IndexController extends Zend_Controller_Action
 //        $this->view->categories = $mNews->getNewsCategory();
         
         $this->view->categories = $mNews->getNewsCategory();
+
+        // print_r($this->view->categories);
+        // die();
     }
 
     public function testAction() {

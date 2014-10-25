@@ -147,10 +147,10 @@ function wrapper_content_for_api($nids) {
     $n = ITEMS_PER_PAGE - count($ret_news);
     $tmp_news = array_fill(0, $n, array(
       "news_id" => 0,
-      "title" => "The Yenching Academy 2",
+      "title" => "Coming Soon",
       "date" => "1/5/2014",
       "like" => "15",
-      "body" => "To all the Yenching Scholars who want to get to know some awesome peers in campus should come to the YCA ball today from 8:30-10:00 PM on the Yenching Courtyard!",
+      "body" => "",
       "images" => array("thumbnail" => "/public/misc/images/comingsoon.jpg",
           "slider" => array(
               "/public/misc/images/pictures/news/new-page-mainvisual1.jpg",

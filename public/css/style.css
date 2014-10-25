@@ -2353,10 +2353,12 @@ margin: 5% auto;
 }
 
 .s7 .block-content .blocks .item-1 .p {
-  width: 68%;
-  float: left;
-  padding: 1em 1em;
-  box-sizing: border-box;
+    width: auto;
+    font-size: 1.5em;
+    height: 106px;
+    padding-left: 12px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .s7 .block-content .blocks .item-1 .p > h5 {

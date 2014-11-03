@@ -415,7 +415,7 @@ In order to help select the approximately 35 percent of the student cohort who w
             <?php $firstNews = array_shift($newsList);?>
               <div data-cid="<?php echo $key?>" data-category="<?php echo $category['name'] ?>" class="blocks blocks-<?php echo $i + 1?> <?php if (count($this->categories) == $i + 1) echo "blocks-last"; ?> clearfix">
                 <div class='wrapper' data-name='all'><div class="items-con"><div class="items clearfix" data-page="1">
-                  <div class="item-1 <?php echo $firstNews["news_id"] == '16'  ? 'no-hover'?>" data-newsid="<?php echo $firstNews["news_id"] == '16' ? '': $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
+                  <div class="item-1 <?php echo $firstNews["news_id"] == '16'  ? 'no-hover': ''?>" data-newsid="<?php echo $firstNews["news_id"] == '16' ? '': $firstNews["news_id"]?>" data-title="<?php echo $firstNews["title"]?>">
                     <img src="<?php echo $firstNews["images"]["thumbnail"]?>" alt="" />
                     <div class="con">
                       <div class="category"><?php echo $category['name']?> <span class="star"></span></div>

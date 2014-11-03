@@ -2310,6 +2310,10 @@ margin: 5% auto;
   position: relative;
 }
 
+.s7 .block-content .blocks .item-1.no-hover img {
+    cursor: default;
+}
+
 .s7 .block-content .blocks .item-1 {
   width: 100%;
   float: none;
